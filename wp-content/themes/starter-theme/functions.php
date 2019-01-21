@@ -48,6 +48,9 @@ class UnderTimberSite extends TimberSite {
 	 */
 	function add_to_context($context) {
 		$context['menu'] = new TimberMenu();
+		$context['top_menu'] = new TimberMenu( 'top' );
+		$context['main_menu'] = new TimberMenu( 'main' );
+		$context['full_menu'] = new TimberMenu( 'full' );
 		$context['site'] = $this;
 		return $context;
 	}
@@ -92,7 +95,9 @@ function _t_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', '_t' ),
+		'top' => esc_html__( 'Top Menu', '_t' ),
+		'main' => esc_html__( 'Main Menu', '_t' ),
+		'full' => esc_html__( 'Expandable Menu', '_t' ),
 	) );
 
 	/*
