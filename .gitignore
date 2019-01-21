@@ -6,6 +6,7 @@
 /*
 !.gitignore
 !build.json
+!README.md
 !wp-content
 wp-content/*
 !wp-content/plugins
