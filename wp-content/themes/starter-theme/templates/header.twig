@@ -1,0 +1,136 @@
+<header class="dark">
+  <div class="site-navigation">
+    {% if top_menu %}
+      <nav class="header-menu top-menu">
+        <div class="menu">
+          {% include "menu.twig" with {
+            'menu': top_menu.get_items,
+            'classes': ''
+          } %}
+        </div>
+      </nav>
+    {% endif %}
+    {% if main_menu %}
+      <div class="header-menu main-menu">
+        <div class="menu">
+          <div class="header-logo">
+            <a href="#" class="logo-link">
+              {% include "logo.twig" %}
+              <h1 class="site-title">StarterTheme</h1>
+            </a>
+          </div>
+          <nav class="main-menu-items">
+            {% include "menu.twig" with {
+              'menu': main_menu.get_items,
+              'class': 'main-menu-list'
+            } %}
+            <div class="header-search">
+              <span class="search-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.7583 11.6177L12.4687 11.9619L12.7805 12.2861L17.0645 16.7417C17.2354 16.9195 17.2299 17.2041 17.052 17.3752L17.0519 17.3753C16.9681 17.456 16.859 17.5 16.7418 17.5C16.6179 17.5 16.5053 17.4522 16.419 17.3628C16.419 17.3627 16.4189 17.3626 16.4188 17.3625L12.1025 12.8733L11.8053 12.5643L11.4546 12.8108C10.3132 13.6129 8.98001 14.035 7.57841 14.035C3.84732 14.035 0.810913 10.9986 0.810913 7.26749C0.810913 3.5364 3.84732 0.5 7.57841 0.5C11.3095 0.5 14.3459 3.5364 14.3459 7.26749C14.3459 8.86446 13.7842 10.3981 12.7583 11.6177ZM13.45 7.26749C13.45 4.02937 10.8165 1.39587 7.57841 1.39587C4.34029 1.39587 1.70678 4.02937 1.70678 7.26749C1.70678 10.5056 4.34029 13.1391 7.57841 13.1391C10.8165 13.1391 13.45 10.5056 13.45 7.26749Z" stroke="#FFF"/>
+                </svg>
+              </span>
+              <form class="main-search">
+                <input class="search-input" placeholder="Search" type="search" name="s" id="search">
+                <button class="search-submit" type="submit">
+                  <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM19.0303 6.53033C19.3232 6.23744 19.3232 5.76256 19.0303 5.46967L14.2574 0.696699C13.9645 0.403806 13.4896 0.403806 13.1967 0.696699C12.9038 0.989593 12.9038 1.46447 13.1967 1.75736L17.4393 6L13.1967 10.2426C12.9038 10.5355 12.9038 11.0104 13.1967 11.3033C13.4896 11.5962 13.9645 11.5962 14.2574 11.3033L19.0303 6.53033ZM1 6.75H18.5V5.25H1V6.75Z" fill="#F0192A"/>
+                  </svg>  
+                </button>
+                
+              </form>
+            </div>
+            <div class="language-selector">
+              <div class="js-lang-btn">
+                <span>NO</span>              
+                <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.341709 0.376577C0.79732 -0.125526 1.53601 -0.125526 1.99162 0.376577L7 5.89601L12.0084 0.376577C12.464 -0.125526 13.2027 -0.125526 13.6583 0.376577C14.1139 0.87868 14.1139 1.69275 13.6583 2.19485L7.82496 8.62342C7.36935 9.12553 6.63065 9.12553 6.17504 8.62342L0.341709 2.19485C-0.113903 1.69275 -0.113903 0.87868 0.341709 0.376577Z" fill="#FFF"/>
+                </svg>
+              </div>
+              <div class="lang-dropdown js-lang-dropdown">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="12" fill="#F1F1F1"/>
+                        <rect y="11" width="32" height="11" fill="#FF4B55"/>
+                      </svg>
+                      <span>Polsku</span>  
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="14" height="22" fill="#168D68"/>
+                        <rect x="14" width="18" height="22" fill="#FF4B55"/>
+                        <circle cx="14" cy="11" r="4" fill="#FEA600"/>
+                      </svg>
+                      <span>Português</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="menu-toggle">
+              <div class="svg-hamburger">
+                  <svg viewBox="0 0 800 600">
+                      <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
+                      <path d="M300,320 L540,320" id="middle"></path>
+                      <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+                    </svg>
+              </div>
+            </div>
+          </nav>
+
+            
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <nav class="main-nav">
+    <div class="navigation">
+      <div class="grid grid-row__four container">
+        {% for item in fullMenu %}
+          <div class="nav-columns">
+            <h3 class="h3 main-item">
+              <a href="{{ item.url }}"><span>{{ item.name }} </span></a>
+              <span class="menu-carret">
+                  <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="down" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L9 7.58579L16.2929 0.292893C16.6834 -0.0976311 17.3166 -0.0976311 17.7071 0.292893C18.0976 0.683417 18.0976 1.31658 17.7071 1.70711L9.70711 9.70711C9.31658 10.0976 8.68342 10.0976 8.29289 9.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z" fill="#2C27CE"/>
+                  </svg>
+                    
+              </span>
+            </h3>
+            <ul>
+              {% if item.subMenu %}
+                {% for subItem in item.subMenu %}
+                  <li class="h3">
+                    <a href="{{ subItem.url }}">
+                      <span>{{ subItem.name }}</span>
+                    </a>
+                  </li>
+                {% endfor %}
+              {% endif %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+
+      <footer>
+        <div class="grid grid-row__two container">
+          <ul>
+            <li><a href="#"><span>Mentions légales</span></a></li>
+            <li><a href="#"><span>Contact</span></a></li>
+          </ul>
+          <ul>
+            <li><a href="#"><span>Français</span></a></li>
+            <li><a href="#"><span>English</span></a></li>
+            <li><a href="#"><span>Deutsch</span></a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+  </nav>
+</header>
