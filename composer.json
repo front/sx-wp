@@ -1,0 +1,15 @@
+{
+  "name": "starter.no",
+  "description": "Composer file to install WPMDEV plugins",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://premium.wpmudev.org/"
+    }
+  ],
+  "require": {
+    "wpmudev/wp-smush-pro": "*",
+    "wpmudev/wpmu-dev-dashboard": "*",
+    "wpmudev/wp-defender": "*"
+  }
+}

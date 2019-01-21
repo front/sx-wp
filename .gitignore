@@ -6,6 +6,7 @@
 /*
 !.gitignore
 !build.json
+!composer.json
 !README.md
 !wp-content
 wp-content/*
