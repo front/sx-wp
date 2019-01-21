@@ -7,3 +7,5 @@ Description: Frontkom starter theme
 Version: 1.0
 Text Domain: fks-theme
 */
+
+@import url("build/css/main.css");
