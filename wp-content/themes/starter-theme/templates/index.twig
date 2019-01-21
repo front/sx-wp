@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+            {% if posts %}
+                {% if fn('is_home') and not fn('is_front_page') %}
+                    <header>
+                        <h1 class="page-title screen-reader-text">{{ fn('single_post_title') }}</h1>
+                    </header>
+                {% endif %}
+                {% for post in posts %}
+                    {% include ['content-'~post.post_type~'.twig', 'content.twig'] %}
+                {% endfor %}
+                {{ fn('the_posts_navigation') }}
+            {% else %}
+                {% include ['content-none.twig', 'content.twig'] %}
+            {% endif %}
+        </main><!-- #main -->
+    </div><!-- #primary -->
+{% endblock %}

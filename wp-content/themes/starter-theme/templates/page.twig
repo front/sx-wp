@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+            {% for post in posts %}
+                {% include ['content-page.twig', 'content.twig'] %}
+
+                {# If comments are open or we have at least one comment, load up the comment template. #}
+                {% if post.comment_status == 'open' or post.comment_count > 0 %}
+                    {% include "comments.twig" %}
+                {% endif %}
+            {% endfor %}
+        </main><!-- #main -->
+    </div><!-- #primary -->
+{% endblock %}

@@ -1,0 +1,34 @@
+{
+    "core": {
+        "download": {
+            "version": "5.0.3",
+            "locale": "en_US"
+        }
+    },
+    "plugins": {
+        "cookie-notice": {
+            "version": "*"
+        },
+        "disable-comments": {
+            "version": "*"
+        },
+        "elasticpress": {
+            "version": "2.*"
+        },
+        "enhanced-media-library": {
+            "version": "*"
+        },
+        "sendgrid-email-delivery-simplified": {
+            "version": "*"
+        },
+        "timber-library": {
+            "version": "*"
+        },
+        "wordpress-seo": {
+            "version": "*"
+        },
+        "wp-super-cache": {
+            "version": "*"
+        }
+    }
+}
