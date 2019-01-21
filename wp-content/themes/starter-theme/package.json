@@ -1,0 +1,70 @@
+{
+  "name": "frontend-starter",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:front/frontend-starter.git",
+  "author": "Foad Yousefi <foad@front.no>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server",
+    "dev": "webpack --run-dev --watch",
+    "dev:lose": "yarn dev --watch-aggregate-timeout 300 --watch-poll 500",
+    "build": "webpack --run-prod",
+    "lint:js": "eslint src",
+    "lint:css": "stylelint src/css"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "css-loader": "^1.0.0",
+    "eslint": "5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.3.1",
+    "mini-css-extract-plugin": "^0.4.2",
+    "node-sass": "^4.9.3",
+    "node-sass-magic-importer": "^5.2.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "raw-loader": "^1.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
+    "stylelint": "^9.5.0",
+    "stylelint-selector-bem-pattern": "^2.0.0",
+    "twig-html-loader": "^0.1.2",
+    "twig-loader": "^0.4.1",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.2.1",
+    "webpack-command": "^0.4.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 version"
+  ]
+}

@@ -1,0 +1,19 @@
+/*
+    html
+    body
+*/
+body {
+  font-family: $font-family;
+}
+
+.container {
+  max-width: 690px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @include rwd(medium) {
+    max-width: 1050px;
+  }
+}

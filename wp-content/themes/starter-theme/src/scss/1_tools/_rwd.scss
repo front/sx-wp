@@ -1,0 +1,74 @@
+/*------------------------------------------
+Breakpoint
+------------------------------------------*/
+
+/// @param {String} $name - Breakpoint name
+/// @require $breakpoints-min
+
+@mixin rwd($name) {
+
+  // If the key exists in the map
+  @if map-has-key($breakpoints-min, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints-min, $name))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$name}`. "
+        + "Available breakpoints-min are: #{map-keys($breakpoints-min)}.";
+  }
+}
+
+/// @param {String} $name - Breakpoint name
+/// @require $breakpoints-mmax
+
+@mixin rwdmax($name) {
+
+  // If the key exists in the map
+  @if map-has-key($breakpoints-max, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints-max, $name))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$name}`. "
+        + "Available breakpoints-mmax are: #{map-keys($breakpoints-mmax)}.";
+  }
+}
+
+
+/*------------------------------------------
+Retina
+------------------------------------------*/
+
+@mixin retina($file, $type, $width, $height) {
+  background-image: url('../img/' + $file + '.' + $type);
+  background-size: $width $height;
+  @media (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+    & {
+      background-image: url('../img/' + $file + '-2x.' + $type);
+      background-size: $width $height;
+    }
+  }
+}
+
+/*------------------------------------------
+Responsive background
+------------------------------------------*/
+
+@mixin section-bg($file,
+$type) {
+  background-image: url('../img/' + $file + '.' + $type);
+  @include rwd(small) {
+    background-image: url('../img/' + $file + '-t.' + $type);
+  }
+  @include rwd(large) {
+    background-image: url('../img/' + $file + '-d.' + $type);
+  }
+}

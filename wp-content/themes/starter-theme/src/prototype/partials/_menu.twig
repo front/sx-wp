@@ -1,0 +1,19 @@
+{% if menu %}
+  <ul class="menu-item">
+    {% for item in menu %}
+      <li class="{{ class }}">
+        <a href="{{ item.url }}">
+          {% if item.icon %}
+            {{item.icon}}
+          {% else %}
+            <span>{{ item.name }}</span>
+          {% endif %}
+        </a>
+        {% include "_menu.twig" with {
+          'menu': item.subMenu,
+          'class': ''
+        } %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

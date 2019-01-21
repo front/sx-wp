@@ -1,0 +1,40 @@
+/*------------------------------------------
+Standard Breakpoints
+------------------------------------------*/
+$breakpoints-min: (
+	"smobile":	( min-width:  360px),
+	"iphone":	( min-width:  375px),
+	"mobile":	( min-width:  420px),
+	"small":	( min-width:  640px),
+	"tablet":	( min-width:  768px),
+	"note":		( min-width:  992px),
+	"medium":	( min-width:  1024px),
+	"large":	( min-width:  1366px),
+) !default;
+
+$breakpoints-max: (
+	"smobile":	( max-width:  359px),
+	"iphone":	( max-width:  374px),
+	"mobile":	( max-width:  419px),
+	"small":	( max-width:  639px),
+	"tablet":	( max-width:  767px),
+	"note":		( max-width:  991px),
+	"medium":	( max-width:  1023px),
+	"large":	( max-width:  1365px),
+) !default;
+
+/*------------------------------------------
+CSS Grid Breakpoints
+------------------------------------------*/
+$av-breakpoints:  (
+  "thumb":            "screen and (max-width: 499px)",
+  "handheld":         "screen and (min-width: 500px) and (max-width: 800px)",
+  "handheld-and-up":  "screen and (min-width: 500px)",
+  "pocket":           "screen and (max-width: 800px)",
+  "lap":              "screen and (min-width: 801px) and (max-width: 1024px)",
+  "lap-and-up":       "screen and (min-width: 801px)",
+  "portable":         "screen and (max-width: 1024px)",
+  "desk":             "screen and (min-width: 1025px)",
+  "widescreen":       "screen and (min-width: 1160px)",
+  "retina":           "screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx)"
+) !default; // Responsive breakpoints. Add/remove as appropriate
