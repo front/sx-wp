@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 class SelectLanguage {
   constructor(select) {
     this.select = select;
