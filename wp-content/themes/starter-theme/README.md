@@ -13,11 +13,12 @@
 
 1. Copy contents of this repository to the root of your project.
 2. Run `npm i` to install dependencies from package.json.
-3. Run `npm start`
+3. Rename `local-config-example.json` to `local-config.json` and do the chagnes according to your local setup.
+3. Run `npm run dev`. This will start the webpack in watch mode and opens browser with Browser Sync.
 
 ### Running project in development version:
 
-```npm start```
+```npm run dev```
 
 ### Production build:
 
