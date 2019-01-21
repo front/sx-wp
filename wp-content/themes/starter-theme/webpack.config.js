@@ -7,7 +7,7 @@ const extractCss = require('mini-css-extract-plugin');
 
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
-// const dummyData = require('./dummy-data')
+const localConf = require('./local-config.json')
 
 // const generateHTMLPlugins = () =>
 //   glob.sync('./src/prototype/*.?(twig|html)').map(
@@ -115,9 +115,9 @@ module.exports = {
       // BrowserSync options
       {
         host: 'localhost',
-        port: 3000,
-        proxy: 'http://dev.starter-theme.no/', // Rename this section with url which local website is running from
-        open: false
+        port: localConf.browserSync.port,
+        proxy: localConf.browserSync.proxy,
+        open: true
       }
     )
   ],
