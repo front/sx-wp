@@ -4,14 +4,17 @@ h2
 h3
  */
 
-h1,
+h1 {
+  font-size: rem(38);
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-size: rem($base-font-size);
-    margin: 0;
+  font-size: rem($base-font-size);
+  margin: 0;
 }
 
 
@@ -21,8 +24,8 @@ h6 {
 .h4,
 .h5,
 .h6 {
-    margin-top: 1.3em;
-    margin-bottom: 0.5em;
+  margin-top: 1.3em;
+  margin-bottom: 0.5em;
 }
 
 .h1 {}
@@ -30,7 +33,7 @@ h6 {
 .h2 {}
 
 .h3 {
-    font-size: rem(20);
+  font-size: rem(20);
 }
 
 .h4 {}
