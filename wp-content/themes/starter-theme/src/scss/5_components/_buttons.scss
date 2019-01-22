@@ -1,3 +1,20 @@
 /*
 .btn
  */
+
+ .wp-block-button {
+   .wp-block-button__link {
+     font-size: rem(20);
+     font-weight: 400;
+   }
+
+   &.is-style-rounded-square {
+     .wp-block-button__link {
+       border-radius: 6px;
+   
+       &.has-starter-cyan-background-color {
+         background-color: $cyan-color;
+       }
+     }
+   }
+ }
