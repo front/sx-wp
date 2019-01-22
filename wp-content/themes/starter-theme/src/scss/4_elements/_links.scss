@@ -27,3 +27,14 @@ a,
     transform: scaleX(1);
   }
 }
+
+p {
+  a {
+    color: $red-color;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
