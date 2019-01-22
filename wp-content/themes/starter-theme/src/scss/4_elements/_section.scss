@@ -19,4 +19,23 @@
   .wp-block-columns {
     align-items: center;
   }
+
+  .wp-block-cloudblocks-section-row-inner-two-columns {
+    &.split-2-1 {
+      @extend .container;
+
+      @include rwdmax(small) {
+        max-width: calc(100% - 60px);
+        grid-template-columns: 1fr !important;
+      }
+      
+      @include rwdmax(medium) {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      @include rwdmax(large) {
+        width: calc(100% - 80px);
+      }
+    }
+  }
 }
