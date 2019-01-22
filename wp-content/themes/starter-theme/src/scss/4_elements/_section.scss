@@ -1,0 +1,22 @@
+.wp-block-cloudblocks-section-row {
+  &.height-full {
+    .has-top-menu & {
+      min-height: calc(100vh - #{$top_menu_height});
+    }
+
+    .has-main-menu & {
+      min-height: calc(100vh - #{$main_menu_height});
+    }
+
+    .has-top-and-main-menus & {
+      min-height: calc(100vh - #{$main_menu_height});
+      @include rwd(small) {
+        min-height: calc(100vh - #{$top_menu_height} - #{$main_menu_height});
+      }
+    }
+  }
+
+  .wp-block-columns {
+    align-items: center;
+  }
+}

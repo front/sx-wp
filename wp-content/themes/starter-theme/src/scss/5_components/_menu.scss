@@ -2,7 +2,7 @@
 
   &.top-menu {
     display: none;
-    height: 60px;
+    height: $top_menu_height;
     font-size: rem(13);
 
     @include rwd(small) {
@@ -11,7 +11,7 @@
   }
 
   &.main-menu {
-    height: 130px;
+    height: $main_menu_height;
     font-size: rem(17);
     font-weight: 600;
 

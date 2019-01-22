@@ -458,6 +458,23 @@ li
 /*
 p
  */
+.has-top-menu .wp-block-cloudblocks-section-row.height-full {
+  min-height: calc(100vh - 60px); }
+
+.has-main-menu .wp-block-cloudblocks-section-row.height-full {
+  min-height: calc(100vh - 130px); }
+
+.has-top-and-main-menus .wp-block-cloudblocks-section-row.height-full {
+  min-height: calc(100vh - 130px); }
+  @media (min-width: 640px) {
+    .has-top-and-main-menus .wp-block-cloudblocks-section-row.height-full {
+      min-height: calc(100vh - 60px - 130px); } }
+
+.wp-block-cloudblocks-section-row .wp-block-columns {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
 /*
 table
 th
