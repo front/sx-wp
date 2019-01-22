@@ -624,7 +624,8 @@ header {
         color: #FFF; }
 
 .header-menu .menu-toggle {
-  z-index: 200; }
+  z-index: 200;
+  margin-right: -20px; }
   .header-menu .menu-toggle svg {
     width: 75px;
     cursor: pointer;

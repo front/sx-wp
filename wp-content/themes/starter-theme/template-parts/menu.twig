@@ -1,7 +1,7 @@
 {% if menu %}
 <ul class="menu-item">
   {% for item in menu %}
-    <li class="{{item.classes | join(' ')}}">
+    <li class="{{item.classes | join(' ')}} {{ class }}">
       <a href="{{ item.get_link }}">
         <span>{{ item.title }}</span>
       </a>
