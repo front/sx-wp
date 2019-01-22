@@ -5,7 +5,11 @@ h3
  */
 
 h1 {
-  font-size: rem(38);
+  font-size: rem(24);
+  
+  @include rwd(medium) {
+    font-size: rem(38);
+  }
 }
 
 h2,
