@@ -490,6 +490,15 @@ tr
 /*
 .btn
  */
+.wp-block-button .wp-block-button__link {
+  font-size: 1.25rem;
+  font-weight: 400; }
+
+.wp-block-button.is-style-rounded-square .wp-block-button__link {
+  border-radius: 6px; }
+  .wp-block-button.is-style-rounded-square .wp-block-button__link.has-starter-cyan-background-color {
+    background-color: #16B1FF; }
+
 footer.footer {
   display: block;
   background-color: #eeeeee;
