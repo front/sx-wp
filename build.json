@@ -9,6 +9,9 @@
         "cookie-notice": {
             "version": "*"
         },
+        "cloud-blocks": {
+            "version": "*"
+        },
         "disable-comments": {
             "version": "*"
         },
