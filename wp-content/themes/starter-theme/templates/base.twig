@@ -2,7 +2,18 @@
 </head>
 {% endblock %}
 
-<body class="{{ body_class }}" data-template="base.twig">
+{% set more_body_classes = '' %}
+{% if top_menu %}
+  {% set more_body_classes = 'has-top-menu' %}
+{% endif %}
+{% if main_menu %}
+  {% set more_body_classes = 'has-main-menu' %}
+{% endif %}
+{% if top_menu and main_menu %}
+  {% set more_body_classes = 'has-top-and-main-menus' %}
+{% endif %}
+
+<body class="{{ body_class }} {{ more_body_classes }}" data-template="base.twig">
   <a class="skip-link visuallyhidden focusable" href="#page-body">{{ __('Skip to content', '_t') }}</a>
   {% include 'header.twig' %}
       
