@@ -18,6 +18,15 @@
 
   .wp-block-columns {
     align-items: center;
+
+  }
+
+  p {
+    margin-bottom: rem(30px);
+    
+    @include rwd(medium) {
+      margin-bottom: rem(60px);
+    }
   }
 
   .wp-block-cloudblocks-section-row-inner-two-columns {
