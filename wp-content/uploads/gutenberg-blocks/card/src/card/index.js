@@ -386,6 +386,7 @@ export const settings = {
     }
     if (backgroundImage) {
       backgroundImgStyle.backgroundImage = `url(${backgroundImage})`;
+      classes.push('has-background');
     }
 
     const backgroundColorStyle = {};
