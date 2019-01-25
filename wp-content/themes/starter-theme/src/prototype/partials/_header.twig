@@ -89,8 +89,9 @@
 
   <nav class="main-nav">
     <div class="navigation">
-      <div class="grid grid-row__four container">
-        {% for item in fullMenu %}
+      <div class="container">
+        <div class="row columns-4">
+          {% for item in fullMenu %}
             <div class="nav-columns">
               <h3 class="h3 main-item">
                 <a href="{{ item.url }}"><span>{{ item.name }} </span></a>
@@ -115,9 +116,11 @@
             </div>
           {% endfor %}
         </div>
+      </div>
 
-        <footer>
-          <div class="grid grid-row__two container">
+      <footer>
+        <div class="container">
+          <div class="row columns-2">
             <ul>
               <li><a href="#"><span>Mentions légales</span></a></li>
               <li><a href="#"><span>Contact</span></a></li>
@@ -128,8 +131,9 @@
               <li><a href="#"><span>Deutsch</span></a></li>
             </ul>
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
+    </div>
 
-    </nav>
-  </header>
+  </nav>
+</header>
