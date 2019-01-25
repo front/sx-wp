@@ -50,7 +50,7 @@ Retina
 @mixin retina($file, $type, $width, $height) {
   background-image: url('../img/' + $file + '.' + $type);
   background-size: $width $height;
-  @media (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+  @include rwd(retina) {
     & {
       background-image: url('../img/' + $file + '-2x.' + $type);
       background-size: $width $height;
@@ -58,17 +58,3 @@ Retina
   }
 }
 
-/*------------------------------------------
-Responsive background
-------------------------------------------*/
-
-@mixin section-bg($file,
-$type) {
-  background-image: url('../img/' + $file + '.' + $type);
-  @include rwd(small) {
-    background-image: url('../img/' + $file + '-t.' + $type);
-  }
-  @include rwd(large) {
-    background-image: url('../img/' + $file + '-d.' + $type);
-  }
-}
