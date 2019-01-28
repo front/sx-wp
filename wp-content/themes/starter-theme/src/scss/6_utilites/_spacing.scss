@@ -1,0 +1,145 @@
+.u-margin {
+  &-top {
+    &-xsmall {
+      margin-top: $space-one-fourth;
+    }
+    &-small {
+      margin-top: $space-one-third;
+      @include rwd(small) {
+        margin-top: $space-half;
+      }
+    }
+    &-medium {
+      margin-top: $space-two-third;
+      @include rwd(small) {
+        margin-top: $space;
+      }
+    }
+    &-large {
+      margin-top: $space;
+      @include rwd(small) {
+        margin-top: $space-double;
+      }
+    }
+    &-xlarge {
+      margin-top: $space-triple * 0.5;
+      @include rwd(small) {
+        margin-top: $space-triple;
+      }
+    }
+    &-xxlarge {
+      margin-top: $space-quadruple * 0.5;
+      @include rwd(small) {
+        margin-top: $space-quadruple;
+      }
+    }
+  }
+  &-bottom {
+    &-xsmall {
+      margin-bottom: $space-one-fourth;
+    }
+    &-small {
+      margin-bottom: $space-one-third;
+      @include rwd(small) {
+        margin-bottom: $space-half;
+      }
+    }
+    &-medium {
+      margin-bottom: $space-two-third;
+      @include rwd(small) {
+        margin-bottom: $space;
+      }
+    }
+    &-large {
+      margin-bottom: $space;
+      @include rwd(small) {
+        margin-bottom: $space-double;
+      }
+    }
+    &-xlarge {
+      margin-bottom: $space-triple * 0.5;
+      @include rwd(small) {
+        margin-bottom: $space-triple;
+      }
+    }
+    &-xxlarge {
+      margin-bottom: $space-quadruple * 0.5;
+      @include rwd(small) {
+        margin-bottom: $space-quadruple;
+      }
+    }
+  }
+}
+
+.u-padding {
+  &-top {
+    &-xsmall {
+      padding-top: $space-one-fourth;
+    }
+    &-small {
+      padding-top: $space-one-third;
+      @include rwd(small) {
+        padding-top: $space-half;
+      }
+    }
+    &-medium {
+      padding-top: $space-two-third;
+      @include rwd(small) {
+        padding-top: $space;
+      }
+    }
+    &-large {
+      padding-top: $space;
+      @include rwd(small) {
+        padding-top: $space-double;
+      }
+    }
+    &-xlarge {
+      padding-top: $space-triple * 0.5;
+      @include rwd(small) {
+        padding-top: $space-triple;
+      }
+    }
+    &-xxlarge {
+      padding-top: $space-quadruple * 0.5;
+      @include rwd(small) {
+        padding-top: $space-quadruple;
+      }
+    }
+  }
+  &-bottom {
+    &-xsmall {
+      padding-bottom: $space-one-fourth;
+    }
+    &-small {
+      padding-bottom: $space-one-third;
+      @include rwd(small) {
+        padding-bottom: $space-half;
+      }
+    }
+    &-medium {
+      padding-bottom: $space-two-third;
+      @include rwd(small) {
+        padding-bottom: $space;
+      }
+    }
+    &-large {
+      padding-bottom: $space;
+      @include rwd(small) {
+        padding-bottom: $space-double;
+      }
+    }
+    &-xlarge {
+      padding-bottom: $space-triple * 0.5;
+      @include rwd(small) {
+        padding-bottom: $space-triple;
+      }
+    }
+    &-xxlarge {
+      padding-bottom: $space-quadruple * 0.5;
+      @include rwd(small) {
+        padding-bottom: $space-quadruple;
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@
 # This block is auto generated every time you run 'wp build-generate'
 # Rules: Exclude everything from Git except for your custom plugins and themes (that is: those that are not on wordpress.org)
 # ------------------------------------------------------------
+
 /*
 !.gitignore
 !build.json
@@ -14,10 +15,20 @@ wp-content/*
 wp-content/plugins/*
 !wp-content/themes
 wp-content/themes/*
+!wp-content/uploads
+wp-content/uploads/*
+
 # ------------------------------------------------------------
 # Your custom themes/plugins
 # Added automagically by WP-CLI Build (wp build-generate)
 # ------------------------------------------------------------
+
 !wp-content/themes/starter-theme/
+
 # ------------------------------------------------------------
 # END WP-CLI BUILD BLOCK
+
+!wp-content/uploads/gutenberg-blocks/
+wp-content/uploads/gutenberg-blocks/*/node_modules
+wp-content/themes/starter-theme/node_modules/
+wp-content/themes/starter-theme/build/
