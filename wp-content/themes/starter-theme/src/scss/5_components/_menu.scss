@@ -143,7 +143,7 @@
 
     .logo-link {
       @extend .flex-ai-center;
-      
+
       @include rwd(small) {
         align-items: baseline;
       }
@@ -195,15 +195,15 @@
       .sub-menu {
         display: none;
       }
-      
+
       a {
         color: $blue-color;
         text-decoration: none;
-        
+
         &:hover svg > path {
           fill: $red-color;
         }
-        
+
         .dark & {
           color: #FFF;
         }
@@ -242,7 +242,7 @@
     .svg-hamburger {
       path {
         stroke: $blue-color;
-        
+
         .dark & {
           stroke: #FFF;
         }
@@ -251,39 +251,39 @@
       &.is-active {
         path {
           stroke: #000;
-  
+
           &#top,
           &#bottom {
             stroke-dashoffset: -650px;
             stroke-dashoffset: -650px;
           }
-  
+
           &#middle {
             stroke-dashoffset: -115px;
             stroke-dasharray: 1px 220px;
           }
         }
-      } 
+      }
     }
 
-    
+
   }
-  
+
 }
 
 header.dark {
   color: white;
-  
+
   li > a > svg > path {
     fill: white;
   }
 
   .top-menu {
-    background-color: $blue-darken;
+    background-color: black;
   }
 
   .main-menu {
-    background-color: $blue-color;
+    background-color: $mine-shaft;
   }
 }
 
@@ -304,7 +304,7 @@ header.dark {
     width: 100%;
     padding-bottom: 60px;
     margin-top: 112px;
-    
+
     @include rwd(small) {
       margin-top: 192px;
     }
@@ -374,7 +374,7 @@ header.dark {
         }
 
       }
-      
+
       ul:last-of-type {
         justify-content: flex-end;
       }

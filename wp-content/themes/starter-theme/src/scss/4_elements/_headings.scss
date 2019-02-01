@@ -4,44 +4,69 @@ h2
 h3
  */
 
-h1 {
-  font-size: rem(24);
-  
-  @include rwd(medium) {
-    font-size: rem(38);
-  }
-}
-
+h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-size: rem($base-font-size);
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
   margin: 0;
 }
 
+h1 {
+  line-height: 51px;
+  font-size: rem(28);
 
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  margin-top: 1.3em;
-  margin-bottom: 0.5em;
+  @include rwd(medium) {
+    font-size: rem(38);
+  }
 }
 
-.h1 {}
+h2 {
+  line-height: 43px;
+  font-size: rem(24);
 
-.h2 {}
-
-.h3 {
-  font-size: rem(20);
+  @include rwd(medium) {
+    font-size: rem(32);
+  }
 }
 
-.h4 {}
+h3 {
+  line-height: 32px;
+  font-size: rem(18);
 
-.h5 {}
+  @include rwd(medium) {
+    font-size: rem(24);
+  }
+}
 
-.h6 {}
+h4 {
+  line-height: 27px;
+  font-size: rem(16);
+
+  @include rwd(medium) {
+    font-size: rem(20);
+  }
+}
+
+h5 {
+  line-height: 22px;
+  font-size: rem(14);
+
+  @include rwd(medium) {
+    font-size: rem(16);
+  }
+}
+
+h6 {
+  font-weight: 300;
+  line-height: normal;
+  font-size: rem(18);
+
+  @include rwd(medium) {
+    font-size: rem(24);
+  }
+}
