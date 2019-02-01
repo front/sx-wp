@@ -52,6 +52,10 @@ class UnderTimberSite extends TimberSite {
 		$context['main_menu'] = new TimberMenu( 'main' );
 		$context['full_menu'] = new TimberMenu( 'full' );
 		$context['site'] = $this;
+        $context['footer1'] = Timber::get_widgets('footer-1');
+        $context['footer2'] = Timber::get_widgets('footer-2');
+        $context['footer3'] = Timber::get_widgets('footer-3');
+        $context['footer4'] = Timber::get_widgets('footer-4');
 		return $context;
 	}
 }
@@ -160,6 +164,45 @@ function _t_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+    register_sidebar( array(
+        'name'          => __( 'Footer 1', '_t' ),
+        'id'            => 'footer-1',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', '_t' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget__title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer 2', '_t' ),
+        'id'            => 'footer-2',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', '_t' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget__title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer 3', '_t' ),
+        'id'            => 'footer-3',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', '_t' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget__title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer 4', '_t' ),
+        'id'            => 'footer-4',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', '_t' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget__title">',
+        'after_title'   => '</h2>',
+    ) );
 }
 add_action( 'widgets_init', '_t_widgets_init' );
 
