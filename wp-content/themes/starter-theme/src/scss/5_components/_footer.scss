@@ -1,6 +1,33 @@
-footer.footer {
+footer {
   display: block;
-  background-color: #eeeeee;
-  padding: 10px 60px;
-  margin-bottom: 30px;
+  background-color: $black;
+  color: $gallery;
+  padding-top: 40px;
+  padding-bottom: 100px;
+
+  a {
+    color: $gallery;
+    text-decoration: none;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: #BE8D7E;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: .10s ease;
+      transition: .10s ease;
+    }
+
+    &:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+  }
 }

@@ -27,14 +27,3 @@ a,
     transform: scaleX(1);
   }
 }
-
-p {
-  a {
-    color: $brandy-rose;
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}

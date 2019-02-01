@@ -9,6 +9,15 @@ p {
 	line-height: 29px;
 	font-size: 18px;
 	margin-bottom: 30px !important;
+
+	a {
+		color: $brandy-rose;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
 
 dfn, cite, em, i {
