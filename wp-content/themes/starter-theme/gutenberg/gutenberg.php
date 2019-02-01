@@ -9,48 +9,44 @@ function fk_add_theme_support() {
   // Color palette
   add_theme_support( 'editor-color-palette', array(
       array(
-          'name' => __( 'red', '_t' ),
-          'slug' => 'starter-red',
-          'color' => '#F0192A',
+          'name' => __( 'Brandy Rose', '_t' ),
+          'slug' => 'starter-brandy-rose',
+          'color' => '#BE8D7E',
       ),
       array(
-          'name' => __( 'dark blue', '_t' ),
-          'slug' => 'starter-dark-blue',
-          'color' => '#2622B4',
+          'name' => __( 'Dark Tan', '_t' ),
+          'slug' => 'starter-dark-tak',
+          'color' => '#996152',
       ),
       array(
-          'name' => __( 'blue', '_t' ),
-          'slug' => 'starter-blue',
-          'color' => '#2C27CE',
-      ),
-      array(
-          'name' => __( 'cyan', '_t' ),
-          'slug' => 'starter-cyan',
-          'color' => '#16B1FF',
-      ),
-      array(
-          'name' => __( 'green', '_t' ),
-          'slug' => 'starter-green',
-          'color' => '#5B7A5C',
-      ),
-      array(
-          'name' => __( 'faded black', '_t' ),
+          'name' => __( 'Black', '_t' ),
           'slug' => 'starter-black',
-          'color' => 'rgba(0, 0, 0, 0.33)',
+          'color' => '#000000',
       ),
       array(
-          'name' => __( 'gray', '_t' ),
-          'slug' => 'starter-gray',
-          'color' => '#ABABAB',
+          'name' => __( 'Mine Shaft', '_t' ),
+          'slug' => 'starter-mine-shaft',
+          'color' => '#333333',
       ),
       array(
-          'name' => __( 'sand', '_t' ),
-          'slug' => 'starter-sand',
-          'color' => '#EAE8E2',
+          'name' => __( 'Steel', '_t' ),
+          'slug' => 'starter-steel',
+          'color' => '#666666',
       ),
       array(
-          'name' => __( 'white', '_t' ),
-          'slug' => 'starter-white',
+          'name' => __( 'Light Gray', '_t' ),
+          'slug' => 'starter-light-gray',
+          'color' => '#D6D6D6',
+      ),
+      array(
+          'name' => __( 'Gallery', '_t' ),
+          'slug' => 'starter-gallery',
+          'color' => '#F0F0F0',
+      ),
+
+      array(
+          'name' => __( 'Romance', '_t' ),
+          'slug' => 'starter-romance',
           'color' => '#ffffff',
       ),
   ) );
