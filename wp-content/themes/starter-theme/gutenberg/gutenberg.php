@@ -54,6 +54,7 @@ function fk_add_theme_support() {
           'color' => '#ffffff',
       ),
   ) );
+  add_theme_support( 'disable-custom-colors' );
 
   // Width
   add_theme_support( 'align-wide' );
@@ -82,10 +83,10 @@ function fk_add_theme_support() {
           'slug' => 'large'
       ),
   ) );
+  add_theme_support( 'disable-custom-font-sizes' );
 
   // Styles
   add_theme_support( 'editor-styles' );
-
 
   // Media
   add_theme_support( 'responsive-embeds' );
