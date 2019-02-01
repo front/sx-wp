@@ -3,3 +3,27 @@ table
 th
 tr
  */
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 0 0 1.5em;
+
+	tr:first-child {
+		background: $light-gray;
+	}
+
+	tr:last-child {
+		font-weight: bold;
+	}
+}
+
+td,
+th {
+	padding: 0;
+	border-bottom: 1px solid $light-gray;
+}
+
+td {
+	padding: 30px;
+}
