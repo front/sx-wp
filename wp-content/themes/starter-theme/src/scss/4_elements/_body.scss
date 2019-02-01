@@ -2,7 +2,7 @@
     html
     body
 */
-body {
+body:not(.wp-admin) {
   font-family: $font-family;
   font-size: $base-font-size;
 }

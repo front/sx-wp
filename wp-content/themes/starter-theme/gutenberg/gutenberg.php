@@ -103,3 +103,13 @@ function gutenberg_blocks_modification_enqueue() {
     );
 }
 add_action( 'enqueue_block_editor_assets', 'gutenberg_blocks_modification_enqueue' );
+
+/**
+ * Enqueue css file for gutenberg override
+ */
+function custom_gutenberg_styles() {
+
+    wp_enqueue_style( 'g-editor-style', get_stylesheet_directory_uri() . '/build/css/main.css', array(), '1.0' );
+
+}
+add_action( 'enqueue_block_editor_assets', 'custom_gutenberg_styles' );
