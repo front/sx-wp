@@ -4,9 +4,14 @@
     display: none;
     height: $top_menu_height;
     font-size: rem(13);
+    background: $gallery;
 
     @include rwd(small) {
       display: block;
+    }
+
+    .menu-open & {
+      display: none;
     }
   }
 
@@ -14,6 +19,7 @@
     height: $main_menu_height;
     font-size: rem(17);
     font-weight: 600;
+    background: $romance;
 
     .menu {
       justify-content: space-between;
@@ -25,7 +31,7 @@
 
     .language-selector {
       margin: 0 30px;
-      color: $blue-color;
+      color: $text-color;
 
       .dark & {
         color: #FFF;
@@ -40,7 +46,7 @@
         cursor: pointer;
 
         svg path {
-          fill: $blue-color;
+          fill: $text-color;
 
           .dark & {
             fill: #FFF;
@@ -49,7 +55,7 @@
 
         &:hover {
           svg path {
-            fill: $red-color;
+            fill: $brandy-rose;
           }
         }
 
@@ -127,10 +133,6 @@
       }
     }
 
-    @include rwd(small) {
-      margin-top: -65px;
-    }
-
     #sign {
       transition: fill 1s ease;
     }
@@ -144,12 +146,8 @@
     .logo-link {
       @extend .flex-ai-center;
 
-      @include rwd(small) {
-        align-items: baseline;
-      }
-
       .site-title {
-        color: $blue-color;
+        color: $text-color;
         font-size: rem(18);
         font-weight: 300;
         margin-left: 20px;
@@ -165,6 +163,10 @@
 
         .dark & {
           color: #FFF;
+
+          .menu-open & {
+            color: $text-color;
+          }
         }
       }
     }
@@ -197,11 +199,11 @@
       }
 
       a {
-        color: $blue-color;
+        color: $text-color;
         text-decoration: none;
 
         &:hover svg > path {
-          fill: $red-color;
+          fill: $brandy-rose;
         }
 
         .dark & {
@@ -241,7 +243,7 @@
 
     .svg-hamburger {
       path {
-        stroke: $blue-color;
+        stroke: $text-color;
 
         .dark & {
           stroke: #FFF;
@@ -272,14 +274,14 @@
 }
 
 header.dark {
-  color: white;
+  color: $romance;
 
   li > a > svg > path {
-    fill: white;
+    fill: $romance;
   }
 
   .top-menu {
-    background-color: black;
+    background-color: $black;
   }
 
   .main-menu {
@@ -385,7 +387,7 @@ header.dark {
       }
     }
 
-    h3.h3 a {
+    .h4 a {
       color: $faded-black;
     }
 
@@ -401,5 +403,13 @@ header.dark {
     visibility: visible;
     -webkit-transition-delay: 0s;
     transition-delay: 0s;
+
+    .navigation a {
+      color: $text-color;
+    }
+
+    .navigation .h4 a {
+      color: $text-color;
+    }
   }
 }

@@ -3,8 +3,12 @@ p
  */
 
 p {
+	font-family: $font-family;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 29px;
+	font-size: 18px;
 	margin-bottom: 1.5em;
-	font-size: $base-font-size;
 }
 
 dfn, cite, em, i {

@@ -14,8 +14,8 @@
         <div class="menu">
           <div class="header-logo">
             <a href="#" class="logo-link">
-              {% include "logo.twig" %}
-              <h1 class="site-title">StarterTheme</h1>
+              <img src="/wp-content/uploads/2019/02/Logo_light.png"/>
+              <h1 class="site-title">{{ site.name }}</h1>
             </a>
           </div>
           <nav class="main-menu-items">
@@ -93,7 +93,7 @@
         <div class="row columns-4">
           {% for item in fullMenu %}
             <div class="nav-columns">
-              <h3 class="h3 main-item">
+              <div class="h3 main-item">
                 <a href="{{ item.url }}"><span>{{ item.name }} </span></a>
                 <span class="menu-carret">
                     <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +101,7 @@
                     </svg>
 
                 </span>
-              </h3>
+              </div>
               <ul>
                 {% if item.subMenu %}
                   {% for subItem in item.subMenu %}
