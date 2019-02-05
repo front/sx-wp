@@ -139,7 +139,7 @@
 
     .menu-open & {
       #sign {
-        fill: #EF1829;
+        fill: #ffffff;
       }
     }
 
@@ -303,7 +303,7 @@ header.dark {
   visibility: hidden;
   transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s;
   z-index: 110;
-  overflow-y: scroll;
+  overflow-y: hidden;
   background: #FFF;
 
   .navigation {
@@ -313,6 +313,18 @@ header.dark {
 
     @include rwd(small) {
       margin-top: 192px;
+    }
+
+    a {
+      color: $text-color;
+
+      span:before {
+        background: $text-color;
+      }
+    }
+    
+    .h4 a {
+      color: $text-color;
     }
 
     > div {
@@ -367,39 +379,6 @@ header.dark {
         }
       }
     }
-
-    footer {
-      width: 100%;
-      left: 0;
-
-      ul {
-        display: flex;
-
-        li:not(:last-of-type) {
-          margin-right: 20px;
-        }
-
-      }
-
-      ul:last-of-type {
-        justify-content: flex-end;
-      }
-
-      a {
-        color: $gray-color;
-        font-size: rem(14);
-      }
-    }
-
-    .h4 a {
-      color: $faded-black;
-    }
-
-    a {
-      span:before {
-        background: $text-color;
-      }
-    }
   }
 
   .menu-open & {
@@ -407,13 +386,15 @@ header.dark {
     visibility: visible;
     -webkit-transition-delay: 0s;
     transition-delay: 0s;
-
-    .navigation a {
-      color: $text-color;
-    }
-
-    .navigation .h4 a {
-      color: $text-color;
-    }
   }
+}
+
+.menu-open header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  z-index: 1;
 }
