@@ -202,6 +202,10 @@
         color: $text-color;
         text-decoration: none;
 
+	span {
+	    position: relative;
+	}
+
         &:hover svg > path {
           fill: $brandy-rose;
         }
