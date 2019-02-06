@@ -28,11 +28,11 @@
     &:before {
       content: '';
       width: 32px;
-      height: 29px;
-      background: $dark-tan;
+      height: 30px;
       position: absolute;
       left: 0;
       top: -2px;
+      background-image: url(../icons/apostrophes.svg);
     }
 
     &:after {
@@ -42,4 +42,3 @@
     }
   }
 }
-
