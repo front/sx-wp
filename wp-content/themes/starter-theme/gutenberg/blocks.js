@@ -5,6 +5,21 @@ wp.blocks.registerBlockStyle('core/button', {
     label: __('Squared Dark'),
 });
 
+wp.blocks.registerBlockStyle('core/button', {
+    name: 'rounded',
+    label: __('Rounded'),
+});
+
+wp.blocks.registerBlockStyle('core/button', {
+    name: 'rounded-dark',
+    label: __('Rounded Dark'),
+});
+
+wp.blocks.registerBlockStyle('core/button', {
+    name: 'rounded-outline',
+    label: __('Rounded Dark'),
+});
+
 // Add paragraph style option
 wp.blocks.registerBlockStyle('core/paragraph', {
     name: 'flarge',
