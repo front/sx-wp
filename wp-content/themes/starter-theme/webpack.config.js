@@ -4,6 +4,7 @@ const extractCss = require('mini-css-extract-plugin');
 
 // const HTMLWebpackPlugin = require('html-webpack-plugin');
 // const glob = require('glob');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
@@ -94,6 +95,7 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)$/i,
+        include: path.resolve(__dirname, 'src/fonts'),
         use: [
           {
             loader: 'url-loader',
@@ -102,7 +104,22 @@ module.exports = {
             },
           },
         ],
-      }
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          { 
+            loader: 'svg-sprite-loader', 
+            options: { 
+	      extract: true,
+              spriteFilename: 'icons/icons.svg',
+              runtimeCompat: true
+	    } 
+          },
+          'svg-fill-loader',
+          'svgo-loader'
+        ]
+      },
     ],
   },
 
@@ -111,14 +128,18 @@ module.exports = {
       filename: 'css/main.css',
     }),
     // ...generateHTMLPlugins(),
-    new BrowserSyncPlugin(
+    new BrowserSyncPlugin({
       // BrowserSync options
-      {
         host: 'localhost',
         port: localConf.browserSync.port,
         proxy: localConf.browserSync.proxy,
         open: true
-      }
-    )
+    }),
+    new SpriteLoaderPlugin({
+        plainSprite: true,
+        spriteAttrs: {
+          id: 'my-custom-sprite-id'
+        }
+    })
   ],
 };
