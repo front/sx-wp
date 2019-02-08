@@ -13,6 +13,14 @@
     .menu-open & {
       display: none;
     }
+
+    .menu-item li {
+      padding: 0 15px;
+    }
+
+    .fa {
+      font-size: 16px;
+    }
   }
 
   &.main-menu {
@@ -181,7 +189,7 @@
       padding: 0 30px;
 
       @include rwd(large) {
-        padding: 0 50px;
+        padding: 0 30px;
       }
 
       &:last-of-type {

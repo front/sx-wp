@@ -5,8 +5,14 @@
         <div class="menu">
           {% include "menu.twig" with {
             'menu': top_menu.get_items,
-            'classes': ''
+            'class': ''
           } %}
+          {% if social_menu %}
+            {% include "menu.twig" with {
+                'menu': social_menu.get_items,
+                'class': 'social-menu'
+            } %}
+          {% endif %}
         </div>
       </nav>
     {% endif %}
@@ -22,7 +28,7 @@
           <nav class="main-menu-items">
             {% include "menu.twig" with {
               'menu': main_menu.get_items,
-              'class': 'main-menu-list'
+              'item_class': 'main-menu-list'
             } %}
             <div class="header-search">
               <span class="search-icon">
