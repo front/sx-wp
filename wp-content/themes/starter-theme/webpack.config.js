@@ -37,6 +37,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'js/main.js',
+        publicPath: '/wp-content/themes/starter-theme/build/',
     },
 
     externals: {
@@ -85,7 +86,12 @@ module.exports = {
             {
                 test: /\.(gif|png|jpe?g)$/i,
                 use: [
-                    'file-loader',
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'img',
+                        },
+                    },
                     {
                         loader: 'image-webpack-loader',
                         options: {
