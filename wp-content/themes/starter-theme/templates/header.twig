@@ -1,6 +1,6 @@
 <header class="header dark">
   <div class="site-navigation">
-    {% if top_menu %}
+    {% if fn('has_nav_menu', 'top') %}
       <nav class="header-menu top-menu">
         <div class="menu">
           {% include "menu.twig" with {
@@ -16,7 +16,7 @@
         </div>
       </nav>
     {% endif %}
-    {% if main_menu %}
+    {% if fn('has_nav_menu', 'main') %}
       <div class="header-menu main-menu">
         <div class="menu">
           <div class="header-logo">
@@ -99,7 +99,7 @@
     <div class="navigation">
       <div class="container">
         <div class="row columns-4">
-          {% if full_menu.get_items %}
+          {% if fn('has_nav_menu', 'full') %}
             {% for item in full_menu.get_items %}
               <div class="nav-columns">
                 <div class="h4 main-item">
