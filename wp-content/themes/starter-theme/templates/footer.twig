@@ -15,6 +15,6 @@
     </div>
 
     <div class="site-info copyright">
-        &copy; {{ now|date('Y') }} {{ bloginfo('name') }}
+        &copy; {{ now|date('Y') }} {{ bloginfo('name') }} {{ fn('get_theme_mod', 'copyright_text') }}
     </div><!-- .site-info -->
 </div>

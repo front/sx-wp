@@ -130,11 +130,6 @@ function _t_setup() {
 		'link',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( '_t_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif;
 add_action( 'after_setup_theme', '_t_setup' );
@@ -223,9 +218,15 @@ function _t_scripts() {
 add_action( 'wp_enqueue_scripts', '_t_scripts' );
 
 /**
- * Implement the Custom Header feature.
+ * Implement the Custom Colors feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-colors.php';
+
+/**
+ * Implement the Custom Colors feature.
+ */
+require get_template_directory() . '/inc/custom-footer.php';
+
 
 /**
  * Custom template tags for this theme.
@@ -251,3 +252,26 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Gutenberg settings file.
  */
 require get_template_directory() . '/gutenberg/gutenberg.php';
+
+/**
+ * Remove the additional CSS section, introduced in 4.7, from the Customizer.
+ * @param $wp_customize WP_Customize_Manager
+ */
+function prefix_remove_css_section( $wp_customize ) {
+    $wp_customize->remove_section( 'custom_css' );
+}
+add_action( 'customize_register', 'prefix_remove_css_section', 15 );
+
+/**
+ * This function adds some styles to the WordPress Customizer
+ */
+function my_customizer_styles() { ?>
+    <style>
+        #_customize-input-additional_customizer_text {
+            display: none;
+        }
+    </style>
+    <?php
+
+}
+add_action( 'customize_controls_print_styles', 'my_customizer_styles', 999 );

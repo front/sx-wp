@@ -6,48 +6,54 @@
  */
 add_action( 'after_setup_theme', 'fk_add_theme_support' );
 function fk_add_theme_support() {
+
   // Color palette
   add_theme_support( 'editor-color-palette', array(
       array(
           'name' => __( 'Brandy Rose', '_t' ),
           'slug' => 'starter-brandy-rose',
-          'color' => '#BE8D7E',
+          'color' => get_theme_mod('secondary_color', '#BE8D7E'),
       ),
       array(
           'name' => __( 'Dark Tan', '_t' ),
           'slug' => 'starter-dark-tak',
-          'color' => '#996152',
+          'color' => get_theme_mod('primary_color', '#926355'),
       ),
       array(
           'name' => __( 'Black', '_t' ),
           'slug' => 'starter-black',
-          'color' => '#000000',
+          'color' => get_theme_mod('dark_color', '#000000'),
       ),
       array(
           'name' => __( 'Mine Shaft', '_t' ),
           'slug' => 'starter-mine-shaft',
-          'color' => '#333333',
+          'color' => get_theme_mod('accent_color', '#333333'),
       ),
       array(
           'name' => __( 'Steel', '_t' ),
           'slug' => 'starter-steel',
-          'color' => '#666666',
+          'color' => get_theme_mod('accent2_color', '#666666'),
+      ),
+      array(
+          'name' => __( 'Gray', '_t' ),
+          'slug' => 'starter-gray',
+          'color' => get_theme_mod('gray_color', '#ABABAB'),
       ),
       array(
           'name' => __( 'Light Gray', '_t' ),
           'slug' => 'starter-light-gray',
-          'color' => '#D6D6D6',
+          'color' => get_theme_mod('light_gray_color', '#D6D6D6'),
       ),
       array(
           'name' => __( 'Gallery', '_t' ),
           'slug' => 'starter-gallery',
-          'color' => '#F0F0F0',
+          'color' => get_theme_mod('light_color', '#F0F0F0'),
       ),
 
       array(
           'name' => __( 'Romance', '_t' ),
           'slug' => 'starter-romance',
-          'color' => '#ffffff',
+          'color' => get_theme_mod('white_color', '#FFFFFF'),
       ),
   ) );
   add_theme_support( 'disable-custom-colors' );
