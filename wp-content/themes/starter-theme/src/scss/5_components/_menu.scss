@@ -4,9 +4,22 @@
     display: none;
     height: $top_menu_height;
     font-size: rem(13);
+    background: $gallery;
 
     @include rwd(small) {
       display: block;
+    }
+
+    .menu-open & {
+      display: none;
+    }
+
+    .menu-item li {
+      padding: 0 15px;
+    }
+
+    .fa {
+      font-size: 16px;
     }
   }
 
@@ -14,6 +27,7 @@
     height: $main_menu_height;
     font-size: rem(17);
     font-weight: 600;
+    background: $romance;
 
     .menu {
       justify-content: space-between;
@@ -25,7 +39,7 @@
 
     .language-selector {
       margin: 0 30px;
-      color: $blue-color;
+      color: $text-color;
 
       .dark & {
         color: #FFF;
@@ -40,7 +54,7 @@
         cursor: pointer;
 
         svg path {
-          fill: $blue-color;
+          fill: $text-color;
 
           .dark & {
             fill: #FFF;
@@ -49,7 +63,7 @@
 
         &:hover {
           svg path {
-            fill: $red-color;
+            fill: $brandy-rose;
           }
         }
 
@@ -127,29 +141,21 @@
       }
     }
 
-    @include rwd(small) {
-      margin-top: -65px;
-    }
-
     #sign {
       transition: fill 1s ease;
     }
 
     .menu-open & {
       #sign {
-        fill: #EF1829;
+        fill: #ffffff;
       }
     }
 
     .logo-link {
       @extend .flex-ai-center;
-      
-      @include rwd(small) {
-        align-items: baseline;
-      }
 
       .site-title {
-        color: $blue-color;
+        color: $text-color;
         font-size: rem(18);
         font-weight: 300;
         margin-left: 20px;
@@ -165,6 +171,10 @@
 
         .dark & {
           color: #FFF;
+
+          .menu-open & {
+            color: $text-color;
+          }
         }
       }
     }
@@ -179,7 +189,7 @@
       padding: 0 30px;
 
       @include rwd(large) {
-        padding: 0 50px;
+        padding: 0 30px;
       }
 
       &:last-of-type {
@@ -195,15 +205,19 @@
       .sub-menu {
         display: none;
       }
-      
+
       a {
-        color: $blue-color;
+        color: $text-color;
         text-decoration: none;
-        
+
+	span {
+	    position: relative;
+	}
+
         &:hover svg > path {
-          fill: $red-color;
+          fill: $brandy-rose;
         }
-        
+
         .dark & {
           color: #FFF;
         }
@@ -241,8 +255,8 @@
 
     .svg-hamburger {
       path {
-        stroke: $blue-color;
-        
+        stroke: $text-color;
+
         .dark & {
           stroke: #FFF;
         }
@@ -251,39 +265,39 @@
       &.is-active {
         path {
           stroke: #000;
-  
+
           &#top,
           &#bottom {
             stroke-dashoffset: -650px;
             stroke-dashoffset: -650px;
           }
-  
+
           &#middle {
             stroke-dashoffset: -115px;
             stroke-dasharray: 1px 220px;
           }
         }
-      } 
+      }
     }
 
-    
+
   }
-  
+
 }
 
 header.dark {
-  color: white;
-  
+  color: $romance;
+
   li > a > svg > path {
-    fill: white;
+    fill: $romance;
   }
 
   .top-menu {
-    background-color: $blue-darken;
+    background-color: $black;
   }
 
   .main-menu {
-    background-color: $blue-color;
+    background-color: $mine-shaft;
   }
 }
 
@@ -297,16 +311,28 @@ header.dark {
   visibility: hidden;
   transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s;
   z-index: 110;
-  overflow-y: scroll;
+  overflow-y: hidden;
   background: #FFF;
 
   .navigation {
     width: 100%;
     padding-bottom: 60px;
     margin-top: 112px;
-    
+
     @include rwd(small) {
       margin-top: 192px;
+    }
+
+    a {
+      color: $text-color;
+
+      span:before {
+        background: $text-color;
+      }
+    }
+
+    .h4 a {
+      color: $text-color;
     }
 
     > div {
@@ -361,39 +387,6 @@ header.dark {
         }
       }
     }
-
-    footer {
-      width: 100%;
-      left: 0;
-
-      ul {
-        display: flex;
-
-        li:not(:last-of-type) {
-          margin-right: 20px;
-        }
-
-      }
-      
-      ul:last-of-type {
-        justify-content: flex-end;
-      }
-
-      a {
-        color: $gray-color;
-        font-size: rem(14);
-      }
-    }
-
-    h3.h3 a {
-      color: $faded-black;
-    }
-
-    a {
-      span:before {
-        background: $text-color;
-      }
-    }
   }
 
   .menu-open & {
@@ -402,4 +395,14 @@ header.dark {
     -webkit-transition-delay: 0s;
     transition-delay: 0s;
   }
+}
+
+.menu-open .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  z-index: 1;
 }

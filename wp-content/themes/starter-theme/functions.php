@@ -51,7 +51,12 @@ class UnderTimberSite extends TimberSite {
 		$context['top_menu'] = new TimberMenu( 'top' );
 		$context['main_menu'] = new TimberMenu( 'main' );
 		$context['full_menu'] = new TimberMenu( 'full' );
+        $context['social_menu'] = new TimberMenu( 'social' );
 		$context['site'] = $this;
+        $context['footer1'] = Timber::get_widgets('footer-1');
+        $context['footer2'] = Timber::get_widgets('footer-2');
+        $context['footer3'] = Timber::get_widgets('footer-3');
+        $context['footer4'] = Timber::get_widgets('footer-4');
 		return $context;
 	}
 }
@@ -98,6 +103,7 @@ function _t_setup() {
 		'top' => esc_html__( 'Top Menu', '_t' ),
 		'main' => esc_html__( 'Main Menu', '_t' ),
 		'full' => esc_html__( 'Expandable Menu', '_t' ),
+        'social' => esc_html__( 'Social Menu', '_t' ),
 	) );
 
 	/*
@@ -124,11 +130,6 @@ function _t_setup() {
 		'link',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( '_t_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif;
 add_action( 'after_setup_theme', '_t_setup' );
@@ -160,6 +161,45 @@ function _t_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+    register_sidebar( array(
+        'name'          => __( 'Footer 1', '_t' ),
+        'id'            => 'footer-1',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', '_t' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget__title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer 2', '_t' ),
+        'id'            => 'footer-2',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', '_t' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget__title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer 3', '_t' ),
+        'id'            => 'footer-3',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', '_t' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget__title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer 4', '_t' ),
+        'id'            => 'footer-4',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', '_t' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget__title">',
+        'after_title'   => '</h2>',
+    ) );
 }
 add_action( 'widgets_init', '_t_widgets_init' );
 
@@ -178,9 +218,15 @@ function _t_scripts() {
 add_action( 'wp_enqueue_scripts', '_t_scripts' );
 
 /**
- * Implement the Custom Header feature.
+ * Implement the Custom Colors feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-colors.php';
+
+/**
+ * Implement the Custom Colors feature.
+ */
+require get_template_directory() . '/inc/custom-footer.php';
+
 
 /**
  * Custom template tags for this theme.
@@ -206,3 +252,26 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Gutenberg settings file.
  */
 require get_template_directory() . '/gutenberg/gutenberg.php';
+
+/**
+ * Remove the additional CSS section, introduced in 4.7, from the Customizer.
+ * @param $wp_customize WP_Customize_Manager
+ */
+function prefix_remove_css_section( $wp_customize ) {
+    $wp_customize->remove_section( 'custom_css' );
+}
+add_action( 'customize_register', 'prefix_remove_css_section', 15 );
+
+/**
+ * This function adds some styles to the WordPress Customizer
+ */
+function my_customizer_styles() { ?>
+    <style>
+        #_customize-input-additional_customizer_text {
+            display: none;
+        }
+    </style>
+    <?php
+
+}
+add_action( 'customize_controls_print_styles', 'my_customizer_styles', 999 );

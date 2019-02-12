@@ -1,0 +1,37 @@
+p {
+  &.has-large-font-size, &.is-style-flarge {
+    @extend .text--large;
+  }
+  &.has-small-font-size, &.is-style-fsmall {
+    @extend .text--small;
+  }
+  &.has-xsmall-font-size, &.is-style-fxsmall {
+    @extend .text--xsmall;
+  }
+}
+
+.text {
+  &--large {
+    line-height: normal;
+    font-size: 20px;
+    @include rwd(small) {
+      font-size: 24px;
+    }
+  }
+
+  &--small {
+    line-height: 24px;
+    font-size: 14px;
+    @include rwd(small) {
+      font-size: 16px;
+    }
+  }
+
+  &--xsmall {
+    line-height: normal;
+    font-size: 12px;
+    @include rwd(small) {
+      font-size: 14px;
+    }
+  }
+}

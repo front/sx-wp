@@ -1,0 +1,39 @@
+.wp-block-pullquote {
+
+  blockquote {
+    text-align: left;
+    margin: 0;
+
+    &:before {
+      content: '';
+      background: url(../icons/separator.svg);
+      background-repeat: no-repeat;
+      position: relative;
+      top: 0;
+      width: 100%;
+      height: 1px;
+      display: block;
+    }
+  }
+
+  p, cite {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 26px;
+    font-size: 18px;
+    color: $steel;
+    text-align: left;
+  }
+
+  cite {
+    position: relative;
+    padding-left: 20px;
+
+    &:before {
+      content: '-';
+      position: absolute;
+      left: 0;
+    }
+  }
+}

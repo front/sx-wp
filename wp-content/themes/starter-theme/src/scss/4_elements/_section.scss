@@ -47,4 +47,17 @@
       }
     }
   }
+
+  .has-3-columns {
+    .wp-block-column:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .wp-block-cloudblocks-section-row-inner-one-column {
+    &.full {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  } 
 }

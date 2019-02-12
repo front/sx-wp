@@ -10,15 +10,6 @@
     @include rwd(medium) {
       font-size: rem(20);
     }
-
-
-    &.has-starter-cyan-background-color {
-      background-color: $cyan-color;
-
-      &:hover {
-        background-color: darken($cyan-color, 5);
-      }
-    }
   }
 
   &.is-style-rounded-square {

@@ -30,8 +30,10 @@
 
 .alignwide {
   max-width: $content-width-wide;
+  margin-left: auto;
+  margin-right: auto;
 }
-  
+
 .alignfull {
   max-width: $content-width-full;
 }

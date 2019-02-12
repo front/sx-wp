@@ -6,54 +6,57 @@
  */
 add_action( 'after_setup_theme', 'fk_add_theme_support' );
 function fk_add_theme_support() {
+
   // Color palette
   add_theme_support( 'editor-color-palette', array(
       array(
-          'name' => __( 'red', '_t' ),
-          'slug' => 'starter-red',
-          'color' => '#F0192A',
+          'name' => __( 'Brandy Rose', '_t' ),
+          'slug' => 'starter-brandy-rose',
+          'color' => get_theme_mod('secondary_color', '#BE8D7E'),
       ),
       array(
-          'name' => __( 'dark blue', '_t' ),
-          'slug' => 'starter-dark-blue',
-          'color' => '#2622B4',
+          'name' => __( 'Dark Tan', '_t' ),
+          'slug' => 'starter-dark-tak',
+          'color' => get_theme_mod('primary_color', '#926355'),
       ),
       array(
-          'name' => __( 'blue', '_t' ),
-          'slug' => 'starter-blue',
-          'color' => '#2C27CE',
-      ),
-      array(
-          'name' => __( 'cyan', '_t' ),
-          'slug' => 'starter-cyan',
-          'color' => '#16B1FF',
-      ),
-      array(
-          'name' => __( 'green', '_t' ),
-          'slug' => 'starter-green',
-          'color' => '#5B7A5C',
-      ),
-      array(
-          'name' => __( 'faded black', '_t' ),
+          'name' => __( 'Black', '_t' ),
           'slug' => 'starter-black',
-          'color' => 'rgba(0, 0, 0, 0.33)',
+          'color' => get_theme_mod('dark_color', '#000000'),
       ),
       array(
-          'name' => __( 'gray', '_t' ),
+          'name' => __( 'Mine Shaft', '_t' ),
+          'slug' => 'starter-mine-shaft',
+          'color' => get_theme_mod('accent_color', '#333333'),
+      ),
+      array(
+          'name' => __( 'Steel', '_t' ),
+          'slug' => 'starter-steel',
+          'color' => get_theme_mod('accent2_color', '#666666'),
+      ),
+      array(
+          'name' => __( 'Gray', '_t' ),
           'slug' => 'starter-gray',
-          'color' => '#ABABAB',
+          'color' => get_theme_mod('gray_color', '#ABABAB'),
       ),
       array(
-          'name' => __( 'sand', '_t' ),
-          'slug' => 'starter-sand',
-          'color' => '#EAE8E2',
+          'name' => __( 'Light Gray', '_t' ),
+          'slug' => 'starter-light-gray',
+          'color' => get_theme_mod('light_gray_color', '#D6D6D6'),
       ),
       array(
-          'name' => __( 'white', '_t' ),
-          'slug' => 'starter-white',
-          'color' => '#ffffff',
+          'name' => __( 'Gallery', '_t' ),
+          'slug' => 'starter-gallery',
+          'color' => get_theme_mod('light_color', '#F0F0F0'),
+      ),
+
+      array(
+          'name' => __( 'Romance', '_t' ),
+          'slug' => 'starter-romance',
+          'color' => get_theme_mod('white_color', '#FFFFFF'),
       ),
   ) );
+  add_theme_support( 'disable-custom-colors' );
 
   // Width
   add_theme_support( 'align-wide' );
@@ -82,10 +85,10 @@ function fk_add_theme_support() {
           'slug' => 'large'
       ),
   ) );
+  add_theme_support( 'disable-custom-font-sizes' );
 
   // Styles
   add_theme_support( 'editor-styles' );
-
 
   // Media
   add_theme_support( 'responsive-embeds' );
@@ -102,3 +105,13 @@ function gutenberg_blocks_modification_enqueue() {
     );
 }
 add_action( 'enqueue_block_editor_assets', 'gutenberg_blocks_modification_enqueue' );
+
+/**
+ * Enqueue css file for gutenberg override
+ */
+function custom_gutenberg_styles() {
+
+    wp_enqueue_style( 'g-editor-style', get_stylesheet_directory_uri() . '/build/css/main.css', array(), '1.0' );
+
+}
+add_action( 'enqueue_block_editor_assets', 'custom_gutenberg_styles' );

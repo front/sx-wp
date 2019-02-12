@@ -1,0 +1,44 @@
+.wp-block-quote {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0;
+
+  p {
+    font-family: 'Lora', serif;
+    font-weight: normal;
+    line-height: 34px;
+    font-size: 20px;
+    padding-left: 55px;
+    padding-right: 55px;
+    color: $steel;
+  }
+
+  cite {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    font-size: 16px;
+    color: $light-gray;
+    position: relative;
+    padding-left: 65px;
+    padding-right: 55px;
+    margin-bottom: 5px;
+    margin-top: 60px;
+
+    &:before {
+      content: '';
+      width: 32px;
+      height: 30px;
+      position: absolute;
+      left: 0;
+      top: -2px;
+      background-image: url(../icons/apostrophes.svg);
+    }
+
+    &:after {
+      content: '-';
+      position: absolute;
+      left: 55px;
+    }
+  }
+}

@@ -14,8 +14,8 @@
         <div class="menu">
           <div class="header-logo">
             <a href="#" class="logo-link">
-              {% include "logo.twig" %}
-              <h1 class="site-title">StarterTheme</h1>
+              <img src="/wp-content/uploads/2019/02/Logo_light.png"/>
+              <h1 class="site-title">{{ site.name }}</h1>
             </a>
           </div>
           <nav class="main-menu-items">
@@ -34,14 +34,14 @@
                 <button class="search-submit" type="submit">
                   <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM19.0303 6.53033C19.3232 6.23744 19.3232 5.76256 19.0303 5.46967L14.2574 0.696699C13.9645 0.403806 13.4896 0.403806 13.1967 0.696699C12.9038 0.989593 12.9038 1.46447 13.1967 1.75736L17.4393 6L13.1967 10.2426C12.9038 10.5355 12.9038 11.0104 13.1967 11.3033C13.4896 11.5962 13.9645 11.5962 14.2574 11.3033L19.0303 6.53033ZM1 6.75H18.5V5.25H1V6.75Z" fill="#F0192A"/>
-                  </svg>  
+                  </svg>
                 </button>
-                
+
               </form>
             </div>
             <div class="language-selector">
               <div class="js-lang-btn">
-                <span>NO</span>              
+                <span>NO</span>
                 <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M0.341709 0.376577C0.79732 -0.125526 1.53601 -0.125526 1.99162 0.376577L7 5.89601L12.0084 0.376577C12.464 -0.125526 13.2027 -0.125526 13.6583 0.376577C14.1139 0.87868 14.1139 1.69275 13.6583 2.19485L7.82496 8.62342C7.36935 9.12553 6.63065 9.12553 6.17504 8.62342L0.341709 2.19485C-0.113903 1.69275 -0.113903 0.87868 0.341709 0.376577Z" fill="#FFF"/>
                 </svg>
@@ -54,7 +54,7 @@
                         <rect width="32" height="12" fill="#F1F1F1"/>
                         <rect y="11" width="32" height="11" fill="#FF4B55"/>
                       </svg>
-                      <span>Polsku</span>  
+                      <span>Polski</span>
                     </a>
                   </li>
                   <li>
@@ -81,7 +81,7 @@
             </div>
           </nav>
 
-            
+
         </div>
       </div>
     {% endif %}
@@ -93,15 +93,15 @@
         <div class="row columns-4">
           {% for item in fullMenu %}
             <div class="nav-columns">
-              <h3 class="h3 main-item">
+              <div class="h3 main-item">
                 <a href="{{ item.url }}"><span>{{ item.name }} </span></a>
                 <span class="menu-carret">
                     <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path id="down" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L9 7.58579L16.2929 0.292893C16.6834 -0.0976311 17.3166 -0.0976311 17.7071 0.292893C18.0976 0.683417 18.0976 1.31658 17.7071 1.70711L9.70711 9.70711C9.31658 10.0976 8.68342 10.0976 8.29289 9.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z" fill="#2C27CE"/>
                     </svg>
-                      
+
                 </span>
-              </h3>
+              </div>
               <ul>
                 {% if item.subMenu %}
                   {% for subItem in item.subMenu %}
