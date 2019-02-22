@@ -51,6 +51,7 @@ class UnderTimberSite extends TimberSite {
 		$context['top_menu'] = new TimberMenu( 'top' );
 		$context['main_menu'] = new TimberMenu( 'main' );
 		$context['full_menu'] = new TimberMenu( 'full' );
+        $context['additional_mobile_menu'] = new TimberMenu( 'mobile' );
         $context['social_menu'] = new TimberMenu( 'social' );
 		$context['site'] = $this;
         $context['footer1'] = Timber::get_widgets('footer-1');
@@ -111,6 +112,7 @@ function _t_setup() {
 		'main' => esc_html__( 'Main Menu', '_t' ),
 		'full' => esc_html__( 'Expandable Menu', '_t' ),
         'social' => esc_html__( 'Social Menu', '_t' ),
+        'mobile' => esc_html__( 'Additional Mobile Menu', '_t' ),
 	) );
 
 	/*
