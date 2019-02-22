@@ -78,6 +78,7 @@
                 </ul>
               </div>
             </div>
+              {% if fn('has_nav_menu', 'full') %}
             <div class="menu-toggle">
               <div class="svg-hamburger">
                   <svg viewBox="0 0 800 600">
@@ -87,6 +88,7 @@
                     </svg>
               </div>
             </div>
+            {% endif %}
           </nav>
 
 
