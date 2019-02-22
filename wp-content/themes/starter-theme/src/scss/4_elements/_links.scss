@@ -2,12 +2,12 @@
 a
 a:hover
  */
-a:not(#wpadminbar a),
+a:not(.ab-item),
 .link {
   text-decoration: none;
   position: relative;
 
-  span:not(#wpadminbar span):before {
+  span:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -20,9 +20,9 @@ a:not(#wpadminbar a),
     transition: .10s ease;
   }
 
-  span:not(#wpadminbar span):hover:before,
-  span:not(#wpadminbar span):focus:before,
-  span:not(#wpadminbar span).active:before {
+  span:hover:before,
+  span:focus:before,
+  span.active:before {
     visibility: visible;
     transform: scaleX(1);
   }
