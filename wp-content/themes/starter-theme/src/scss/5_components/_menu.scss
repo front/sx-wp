@@ -153,6 +153,7 @@
 
     .logo-link {
       @extend .flex-ai-center;
+      text-decoration: none;
 
       .site-title {
         color: $text-color;

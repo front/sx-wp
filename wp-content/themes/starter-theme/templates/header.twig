@@ -21,8 +21,12 @@
         <div class="menu">
           <div class="header-logo">
             <a href="#" class="logo-link">
-              <img src="/wp-content/uploads/2019/02/Logo_light.png"/>
-              <h1 class="site-title">{{ site.name }}</h1>
+              {% if fn('function_exists', 'the_custom_logo') %}
+                <img src="{{ fn('wp_get_attachment_image_src', fn('get_theme_mod', 'custom_logo'), 'full' )[0] }}"/>
+                {% if fn('get_option', 'blogdescription')  %}
+                  <h1 class="site-title">{{ fn('get_option', 'blogdescription') }}</h1>
+                {% endif %}
+              {% endif %}
             </a>
           </div>
           <nav class="main-menu-items">

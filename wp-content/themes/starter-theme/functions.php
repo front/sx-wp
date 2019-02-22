@@ -98,6 +98,13 @@ function _t_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+    /*
+     * Enable support for Custom Logo.
+     *
+     * @link https://developer.wordpress.org/themes/functionality/custom-logo/
+     */
+    add_theme_support( 'custom-logo' );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'top' => esc_html__( 'Top Menu', '_t' ),
