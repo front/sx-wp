@@ -1,0 +1,14 @@
+.arrow {
+  &--right {
+    transform: rotate(-180deg);
+    & + .line {
+      margin-left: 2px;
+    }
+  }
+}
+
+.line {
+  & + .arrow--left {
+    margin-left: 2px;
+  }
+}

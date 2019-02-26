@@ -1,7 +1,7 @@
 {
     "core": {
         "download": {
-            "version": "5.0.3",
+            "version": "*",
             "locale": "en_US"
         }
     },

@@ -51,6 +51,7 @@ class UnderTimberSite extends TimberSite {
 		$context['top_menu'] = new TimberMenu( 'top' );
 		$context['main_menu'] = new TimberMenu( 'main' );
 		$context['full_menu'] = new TimberMenu( 'full' );
+        $context['additional_mobile_menu'] = new TimberMenu( 'mobile' );
         $context['social_menu'] = new TimberMenu( 'social' );
 		$context['site'] = $this;
         $context['footer1'] = Timber::get_widgets('footer-1');
@@ -98,12 +99,20 @@ function _t_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+    /*
+     * Enable support for Custom Logo.
+     *
+     * @link https://developer.wordpress.org/themes/functionality/custom-logo/
+     */
+    add_theme_support( 'custom-logo' );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'top' => esc_html__( 'Top Menu', '_t' ),
 		'main' => esc_html__( 'Main Menu', '_t' ),
 		'full' => esc_html__( 'Expandable Menu', '_t' ),
         'social' => esc_html__( 'Social Menu', '_t' ),
+        'mobile' => esc_html__( 'Additional Mobile Menu', '_t' ),
 	) );
 
 	/*

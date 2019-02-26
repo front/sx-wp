@@ -2,7 +2,7 @@
 a
 a:hover
  */
-a,
+a:not(.ab-item),
 .link {
   text-decoration: none;
   position: relative;

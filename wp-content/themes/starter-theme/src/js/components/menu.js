@@ -2,6 +2,7 @@ class Menu {
   constructor() {
     this.hamburger = document.querySelector('.menu-toggle')
     this.mainNav = document.querySelectorAll('.main-nav .nav-columns')
+    this.mobileNav = document.querySelectorAll('.nav-columns')
   }
 
   events() {
@@ -26,6 +27,16 @@ class Menu {
           item.style.maxHeight = item.scrollHeight + 'px';
         }
       });
+    }
+
+    var isMobile = window.matchMedia("only screen and (max-width: 640px)").matches;
+    if (isMobile) {
+        this.hamburger.addEventListener('click', e => {
+            e.preventDefault();
+            for (let i = 0; i < this.mobileNav.length; i++) {
+                this.mobileNav[i].style.display = 'block'
+            }
+        })
     }
   }
 

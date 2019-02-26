@@ -82,12 +82,20 @@
       width: 100%;
       height: 100%;
       border: none;
-      background-color: $mine-shaft;
-      color: #FFF;
+      background-color: #ffffff;
       font-weight: 300;
 
       &::placeholder {
+        color: initial;
+      }
+
+      .dark & {
+        background-color: $mine-shaft;
         color: #FFF;
+
+        &::placeholder {
+          color: #FFF;
+        }
       }
     }
 
@@ -114,10 +122,6 @@
 
       .search-input {
         border-bottom: 2px solid $brandy-rose;
-
-        &::placeholder {
-          color: $romance;
-        }
       }
 
       #searchMagnifying {
