@@ -2,7 +2,7 @@
 <html lang="en-US" prefix="og: http://ogp.me/ns#">
 <head>
 
-  <title>Styleguide - StarterTheme</title>
+  <title>Blog Article List With Side Bar - StarterTheme</title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +25,7 @@
 
 </head>
 
+
 <body>
 <header class="header">
   <div class="site-navigation">
@@ -32,7 +33,7 @@
       <div class="menu">
         <div class="header-logo">
           <a href="http://fkstarter.localhost/styleguide/#" class="logo-link">
-            <img src="/wp-content/uploads/2019/02/Logo_light.png">
+            <img src="./img/logo.svg" alt="logo">
             <h1 class="site-title">StarterTheme</h1>
           </a>
         </div>
@@ -287,139 +288,131 @@
 </header>
 
 <div id="content" class="site-content">
-  <div id="primary" class="content-area">
+  <div id="primary" class="content-area container">
     <main id="main" class="site-main" role="main">
-      <article id="post-123" class="post-123 page type-page status-publish hentry">
-        <header class="entry-header alignwide">
-          <h1 class="entry-title">Styleguide</h1>
-        </header><!-- .entry-header -->
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">home</a></li>
+        <li class="breadcrumbs__item">blog</li>
+      </ul>
 
-        <div class="entry-content">
+      <header class="entry-header">
+        <h1 class="entry-title title title--page">Blog</h1>
+      </header><!-- .entry-header -->
 
-          <div class="wp-block-cloudblocks-section-row alignfull justify-content-center">
-            <div class="wp-block-cloudblocks-section-row-inner-one-column save  wide">
-              <div class="wp-block-cloudblocks-section-row-cell section-row-cell"
-                   style="max-width:735px;justify-self:center">
-                <h6>Typography</h6>
+      <hr class="wp-block-separator is-style-wide">
 
-                <hr class="wp-block-separator is-style-wide">
-
-                <h1>Heading 1</h1>
-                <h2>Heading 2</h2>
-                <h3>Heading 3</h3>
-                <h4>Heading 4</h4>
-                <h5>Heading 5</h5>
-
-                <p class="has-large-font-size is-style-flarge">Lead – Hero section Intro Tex</p>
-
-                <p>&lt;p&gt;A static website stores a unique file for every page of a static website.
-                  Each time that page is requested, the same content is returned. This content is
-                  created once, during the design of the website. It is usually manually authored,
-                  although some sites use an automated creation process, similar to a dynamic website,
-                  whose results are stored long-term as completed pages. These automatically-created
-                  static sites became more popular around 2015, with generators such as Jekyll and
-                  Adobe Muse.&lt;/p&gt; </p>
-
-                <p><a href="https://testlenke.no/">This is a link﻿</a></p>
-
-                <h6>Buttons</h6>
-
-                <hr class="wp-block-separator is-style-wide">
-
-                <div class="wp-block-columns has-3-columns">
-                  <div class="wp-block-column">
-                    <div class="wp-block-button aligncenter is-style-dark"><a
-                      class="wp-block-button__link">Dark</a></div>
+      <div class="content content--with-sidebar">
+        <div class="content__left entry-content">
+          <div class="articles">
+            <div class="articles__item">
+              <div class="article">
+                <img class="article__img" src="./img/blog-article-list-with-side-bar/Rectangle%202.11.jpg" alt="article img">
+                <div class="article__info">
+                  <hr class="wp-block-separator is-short no-margin-top no-margin-left">
+                  <div class="article__info__tag">Coal</div>
+                  <div class="article__info__title">Coal a combustible sedimentary rock formed in coal seams</div>
+                  <div class="article__info__credits">
+                    by <span class="article__info__author">JOHN DOE</span> | <span class="article__info__date">FEBRUARY 18, 2019</span>
                   </div>
-
-                  <div class="wp-block-column">
-                    <div class="wp-block-button aligncenter is-style-default"><a
-                      class="wp-block-button__link"
-                      href="http://fkstarter.localhost/styleguide/">Normal</a></div>
-                  </div>
-
-                  <div class="wp-block-column">
-                    <div class="wp-block-button aligncenter is-style-outline"><a
-                      class="wp-block-button__link">Outline</a></div>
+                  <div class="article__info__content">
+                    Are we in agreeance programmatically we want to empower the team with the right tools and guidance to uplevel our craft...
                   </div>
                 </div>
-
-
-                <h6>Lists</h6>
-
-                <hr class="wp-block-separator is-style-wide">
-
-                <ul>
-                  <li>A static website stores a unique file for every page of a static website.</li>
-                  <li>Each time that page is requested, the same content is returned.</li>
-                  <li>This content is created once, during the design of the website.</li>
-                  <li>It is usually manually authored, although some sites use an automated creation
-                    process.
-                  </li>
-                </ul>
-
-                <ol>
-                  <li>A static website stores a unique file for every page of a static website.</li>
-                  <li>Each time that page is requested, the same content is returned.</li>
-                  <li>This content is created once, during the design of the website.</li>
-                  <li>It is usually manually authored, although some sites use an automated creation
-                    process.
-                  </li>
-                </ol>
-
-                <h6>Tables</h6>
-
-                <hr class="wp-block-separator is-style-wide">
-
-                <table class="wp-block-table">
-                  <tbody>
-                  <tr>
-                    <td>Column 1</td>
-                    <td>Column 2</td>
-                    <td>Column 3</td>
-                  </tr>
-                  <tr>
-                    <td>Item #1</td>
-                    <td>Description</td>
-                    <td>Discount</td>
-                  </tr>
-                  <tr>
-                    <td>Item #2</td>
-                    <td>Description</td>
-                    <td>Discount</td>
-                  </tr>
-                  <tr>
-                    <td>All items</td>
-                    <td>Description</td>
-                    <td>Your total</td>
-                  </tr>
-                  </tbody>
-                </table>
-
-
-                <h6>Pull Quote &amp; Quote</h6>
-
-                <hr class="wp-block-separator is-style-wide">
-
-                <blockquote class="wp-block-quote"><p>A static website stores a unique file for every
-                  <strong>page of a static website</strong>. Each time that page is requested, the
-                  same content is returned. This content is created once, during the <strong>design of
-                    the website</strong>.</p><cite>H.Mendes</cite></blockquote>
-
-                <figure class="wp-block-pullquote">
-                  <blockquote><p>A static website stores a unique file for every page <strong>of a
-                    static website</strong>. Each time that page is requested, the same content is
-                    returned. This content is created once, during the <strong>design of the
-                      website</strong>.</p><cite>H. Mendes</cite></blockquote>
-                </figure>
+              </div>
+            </div>
+            <div class="articles__item">
+              <div class="article">
+                <img class="article__img" src="./img/blog-article-list-with-side-bar/Rectangle%202.29.jpg" alt="article img">
+                <div class="article__info">
+                  <hr class="wp-block-separator is-short no-margin-top no-margin-left">
+                  <div class="article__info__tag">Coal</div>
+                  <div class="article__info__title">Coal a combustible sedimentary rock formed in coal seams</div>
+                  <div class="article__info__credits">
+                    by <span class="article__info__author">JOHN DOE</span> | <span class="article__info__date">FEBRUARY 18, 2019</span>
+                  </div>
+                  <div class="article__info__content">
+                    Are we in agreeance programmatically we want to empower the team with the right tools and guidance to uplevel our craft...
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="articles__item">
+              <div class="article">
+                <img class="article__img" src="./img/blog-article-list-with-side-bar/Rectangle%202.31.jpg" alt="article img">
+                <div class="article__info">
+                  <hr class="wp-block-separator is-short no-margin-top no-margin-left">
+                  <div class="article__info__tag">Coal</div>
+                  <div class="article__info__title">Coal a combustible sedimentary rock formed in coal seams</div>
+                  <div class="article__info__credits">
+                    by <span class="article__info__author">JOHN DOE</span> | <span class="article__info__date">FEBRUARY 18, 2019</span>
+                  </div>
+                  <div class="article__info__content">
+                    Are we in agreeance programmatically we want to empower the team with the right tools and guidance to uplevel our craft...
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-
+          <ul class="pagination">
+            <li class="pagination__item nav first">
+              <a class="pagination__link" href="#!">
+                <img class="line" src="./img/svg/line.svg" alt="line">
+                <img class="arrow arrow--left" src="./img/svg/arrow.svg" alt="arrow">
+              </a>
+            </li>
+            <li class="pagination__item nav previous">
+              <a class="pagination__link" href="#!">
+                <img class="arrow arrow--left" src="./img/svg/arrow.svg" alt="arrow">
+              </a>
+            </li>
+            <li class="pagination__item active"><a class="pagination__link" href="#!">1</a></li>
+            <li class="pagination__item "><a class="pagination__link" href="#!">2</a></li>
+            <li class="pagination__item "><a class="pagination__link" href="#!">3</a></li>
+            <li class="pagination__item "><a class="pagination__link" href="#!">4</a></li>
+            <li class="pagination__item "><a class="pagination__link" href="#!">5</a></li>
+            <li class="pagination__item dots"><a class="pagination__link" href="#!">...</a></li>
+            <li class="pagination__item nav next">
+              <a class="pagination__link" href="#!">
+                <img class="arrow arrow--right" src="./img/svg/arrow.svg" alt="arrow">
+              </a>
+            </li>
+            <li class="pagination__item nav last">
+              <a class="pagination__link" href="#!">
+                <img class="arrow arrow--right" src="./img/svg/arrow.svg" alt="arrow">
+                <img class="line" src="./img/svg/line.svg" alt="line">
+              </a>
+            </li>
+          </ul>
         </div><!-- .entry-content -->
-      </article><!-- #post-## -->
-
+        <div class="content__right sidebar">
+          <div class="tags">
+            <div class="tags__title">
+              Tags
+            </div>
+            <div class="tags__items">
+              <div class="tag">
+                Coal
+              </div>
+              <div class="tag">
+                nature
+              </div>
+              <div class="tag">
+                photography
+              </div>
+              <div class="tag">
+                rocks-gems-dark
+              </div>
+              <div class="tag">
+                black&white
+              </div>
+              <div class="tag">
+                people
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main><!-- #main -->
   </div><!-- #primary -->
 </div><!-- #content -->
@@ -432,7 +425,7 @@
           <div class="textwidget"></div>
         </section>
         <section id="media_image-2" class="widget widget_media_image"><a
-          href="http://fkstarter.localhost/styleguide/#">
+                href="http://fkstarter.localhost/styleguide/#">
           <img width="68" height="91"
                src="/wp-content/uploads/2019/02/Logo_light.png"
                class="image wp-image-128  attachment-full size-full"

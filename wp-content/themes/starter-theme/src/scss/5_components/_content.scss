@@ -1,0 +1,22 @@
+.content {
+  margin-top: $space-triple;
+  &--with-sidebar {
+    display: flex;
+    & .content {
+      &__left {
+        max-width: 70%;
+      }
+      &__right {
+        max-width: 30%;
+        padding-left: 77px;
+        border-left: 1px solid $text-color-gray--lighter;
+      }
+    }
+  }
+  &--article {
+    margin-top: 25px;
+    & .sidebar {
+      margin-top: 40px;
+    }
+  }
+}

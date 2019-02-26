@@ -1,0 +1,27 @@
+.tag {
+  &s {
+    &__title {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 27px;
+      font-size: 20px;
+
+      color: #293139;
+      margin-bottom: 47px;
+    }
+  }
+  background: #666666;
+  border-radius: 4px;
+  color: white;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  font-size: 13px;
+  text-align: center;
+  padding: 10px 15px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  display: inline-block;
+}

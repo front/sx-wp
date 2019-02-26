@@ -7,4 +7,24 @@
   &.is-style-wide {
     width: 100%;
   }
+
+  &.is-short {
+    width: 30px;
+    border-color: $dark-orange;
+  }
+  &.is-style-dots {
+    border-style: dotted;
+    border-color: $light-gray;
+  }
+
+  &.no-margin-top {
+    margin-top: 0;
+  }
+  &.no-margin-left {
+    margin-left: 0;
+  }
+  &.has-margin-vertical-big {
+    margin-top: 45px;
+    margin-bottom: 50px;
+  }
 }

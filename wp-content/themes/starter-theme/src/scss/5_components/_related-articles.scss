@@ -1,0 +1,33 @@
+.related-articles {
+  margin-top: 53px;
+  &__title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 32px;
+    font-size: 24px;
+    color: $black;
+    margin-bottom: 31px;
+  }
+  &__item {
+    &s {
+      display: flex;
+    }
+    width: 25%;
+    &:not(:first-child) {
+      padding-left: 20px;
+    }
+    &:not(:last-child) {
+      padding-right: 20px;
+    }
+    &__title {
+      margin-top: 15px;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 21px;
+      font-size: 13px;
+      color: $black;
+    }
+  }
+}

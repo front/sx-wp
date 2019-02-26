@@ -17,4 +17,9 @@ body:not(.wp-admin) {
   @include rwd(medium) {
     max-width: 1050px;
   }
+  //@include rwd(large) {
+  //  //max-width: 1200px;
+  //  max-width: 100%;
+  //  margin: 0 10%;
+  //}
 }
