@@ -4,10 +4,10 @@
     display: flex;
     & .content {
       &__left {
-        max-width: 70%;
+        width: 76%;
       }
       &__right {
-        max-width: 30%;
+        width: 24%;
         padding-left: 77px;
         border-left: 1px solid $text-color-gray--lighter;
       }
