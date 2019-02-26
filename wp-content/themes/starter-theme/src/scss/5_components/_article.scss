@@ -54,10 +54,15 @@
       }
     }
   }
+  &__info {
+    &__tag {
+      color: $dark-orange;
+    }
+  }
 }
 
 .content--article.content--with-sidebar {
-  .sidebar {
+  .article {
     margin-right: 80px;
   }
 }
