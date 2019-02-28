@@ -29,10 +29,14 @@ h6 {
 }
 
 h1, .h1 {
-  line-height: 51px;
-  font-size: rem(28);
-
+  line-height: 27px;
+  font-size: rem(20);
+  @include rwd(tablet) {
+    line-height: 43px;
+    font-size: rem(32);
+  }
   @include rwd(medium) {
+    line-height: 51px;
     font-size: rem(38);
   }
 }

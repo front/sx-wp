@@ -1,6 +1,10 @@
 .pagination {
-  margin-top: $space-quadruple;
-  margin-bottom: $space-quadruple;
+  margin-top: $space-double;
+  margin-bottom: $space-double;
+  @include rwd(medium) {
+    margin-top: $space-quadruple;
+    margin-bottom: $space-quadruple;
+  }
   list-style: none;
   display: flex;
   align-items: center;
@@ -8,24 +12,32 @@
   padding-left: 0;
   &__link {
     color: $steel;
-    &:not(:last-child) {
-      margin-right: 35px;
-    }
-    &:first-child {
+    margin-left: 10px;
+    margin-right: 15px;
+    @include rwd(tablet) {
       margin-left: 25px;
-    }
-    &:last-child {
       margin-right: 25px;
     }
   }
   &__item {
+    &.item-4,
+    &.item-5 {
+      display: none;
+      @include rwd(tablet) {
+        display: block;
+      }
+    }
     &.dots {
       color: $black;
     }
     &.nav {
       background-color: $gallery;
-      height: 38px;
-      width: 38px;
+      height: 34px;
+      width: 34px;
+      @include rwd(tablet) {
+        height: 38px;
+        width: 38px;
+      }
       &.first {
         margin-right: 10px;
       }
@@ -33,8 +45,12 @@
         margin-left: 10px;
       }
       & .pagination__link {
-        height: 38px;
-        width: 38px;
+        height: 34px;
+        width: 34px;
+        @include rwd(tablet) {
+          height: 38px;
+          width: 38px;
+        }
         margin: 0;
         display: flex;
         align-items: center;

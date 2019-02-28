@@ -1,5 +1,7 @@
 .title {
   &--page {
-    margin-bottom: 30px;
+    @include rwd(medium) {
+      margin-bottom: 30px;
+    }
   }
 }

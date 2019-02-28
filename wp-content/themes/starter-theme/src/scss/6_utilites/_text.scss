@@ -1,5 +1,7 @@
 .text {
     &-center {
-        text-align: center;
+        @include rwd(medium) {
+            text-align: center;
+        }
     }
 }
