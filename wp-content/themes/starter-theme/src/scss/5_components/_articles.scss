@@ -1,20 +1,29 @@
 .articles {
-  margin-bottom: $space-quadruple;
+  margin-bottom: $space-double;
+  @include rwd(medium) {
+    margin-bottom: $space-quadruple;
+  }
   &__item {
-    display: flex;
+    @include rwd(medium) {
+      display: flex;
+    }
     &:not(:last-child) {
       margin-bottom: $space-double;
     }
   }
   .article {
-    display: flex;
+    @include rwd(tablet) {
+      display: flex;
+    }
     &__img {
-      width: 314px;
-      height: 314px;
+      width: 250px;
+      height: 250px;
       margin-right: 40px;
     }
     &__info {
-      padding-right: 9%;
+      @include rwd(medium) {
+        padding-right: 40px;
+      }
       &__tag {
         font-family: Lora;
         font-style: normal;
@@ -24,6 +33,7 @@
         color: $dark-orange;
         margin-top: 24px;
         margin-bottom: 15px;
+        margin-left: 0;
       }
       &__title {
         font-family: Poppins;
@@ -56,15 +66,22 @@
       }
     }
     &--half {
-      width: 50%;
+      @include rwd(medium) {
+        width: 50%;
+      }
       & .article {
         &__img {
-          width: 196px;
-          height: 196px;
-          margin-right: 40px;
+          max-width: 375px;
+          @include rwd(tablet) {
+            width: 196px;
+            height: 196px;
+            margin-right: 40px;
+          }
         }
         &__info {
-          padding-right: 9%;
+          @include rwd(medium) {
+            padding-right: 40px;
+          }
           &__tag {
             margin-top: 14px;
             margin-bottom: 5px;

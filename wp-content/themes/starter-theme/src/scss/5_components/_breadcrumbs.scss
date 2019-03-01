@@ -2,10 +2,19 @@
   list-style: none;
   color: $text-color-gray--lighter;
   padding: 0;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  @include rwd(medium) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
   &__item {
     display: inline;
+    line-height: 21px;
+    font-size: rem(13);
+    @include rwd(medium) {
+      font-size: rem(16);
+    }
     &:not(:first-child) {
       &:before {
         content: ' ';

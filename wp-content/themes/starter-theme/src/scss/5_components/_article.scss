@@ -5,7 +5,10 @@
     font-style: normal;
     font-weight: 500;
     line-height: 21px;
-    font-size: 13px;
+    font-size: 11px;
+    @include rwd(iphone) {
+      font-size: 13px;
+    }
     color: $steel;
     margin-bottom: 25px;
   }
@@ -13,8 +16,12 @@
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
-    line-height: 31px;
-    font-size: 20px;
+    line-height: 25px;
+    font-size: rem(16);
+    @include rwd(tablet) {
+      line-height: 31px;
+      font-size: rem(20);
+    }
     color: #3D3D3D;
     margin-bottom: 25px;
   }
@@ -23,13 +30,15 @@
     font-style: normal;
     font-weight: normal;
     line-height: 31px;
-    font-size: 18px;
+    font-size: rem(18);
     color: #333333;
     margin-bottom: 40px;
   }
   &__img {
     &--section {
-      display: flex;
+      @include rwd(mobile) {
+        display: flex;
+      }
     }
     & img {
       max-width: 100%;
@@ -39,23 +48,38 @@
       font-family: Poppins;
       font-style: normal;
       font-weight: 500;
-      line-height: 21px;
-      font-size: 13px;
+      line-height: 19px;
+      font-size: rem(12);
+      margin-bottom: $space;
+      @include rwd(medium) {
+        line-height: 21px;
+        font-size: rem(13);
+        margin-bottom: $space-double;
+      }
       color: #3D3D3D;
-      margin-bottom: $space-double;
     }
     &--half {
-      max-width: calc(50% - 20px);
-      &:nth-child(odd) {
-        padding-right: 20px;
-      }
-      &:nth-child(even) {
-        padding-left: 20px;
+      @include rwd(mobile) {
+        max-width: calc(50% - 20px);
+        &:nth-child(odd) {
+          padding-right: 20px;
+        }
+        &:nth-child(even) {
+          padding-left: 20px;
+        }
       }
     }
   }
   &__info {
+    &__author {
+      margin-right: 10px;
+    }
+    &__date {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
     &__tag {
+      margin-left: 10px;
       color: $dark-orange;
     }
   }
@@ -63,6 +87,8 @@
 
 .content--article.content--with-sidebar {
   .article {
-    margin-right: 80px;
+    @include rwd(medium) {
+      margin-right: 80px;
+    }
   }
 }

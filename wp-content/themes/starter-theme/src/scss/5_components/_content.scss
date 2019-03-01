@@ -1,15 +1,25 @@
 .content {
-  margin-top: $space-triple;
+  margin-top: $space-double;
+  @include rwd(medium) {
+    margin-top: $space-triple;
+  }
   &--with-sidebar {
     display: flex;
     & .content {
       &__left {
-        width: 76%;
+        max-width: 100%;
+        @include rwd(medium) {
+          width: 76%;
+        }
       }
       &__right {
-        width: 24%;
-        padding-left: 77px;
-        border-left: 1px solid $text-color-gray--lighter;
+        display: none;
+        @include rwd(medium) {
+          display: block;
+          width: 24%;
+          padding-left: 77px;
+          border-left: 1px solid $text-color-gray--lighter;
+        }
       }
     }
   }
