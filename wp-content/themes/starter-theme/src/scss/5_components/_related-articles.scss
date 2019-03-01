@@ -26,12 +26,6 @@
         margin-right: 0;
       }
     }
-    &s {
-      display: block;
-      @include rwd(tablet) {
-        display: flex;
-      }
-    }
     @include rwd(tablet) {
       width: 33.3%;
     }
@@ -64,6 +58,12 @@
       @include rwd(tablet) {
         margin-top: 15px;
       }
+    }
+  }
+  &__items {
+    display: block;
+    @include rwd(tablet) {
+      display: flex;
     }
   }
 }

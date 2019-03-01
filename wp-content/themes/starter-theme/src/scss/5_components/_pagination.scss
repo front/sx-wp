@@ -20,8 +20,7 @@
     }
   }
   &__item {
-    &.item-4,
-    &.item-5 {
+    &--sm-hidden {
       display: none;
       @include rwd(tablet) {
         display: block;
