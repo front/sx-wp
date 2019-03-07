@@ -1,0 +1,18 @@
+<div class="articles__item">
+    <div class="article">
+        <img class="article__img" src="{{ (post.thumbnail and post.thumbnail._wp_attachment_metadata != 'a:0:{}') ? post.thumbnail.src|resize(250, 250) : theme.link ~ '/src/icons/250x250.svg' }}" alt="article img">
+        <div class="article__info">
+          <hr class="wp-block-separator is-short no-margin-top no-margin-left">
+          <div class="article__info__tag">{{ post.tags|join(', ')}}</div>
+            <a href="{{ post.link }}">
+                <div class="article__info__title">{{ post.title }}</div>
+            </a>
+          <div class="article__info__credits">
+            by <span class="article__info__author">{{ post.author }}</span> | <span class="article__info__date">{{ post.date }}</span>
+          </div>
+          <div class="article__info__content">
+            {{ post.post_excerpt|excerpt(50) }}
+          </div>
+        </div>
+    </div>
+</div>

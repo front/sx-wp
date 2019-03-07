@@ -1,0 +1,43 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div id="content" class="site-content">
+    <div id="primary" class="content-area container">
+        <main id="main" class="site-main" role="main">
+            {% if posts %}
+                {#<header class="page-header">#}
+                {#{{ fn('the_archive_title', '<h1 class="page-title">', '</h1>') }}#}
+                {#{{ fn('the_archive_description', '<div class="taxonomy-description">', '</div>') }}#}
+                {#</header><!-- .page-header -->#}
+
+                <header class="entry-header">
+                    <h1 class="entry-title title title--page">Blog</h1>
+                </header><!-- .entry-header -->
+
+                <hr class="wp-block-separator is-style-wide">
+
+                <div class="content content--with-sidebar">
+                    <div class="content__left entry-content">
+                        <div class="articles">
+                            {% for post in posts %}
+                                {% include ['post-box.twig'] %}
+                            {% endfor %}
+                        </div>
+                        {#<pre>#}
+                            {#{{ posts.pagination({show_all: false, size: 4, end_size: false}) | print_r }}#}
+                        {#</pre>#}
+                        {% include 'template-parts/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 1, end_size: 1}) } %}
+                    </div><!-- .entry-content -->
+                    <div class="content__right sidebar">
+                        <div class="tag-cloud-links">
+                            {{ fn('the_widget', 'WP_Widget_Tag_Cloud') }}
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                {% include ['content-none.twig', 'content.twig'] %}
+            {% endif %}
+        </main><!-- #main -->
+    </div><!-- #primary -->
+</div>
+{% endblock %}
