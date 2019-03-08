@@ -83,11 +83,15 @@
       color: $dark-orange;
     }
   }
+}
 
-  & > *:not(.wp-block-image):not(.wp-block-columns) {
-    @include rwd(medium) {
-      margin-left: 80px;
-      margin-right: 80px;
+.content--article {
+  .article {
+    & > *:not(.wp-block-image):not(.wp-block-columns) {
+      @include rwd(medium) {
+        margin-left: 80px;
+        margin-right: 80px;
+      }
     }
   }
 }
