@@ -1,5 +1,6 @@
 .related-articles {
   margin-top: 53px;
+  margin-bottom: 40px;
   &__title {
     font-family: Poppins;
     font-style: normal;
@@ -10,11 +11,15 @@
     margin-bottom: 31px;
   }
   &__item {
-    display: flex;
-    margin-bottom: 30px;
+    & a {
+      display: flex;
+      margin-bottom: 30px;
+    }
     @include rwd(tablet) {
-      display: block;
-      margin-bottom: 0;
+      & a {
+        display: block;
+        margin-bottom: 0;
+      }
     }
     & img {
       width: 100px;

@@ -93,6 +93,14 @@
         margin-right: 80px;
       }
     }
+    & p:not(.article__subtitle) {
+      font-family: Lora;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 35px;
+      font-size: rem(18);
+      letter-spacing: 0.02em;
+    }
   }
 }
 

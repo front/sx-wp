@@ -24,9 +24,7 @@
                         {% include 'template-parts/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 1, end_size: 1}) } %}
                     </div><!-- .entry-content -->
                     <div class="content__right sidebar">
-                        <div class="tag-cloud-links">
-                            {{ fn('the_widget', 'WP_Widget_Tag_Cloud') }}
-                        </div>
+                        {% include 'template-parts/tag-cloud.twig' %}
                     </div>
                 </div>
             {% else %}

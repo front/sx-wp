@@ -21,7 +21,10 @@
                     by <span class="article__info__author">{{ post.author }}</span> | <span class="article__info__date">{{ post.date }}</span> {{ post.tags ? '| <span class="article__info__tag">' ~ post.tags|join(', ') ~ '</span>' }}
                 </div>
                 {{ post.content }}
+                {% include 'template-parts/tag-cloud.twig' with { modify: 'inside_article', centered: true } %}
             </div>
+            <hr class="wp-block-separator is-style-dots-line has-margin-vertical-big">
+            {% include 'template-parts/related-articles.twig' with { category: post.category, centered: true, posts: posts_in_category } %}
         </div>
     </div><!-- .entry-content -->
 </article><!-- #post-## -->
