@@ -10,7 +10,6 @@ if ( ! class_exists( 'Timber' ) ) {
 
 $context = Timber::get_context();
 $context['posts'] = new Timber\PostQuery();
-$context['breadcrumbs'] = 'test';
 if ( function_exists( 'yoast_breadcrumb' ) ) {
     $context['breadcrumbs'] = yoast_breadcrumb('<nav id="breadcrumbs" class="main-breadcrumbs">','</nav>', false );
 }
