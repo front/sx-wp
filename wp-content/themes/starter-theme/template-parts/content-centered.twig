@@ -9,28 +9,23 @@
 #}
 <article id="post-{{ post.ID }}" {{ fn('post_class') }}>
     {% include 'template-parts/breadcrumbs.twig' %}
-    <header class="entry-header">
+    <header class="entry-header container--centered text-center">
         <h1 class="entry-title title title--page">{{ post.title }}</h1>
     </header><!-- .entry-header -->
 
     <hr class="wp-block-separator is-style-wide">
 
-    <div class="content content--with-sidebar content--article">
+    <div class="content content--article container--centered">
         <div class="content__left entry-content">
             <div class="article">
-                <div class="article__credits">
+                <div class="article__credits text-center">
                     by <span class="article__info__author">{{ post.author }}</span> | <span class="article__info__date">{{ post.date }}</span> {{ post.tags ? '| <span class="article__info__tag">' ~ post.tags|join(', ') ~ '</span>' }}
                 </div>
                 {{ post.content }}
-                <div class="tag-cloud-links tag-cloud-links--inside-article tag-cloud-links--mobile">
-                    {% include 'template-parts/tag-cloud.twig' %}
-                </div>
-            <hr class="wp-block-separator is-style-dots-line has-margin-vertical-big">
-            {% include 'template-parts/related-articles.twig' with { category: post.category, posts: posts_in_category } %}
+                {% include 'template-parts/tag-cloud.twig' with { modify: 'inside_article', centered: true } %}
             </div>
-        </div>
-        <div class="content__right sidebar">
-            {% include 'template-parts/tag-cloud.twig' %}
+            <hr class="wp-block-separator is-style-dots-line has-margin-vertical-big">
+            {% include 'template-parts/related-articles.twig' with { category: post.category, centered: true, posts: posts_in_category } %}
         </div>
     </div><!-- .entry-content -->
 </article><!-- #post-## -->

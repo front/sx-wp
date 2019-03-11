@@ -86,20 +86,22 @@
 }
 
 .content--article {
-  .article {
-    & > *:not(.wp-block-image):not(.wp-block-columns) {
-      @include rwd(medium) {
-        margin-left: 80px;
-        margin-right: 80px;
+  &.container--centered {
+    .article {
+      & > *:not(.wp-block-image):not(.wp-block-columns) {
+        @include rwd(medium) {
+          margin-left: 80px;
+          margin-right: 80px;
+        }
       }
-    }
-    & p:not(.article__subtitle) {
-      font-family: Lora;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 35px;
-      font-size: rem(18);
-      letter-spacing: 0.02em;
+      & p:not(.article__subtitle) {
+        font-family: Lora;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 35px;
+        font-size: rem(18);
+        letter-spacing: 0.02em;
+      }
     }
   }
 }

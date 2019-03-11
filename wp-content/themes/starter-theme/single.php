@@ -53,3 +53,4 @@ foreach ($posts_in_category as $post_in_category) {
 $context['posts_in_category'] = Timber::get_posts( $posts_in_category_array_with_ids );
 
 Timber::render('single.twig', $context);
+//Timber::render('single-with-sidebar.twig', $context);
