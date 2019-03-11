@@ -18,6 +18,7 @@ Thumbs.db
 ## Development
 node_modules
 assets/
+!inc/fk_social_menu/assets/
 
 ## Local configurations
 local-config.json
