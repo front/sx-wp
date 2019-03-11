@@ -292,10 +292,7 @@ function fk_social_icons_scripts() {
     wp_enqueue_style( '_fk_social_icons-style', get_template_directory_uri() . '/inc/fk_social_menu/assets/css/fk-social-icons.css' );
     wp_enqueue_style( '_fk_social_icons-controls-style', get_template_directory_uri() . '/inc/fk_social_menu/assets/css/fk-social-icons-controls.css' );
 
-    wp_enqueue_script( '_fk_social_icons-scripts', get_template_directory_uri() . '/build/js/main.js', array('jquery'), '20190121', true );
-
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
-    }
+    wp_enqueue_script( '_fk_social_icons-script-display-colors', get_template_directory_uri() . '/inc/fk_social_menu/assets/js/fk-social-icons-display-colors.js');
+    wp_enqueue_script( '_fk_social_icons-script-live-preview', get_template_directory_uri() . '/inc/fk_social_menu/assets/js/fk-social-icons-live-preview.js');
 }
 add_action( 'wp_enqueue_scripts', 'fk_social_icons_scripts' );
