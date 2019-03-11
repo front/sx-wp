@@ -5,13 +5,13 @@
           <hr class="wp-block-separator is-short no-margin-top no-margin-left">
           <div class="article__info__tag">{{ post.tags|join(', ')}}</div>
             <a href="{{ post.link }}">
-                <div class="article__info__title">{{ post.title }}</div>
+                <div class="article__info__title">{{ half ? post.title|excerpt[:30] ~ ' ...' : post.title }}</div>
             </a>
           <div class="article__info__credits">
             by <span class="article__info__author">{{ post.author }}</span> | <span class="article__info__date">{{ post.date }}</span>
           </div>
           <div class="article__info__content">
-            {{ post.post_excerpt|excerpt(50) }}
+            {{ half ? post.post_excerpt|excerpt(25) : post.post_excerpt|excerpt(50) }}
           </div>
         </div>
     </div>

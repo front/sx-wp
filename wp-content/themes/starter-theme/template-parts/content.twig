@@ -8,6 +8,7 @@
  */
 #}
 <article id="post-{{ post.ID }}" {{ fn('post_class') }}>
+    {% include 'template-parts/breadcrumbs.twig' %}
     <header class="entry-header container--centered text-center">
         <h1 class="entry-title title title--page">{{ post.title }}</h1>
     </header><!-- .entry-header -->
