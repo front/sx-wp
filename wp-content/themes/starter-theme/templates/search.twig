@@ -1,24 +1,29 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+<div id="content" class="site-content">
+    <div id="primary" class="content-area container">
+        <main id="main" class="site-main search-results container--centered" role="main">
             {% if posts %}
-                <header class="page-header">
-                    <h1 class="page-title">{{ __('Search Results for: %s', '_t')|format('<span>' ~ fn('get_search_query') ~ '</span>') }}</h1>
+                <header class="search-results__header">
+                    <h1 class="search-results__title">{{ __('Search Results for')}}</h1>
+                    {{ __('<span class="search-results__query">' ~ fn('get_search_query') ~ '</span>') }} <span class="search-results__hits">( {{ posts_count }} {{ posts_count == '1' ? 'hit' : 'hits' }} )</span>
                 </header><!-- .page-header -->
+                <div class="search-posts">
+                {% if posts is not empty %}
+                    {% for post in posts %}
+                        {% include ['template-parts/search-post.twig'] %}
+                    {% endfor %}
+                {% else %}
+                    {{ __('No results') }}
+                {% endif %}
+                </div>
+                {% include 'template-parts/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 1, end_size: 1}) } %}
 
-                {% for post in posts %}
-                    {# Run the loop for the search to output the results.
-				    If you want to overload this in a child theme then include a file
-				    called content-search.twig and that will be used instead. #}
-                    {% include ['content-search.twig', 'content.twig'] %}
-                {% endfor %}
-
-                {{ fn('the_posts_navigation') }}
             {% else %}
                 {% include ['content-none.twig', 'content.twig'] %}
             {% endif %}
         </main><!-- #main -->
     </div><!-- #primary -->
+</div>
 {% endblock %}
