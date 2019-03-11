@@ -13,6 +13,11 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 
 $context = Timber::get_context();
-$context['posts'] = Timber::get_posts();
+$context['posts'] = new Timber\PostQuery();
+$allsearch = new WP_Query("s=$s&showposts=0");
+$context['posts_count'] = $allsearch ->found_posts;
+if ( function_exists( 'yoast_breadcrumb' ) ) {
+    $context['breadcrumbs'] = yoast_breadcrumb('<nav id="breadcrumbs" class="main-breadcrumbs">','</nav>', false );
+}
 
 Timber::render('search.twig', $context);

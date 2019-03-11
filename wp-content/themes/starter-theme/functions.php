@@ -284,3 +284,16 @@ function my_customizer_styles() { ?>
 
 }
 add_action( 'customize_controls_print_styles', 'my_customizer_styles', 999 );
+
+// social menu
+require get_template_directory() . '/inc/fk_social_menu/fk-social-icons.php';
+function fk_social_icons_scripts() {
+    wp_enqueue_style( '_fk_social_icons-fa-style', get_template_directory_uri() .'/inc/fk_social_menu/assets/css/font-awesome/font-awesome.css' );
+    wp_enqueue_style( '_fk_social_icons-style', get_template_directory_uri() . '/inc/fk_social_menu/assets/css/fk-social-icons.css' );
+    wp_enqueue_style( '_fk_social_icons-controls-style', get_template_directory_uri() . '/inc/fk_social_menu/assets/css/fk-social-icons-controls.css' );
+
+    // @todo fix this, this causes an error, see in console
+//    wp_enqueue_script( '_fk_social_icons-script-display-colors', get_template_directory_uri() . '/inc/fk_social_menu/assets/js/fk-social-icons-display-colors.js');
+//    wp_enqueue_script( '_fk_social_icons-script-live-preview', get_template_directory_uri() . '/inc/fk_social_menu/assets/js/fk-social-icons-live-preview.js');
+}
+add_action( 'wp_enqueue_scripts', 'fk_social_icons_scripts' );

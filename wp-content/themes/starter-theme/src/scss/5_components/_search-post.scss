@@ -1,0 +1,34 @@
+.search-posts {
+  margin-bottom: 120px;
+}
+
+.search-post {
+  font-family: Poppins;
+  font-style: normal;
+  &:not(:last-child) {
+    margin-bottom: 58px;
+  }
+  &__title {
+    font-weight: bold;
+    line-height: 32px;
+    font-size: rem(24);
+    color: $black;
+  }
+  &__link {
+    font-weight: 500;
+    line-height: 29px;
+    font-size: rem(18);
+    text-decoration: underline!important;
+    color: $dark-orange;
+    margin-top: 6px;
+    margin-bottom: 13px;
+  }
+  &__excerpt {
+    margin-top: 13px;
+    font-weight: 500;
+    line-height: 40px;
+    font-size: rem(18);
+    letter-spacing: 0.02em;
+    color: $mine-shaft;
+  }
+}

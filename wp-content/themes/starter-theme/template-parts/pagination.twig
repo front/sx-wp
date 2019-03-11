@@ -1,0 +1,79 @@
+{% if posts.pagination.pages is not empty  %}
+    <ul class="pagination">
+         {% if pagination.pages|first and pagination.pages|first.current != true %}
+            <li class="pagination__item nav first">
+                <a class="pagination__link" href="{{ pagination.pages|first.link }}">
+                    <img class="line" src="{{theme.link}}/src/icons/line.svg" alt="line">
+                    <img class="arrow arrow--left" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
+                </a>
+            </li>
+        {% else %}
+            <li class="pagination__item nav first">
+                <a class="pagination__link">
+                    <img class="line" src="{{theme.link}}/src/icons/line.svg" alt="line">
+                    <img class="arrow arrow--left" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
+                </a>
+            </li>
+        {% endif %}
+
+        {% if pagination.prev %}
+            <li class="pagination__item nav previous">
+                <a class="pagination__link" href="{{ pagination.prev.link }}">
+                    <img class="arrow arrow--left" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
+                </a>
+            </li>
+        {% else %}
+            <li class="pagination__item nav previous">
+                <a class="pagination__link">
+                    <img class="arrow arrow--left" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
+                </a>
+            </li>
+        {% endif %}
+
+        {% for page in pagination.pages %}
+            {% if page.link %}
+                <li class="pagination__item {{ page.class }}">
+                    <a class="pagination__link" href="{{ page.link }}">
+                        {{ page.title }}
+                    </a>
+                </li>
+            {% else %}
+                <li class="pagination__item {{ page.class }}">
+                    <a class="pagination__link">
+                        {{ page.title }}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+        {% if pagination.next %}
+            <li class="pagination__item nav next">
+                <a class="pagination__link" href="{{ pagination.next.link }}">
+                    <img class="arrow arrow--right" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
+                </a>
+            </li>
+        {% else %}
+            <li class="pagination__item nav next">
+                <a class="pagination__link">
+                    <img class="arrow arrow--right" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
+                </a>
+            </li>
+        {% endif %}
+
+         {% if pagination.pages|last and pagination.pages|last.current != true %}
+             <li class="pagination__item nav last">
+                 <a class="pagination__link" href="{{ pagination.pages|last.link }}">
+                     <img class="arrow arrow--right" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
+                     <img class="line" src="{{theme.link}}/src/icons/line.svg" alt="line">
+                 </a>
+             </li>
+        {% else %}
+            <li class="pagination__item nav last">
+                <a class="pagination__link">
+                    <img class="arrow arrow--right" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
+                    <img class="line" src="{{theme.link}}/src/icons/line.svg" alt="line">
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}

@@ -1,0 +1,17 @@
+.wp-block-image {
+  & figcaption {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19px;
+    font-size: rem(12);
+    margin-bottom: $space;
+    text-align: left;
+    @include rwd(medium) {
+      line-height: 21px;
+      font-size: rem(13);
+      margin-bottom: $space-double;
+    }
+    color: #3D3D3D;
+  }
+}

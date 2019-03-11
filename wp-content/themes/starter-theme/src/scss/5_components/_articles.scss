@@ -101,4 +101,15 @@
       }
     }
   }
+  &--half {
+    display: flex;
+    flex-wrap: wrap;
+    @include rwd(medium) {
+      & .articles {
+        &__item {
+          width: 50%;
+        }
+      }
+    }
+  }
 }

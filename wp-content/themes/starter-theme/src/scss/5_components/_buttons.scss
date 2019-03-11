@@ -18,3 +18,19 @@
     }
   }
 }
+
+.btn {
+  &--rounded {
+    background: $brandy-rose;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 30px;
+    line-height: 24px;
+    font-size: rem(18);
+    text-align: center;
+    color: $romance;
+    padding: 15px 30px;
+    &:hover {
+      background: $dark-tan;
+    }
+  }
+}

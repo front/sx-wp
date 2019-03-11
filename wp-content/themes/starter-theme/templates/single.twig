@@ -1,17 +1,10 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <div id="primary" class="content-area">
+    <div id="primary" class="content-area container">
         <main id="main" class="site-main" role="main">
             {% for post in posts %}
-                {% include ['content-' ~ post.post_type ~ '.twig', 'content.twig'] %}
-
-                {{ fn('the_post_navigation') }}
-
-                {# If comments are open or we have at least one comment, load up the comment template. #}
-                {% if post.comment_status == 'open' or post.comment_count > 0 %}
-                    {% include "comments.twig" %}
-                {% endif %}
+                {% include ['content-centered.twig'] %}
             {% endfor %}
         </main><!-- #main -->
     </div><!-- #primary -->
