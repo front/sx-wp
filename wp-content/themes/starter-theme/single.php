@@ -41,6 +41,10 @@ $args = array(
 	'fields'            => '',
 );
 $posts_in_category = get_posts( $args );
-$context['posts_in_category'] = get_posts( $args );
+$posts_in_category_array_with_ids = [];
+foreach ($posts_in_category as $post_in_category) {
+    array_push($posts_in_category_array_with_ids, $post_in_category->ID);
+}
+$context['posts_in_category'] = Timber::get_posts( $posts_in_category_array_with_ids );
 
 Timber::render('single.twig', $context);
