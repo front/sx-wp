@@ -5,43 +5,20 @@
         <main id="main" class="site-main" role="main">
 
             <section class="error-404 not-found">
-                <header class="page-header">
-                    <h1 class="page-title">{{ __('Oops! That page can&rsquo;t be found.', '_t') }}</h1>
-                </header><!-- .page-header -->
-
-                <div class="page-content">
-                    <p>{{ __('It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_t' ) }}</p>
-
-                    {{ fn('get_search_form', false) }}
-
-                    {{ fn('the_widget', 'WP_Widget_Recent_Posts') }}
-
-                    {# Only show the widget if site has multiple categories. #}
-                    {% if fn('_t_categorized_blog') %}
-                        <div class="widget widget_categories">
-                            <h2 class="widget-title">{{ __('Most Used Categories', '_t' ) }}</h2>
-                            <ul>
-                                {{ fn('wp_list_categories', {
-                                    'orderby'    : 'count',
-                                    'order'      : 'DESC',
-                                    'show_count' : 1,
-                                    'title_li'   : '',
-                                    'number'     : 10,
-                                }) }}
-                            </ul>
-                        </div><!-- .widget -->
-                    {% endif %}
-
-                    {# translators: %1$s: smiley #}
-                    {% set archive_content = '<p>' ~ __( 'Try looking in the monthly archives. %1$s', '_t' )|format(fn('convert_smilies', ':)')) ~ '</p>' %}
-                    {{ fn('the_widget', 'WP_Widget_Archives', {
-                        'dropdown': 1
-                    }, {
-                        'after_title': '</h2>' ~ archive_content
-                    }) }}
-
-                    {{ fn('the_widget', 'WP_Widget_Tag_Cloud') }}
-                </div><!-- .page-content -->
+                <div class="error-404__item error-404__img-wrapper">
+                    <img class="error-404__img" src="{{theme.link}}/src/icons/ufo.svg" alt="404 image">
+                </div>
+                <div class="error-404__item error-404__title">
+                    404
+                </div>
+                <div class="error-404__item error-404__subtitle">
+                    {{ __('Page not found') }}
+                </div>
+                <div class="error-404__item">
+                    <a class="error-404__button btn btn--rounded" href="{{ site.link }}">
+                        Go to homepage
+                    </a>
+                </div>
             </section><!-- .error-404 -->
 
         </main><!-- #main -->
