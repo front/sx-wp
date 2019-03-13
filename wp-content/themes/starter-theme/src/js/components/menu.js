@@ -2,15 +2,17 @@ class Menu {
   constructor() {
     this.hamburger = document.querySelector('.menu-toggle')
     this.mainNav = document.querySelectorAll('.main-nav .nav-columns')
-    this.mobileNav = document.querySelectorAll('.nav-columns')
+    this.mobileNav = document.querySelectorAll('.nav-columns');
   }
 
   events() {
-    this.hamburger.addEventListener('click', e => {
-      e.preventDefault();
-      this.hamburger.querySelector('.svg-hamburger').classList.toggle('is-active')
-      document.querySelector('body').classList.toggle('menu-open');
-    })
+    if ( this.hamburger ) {
+      this.hamburger.addEventListener('click', e => {
+        e.preventDefault();
+        this.hamburger.querySelector('.svg-hamburger').classList.toggle('is-active')
+        document.querySelector('body').classList.toggle('menu-open');
+      });
+    }
     for (let i = 0; i < this.mainNav.length; i++) {
       this.mainNav[i].addEventListener('click', e => {
         for (let j = 0; j < this.mainNav.length; j++) {
