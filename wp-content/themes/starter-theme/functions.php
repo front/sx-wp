@@ -286,4 +286,4 @@ function my_customizer_styles() { ?>
 add_action( 'customize_controls_print_styles', 'my_customizer_styles', 999 );
 
 // social menu
-require get_template_directory() . '/inc/customizer_social_icons/customizer-social-icons.php';
+//require get_template_directory() . '/inc/customizer_social_icons/customizer-social-icons.php';
