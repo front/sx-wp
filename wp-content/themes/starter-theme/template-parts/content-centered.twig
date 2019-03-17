@@ -7,6 +7,10 @@
  * @package Under_Timber
  */
 #}
+
+{% set category_link = fn('get_category_link', post.category.ID ) %}
+{% set author_link = fn('get_author_posts_url', post.post_author ) %}
+
 <article id="post-{{ post.ID }}" {{ fn('post_class') }}>
     {% include 'template-parts/breadcrumbs.twig' %}
     <header class="entry-header container--centered text-center">
@@ -19,7 +23,7 @@
         <div class="content__left entry-content">
             <div class="article">
                 <div class="article__credits text-center">
-                    by <span class="article__info__author">{{ post.author }}</span> | <span class="article__info__date">{{ post.date }}</span> {{ post.tags ? '| <span class="article__info__tag">' ~ post.tags|join(', ') ~ '</span>' }}
+                    {{ __('by', '_t') }} <a href="{{ author_link }}" class="article__info__author"><span>{{ post.author }}</span></a> | <span class="article__info__date">{{ post.date }}</span> {{ post.category.name ? '| <a class="article__info__tag" href="' ~ category_link ~ '"><span>' ~ post.category.name ~ '</span></a>' }}
                 </div>
                 {{ post.content }}
                 {% include 'template-parts/tag-cloud.twig' with { modify: 'inside_article', centered: true } %}
