@@ -37,8 +37,8 @@
   list-style: none;
   color: $text-color-gray--lighter;
   padding: 0;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 15px;
   @include rwd(medium) {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -53,7 +53,7 @@
   span {
     display: inline;
     line-height: 21px;
-    font-size: rem(13);
+    font-size: rem(12);
     @include rwd(medium) {
       font-size: rem(16);
     }

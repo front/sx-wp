@@ -1,5 +1,8 @@
 .entry {
   &-header {
-    margin-top: 40px;
+    margin-top: 15px;
+    @include rwd(medium) {
+      margin-top: 40px;
+    }
   }
 }
