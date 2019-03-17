@@ -3,6 +3,7 @@ class Menu {
     this.hamburger = document.querySelector('.menu-toggle')
     this.mainNav = document.querySelectorAll('.main-nav .nav-columns')
     this.mobileNav = document.querySelectorAll('.nav-columns');
+    this.submenu = document.querySelectorAll('.js-sub-menu');
   }
 
   events() {
@@ -39,6 +40,22 @@ class Menu {
                 this.mobileNav[i].style.display = 'block'
             }
         })
+    }
+
+    if (this.submenu) {
+      for (let i = 0; i < this.submenu.length; i++) {
+        let subMenu = this.submenu[i];
+        let subMenuParent = subMenu.previousElementSibling;
+        subMenuParent.addEventListener('click', e => {
+          e.preventDefault();
+          subMenu.style.display = 'block';
+          let subMenuWidth = subMenu.offsetWidth;
+          let subMenuChildMenu = subMenu.querySelector('.sub-menu');
+          if (subMenuChildMenu) {
+            subMenuChildMenu.style.left = subMenuWidth + 'px';
+          }
+        })
+      }
     }
   }
 
