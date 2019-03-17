@@ -63,7 +63,7 @@
     };
   }
   .tag-cloud-link {
-    background: #666666;
+    background: $steel;
     border-radius: 4px;
     color: white;
     font-family: Poppins;
@@ -76,5 +76,8 @@
     margin-right: 20px;
     margin-bottom: 10px;
     display: inline-block;
+    &:hover {
+      background: $dark-orange;
+    }
   }
 }

@@ -69,6 +69,9 @@
         color: $black;
         margin-top: 15px;
         margin-bottom: 13px;
+        &:hover {
+          text-decoration: underline;
+        }
       }
       &__credits {
         font-family: Poppins;
