@@ -1,7 +1,7 @@
 <?php
 $plugin = 'customizer-social-icons';
-$base_path = wp_normalize_path( plugin_dir_path( dirname( dirname(__FILE__) ) ) );
-$base_url  = dirname( plugin_dir_url( __DIR__ ) );
+$base_path = get_template_directory_uri() . '/inc/customizer_social_icons';
+$base_url  =  $base_path;
 return array(
 	'version' => implode( get_file_data( $base_path . $plugin . '.php', array( 'Stable Tag' ), 'plugin' ) ),
 	'plugin_path' => $base_path,
