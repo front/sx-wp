@@ -18,6 +18,7 @@ Thumbs.db
 ## Development
 node_modules
 assets/
+!inc/customizer_social_icons/assets/
 
 ## Local configurations
 local-config.json

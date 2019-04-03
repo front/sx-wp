@@ -1,0 +1,9 @@
+<div class="search-post">
+    <div class="search-post__title">
+        {{ post.title }}
+    </div>
+    <a class="search-post__link" href="{{ post.link }}">{{ post.link[:50] ~ ' ...' }}</a>
+    <div class="search-post__excerpt">
+        {{ post.post_excerpt|excerpt(33) }}
+    </div>
+</div>

@@ -17,7 +17,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: 25px;
-    font-size: rem(16);
+    font-size: rem(18);
     @include rwd(tablet) {
       line-height: 31px;
       font-size: rem(20);
@@ -73,6 +73,7 @@
   &__info {
     &__author {
       margin-right: 10px;
+      color: #666;
     }
     &__date {
       margin-left: 10px;
@@ -81,6 +82,27 @@
     &__tag {
       margin-left: 10px;
       color: $dark-orange;
+    }
+  }
+}
+
+.content--article {
+  &.container--centered {
+    .article {
+      & > *:not(.wp-block-image):not(.wp-block-columns) {
+        @include rwd(medium) {
+          margin-left: 80px;
+          margin-right: 80px;
+        }
+      }
+      & p:not(.article__subtitle) {
+        font-family: Lora;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 35px;
+        font-size: 18px;
+        letter-spacing: 0.02em;
+      }
     }
   }
 }

@@ -14,6 +14,9 @@
     color: $steel;
     margin-left: 10px;
     margin-right: 15px;
+    &:hover {
+      color: $black;
+    }
     @include rwd(tablet) {
       margin-left: 25px;
       margin-right: 25px;
@@ -33,6 +36,9 @@
       background-color: $gallery;
       height: 34px;
       width: 34px;
+      &:hover {
+        background-color: $text-color-gray;
+      }
       @include rwd(tablet) {
         height: 38px;
         width: 38px;
@@ -57,7 +63,8 @@
       }
     }
   }
-  & .active {
+  & .active,
+  & .current{
     & .pagination {
       &__link {
         color: $black;

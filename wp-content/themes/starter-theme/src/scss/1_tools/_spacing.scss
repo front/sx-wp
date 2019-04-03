@@ -35,7 +35,10 @@
 }
 
 .alignfull {
-  max-width: $content-width-full;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: none !important;
 }
 
 [class*="-section-row-inner-"] {

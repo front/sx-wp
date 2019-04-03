@@ -1,0 +1,278 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-03-17 20:46+0100\n"
+"PO-Revision-Date: 2019-03-17 20:46+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nn_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;_ex;_nx;esc_attr__;esc_attr_e;esc_attr_x;"
+"esc_html__;esc_html_e;esc_html_x\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: build\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: gutenberg/blocks.js:5
+msgid "Squared Dark"
+msgstr ""
+
+#: gutenberg/blocks.js:10
+msgid "Rounded"
+msgstr ""
+
+#: gutenberg/blocks.js:15 gutenberg/blocks.js:20
+msgid "Rounded Dark"
+msgstr ""
+
+#: gutenberg/blocks.js:26 gutenberg/gutenberg.php:83
+msgid "Large"
+msgstr ""
+
+#: gutenberg/blocks.js:30 gutenberg/gutenberg.php:78
+msgid "Normal"
+msgstr ""
+
+#: gutenberg/blocks.js:34 gutenberg/gutenberg.php:73
+msgid "Small"
+msgstr ""
+
+#: gutenberg/blocks.js:38 gutenberg/gutenberg.php:68
+msgid "Extra small"
+msgstr ""
+
+#: gutenberg/blocks.js:45
+msgid "Visually Hidden"
+msgstr ""
+
+#: functions.php:111
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:112
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:113
+msgid "Expandable Menu"
+msgstr ""
+
+#: functions.php:114
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:115
+msgid "Additional Mobile Menu"
+msgstr ""
+
+#: functions.php:165
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:174
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:176 functions.php:186 functions.php:196 functions.php:206
+msgid "Widgets in this area will be shown on all posts and pages."
+msgstr ""
+
+#: functions.php:184
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:194
+msgid "Footer 3"
+msgstr ""
+
+#: functions.php:204
+msgid "Footer 4"
+msgstr ""
+
+#: gutenberg/gutenberg.php:13
+msgid "Brandy Rose"
+msgstr ""
+
+#: gutenberg/gutenberg.php:18
+msgid "Dark Tan"
+msgstr ""
+
+#: gutenberg/gutenberg.php:23
+msgid "Black"
+msgstr ""
+
+#: gutenberg/gutenberg.php:28
+msgid "Mine Shaft"
+msgstr ""
+
+#: gutenberg/gutenberg.php:33
+msgid "Steel"
+msgstr ""
+
+#: gutenberg/gutenberg.php:38
+msgid "Gray"
+msgstr ""
+
+#: gutenberg/gutenberg.php:43
+msgid "Light Gray"
+msgstr ""
+
+#: gutenberg/gutenberg.php:48
+msgid "Gallery"
+msgstr ""
+
+#: gutenberg/gutenberg.php:54
+msgid "Romance"
+msgstr ""
+
+#: inc/custom-colors.php:20
+msgid "Colors"
+msgstr ""
+
+#: inc/custom-colors.php:75
+msgid ""
+"If you want to see changes, please save colors first, and then reload the "
+"page."
+msgstr ""
+
+#: inc/custom-colors.php:76
+msgid "Live preview does not work with colors & gutenberg"
+msgstr ""
+
+#: inc/custom-footer.php:9
+msgid "Copyright"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:67
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:93
+msgid "Social Icon"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:129
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:198
+#, php-format
+msgid "Add to menu: %1$s (%2$s)"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:142
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:211
+msgid "Move up"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:143
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:212
+msgid "Move down"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:144
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:213
+msgid "Move one level up"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:145
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:214
+msgid "Move one level down"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:154
+msgid "Delete Menu"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:160
+msgid "Click &#8220;Next&#8221; to start adding links to your new menu."
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:161
+msgid "Next"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:171
+msgid ""
+"It doesn&#8217;t look like your site has any menus yet. Want to build one? "
+"Click the button to start."
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:174
+msgid ""
+"You&#8217;ll create a menu, assign it a location, and add menu items like "
+"links to pages and categories. If your theme has multiple menu areas, you "
+"might need to create more than one."
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer-menus.php:178
+msgid "Create New Menu"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer.php:187
+msgid "Size"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer.php:222
+msgid "Spacing"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer.php:306
+msgid "Color"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer.php:328
+msgid "Background Color"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer.php:350
+msgid "Hover Color"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer.php:372
+msgid "Background Hover Color"
+msgstr ""
+
+#: inc/customizer_social_icons/includes/class-customizer-social-icons-customizer.php:402
+msgid "Hide Text?"
+msgstr ""
+
+#: inc/template-tags.php:28
+#, php-format
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:33
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:50 inc/template-tags.php:56
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:52
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:58
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:71
+#, php-format
+msgid "Edit %s"
+msgstr ""

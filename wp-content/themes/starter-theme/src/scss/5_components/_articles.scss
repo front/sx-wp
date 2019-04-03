@@ -19,10 +19,31 @@
       width: 250px;
       height: 250px;
       margin-right: 40px;
+      object-fit: cover;
+      display: none;
+      @include rwd(tablet) {
+        display: block;
+      }
+      &-mobile {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        display: block;
+        margin-left: auto;
+        @include rwd(tablet) {
+          display: none;
+        }
+      }
     }
     &__info {
       @include rwd(medium) {
         padding-right: 40px;
+      }
+      &__header {
+        display: flex;
+        @include rwd(tablet) {
+          display: block;
+        }
       }
       &__tag {
         font-family: Lora;
@@ -39,11 +60,18 @@
         font-family: Poppins;
         font-style: normal;
         font-weight: bold;
-        line-height: 27px;
-        font-size: 20px;
+        line-height: 22px;
+        font-size: rem(16);
+        @include rwd(tablet) {
+          line-height: 27px;
+          font-size: rem(20);
+        }
         color: $black;
         margin-top: 15px;
         margin-bottom: 13px;
+        &:hover {
+          text-decoration: underline;
+        }
       }
       &__credits {
         font-family: Poppins;
@@ -60,9 +88,13 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
-        font-size: 18px;
+        font-size: rem(16);
+        @include rwd(tablet) {
+          font-size: rem(18);
+        }
         color: $mine-shaft;
         margin-top: 24px;
+        margin-bottom: 0!important;
       }
     }
     &--half {
@@ -97,6 +129,17 @@
           &__content {
             margin-top: 4px;
           }
+        }
+      }
+    }
+  }
+  &--half {
+    display: flex;
+    flex-wrap: wrap;
+    @include rwd(medium) {
+      & .articles {
+        &__item {
+          width: 50%;
         }
       }
     }

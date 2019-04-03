@@ -58,3 +58,13 @@ Retina
   }
 }
 
+@mixin gutenberg-color-palette($palette-list) {
+  @each $slug, $color in $palette-list {
+    .has-starter-#{$slug}-color {
+      color: $color !important;
+    }
+    .has-starter-#{$slug}-background-color {
+      background-color: $color !important;
+    }
+  }
+}

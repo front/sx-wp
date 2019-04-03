@@ -8,31 +8,29 @@
  */
 #}
 <article id="post-{{ post.ID }}" {{ fn('post_class') }}>
-    <header class="entry-header alignwide">
-        {% if fn('is_single') %}
-            <h1 class="entry-title">{{ post.title }}</h1>
-        {% else %}
-            <h2 class="entry-title"><a href="{{ post.link }}" rel="bookmark">{{ post.title }}</a></h2>
-        {% endif %}
-
-        {% if post.get_post_type.name == 'post' %}
-            <div class="entry-meta">
-                {{ fn('_t_posted_on') }}
-            </div><!-- .entry-meta -->
-        {% endif %}
+    {% include 'template-parts/breadcrumbs.twig' %}
+    <header class="entry-header">
+        <h1 class="entry-title title title--page">{{ post.title }}</h1>
     </header><!-- .entry-header -->
 
-    <div class="entry-content">
-        {% set read_more = __('Continue reading %s <span class="meta-nav">&rarr;</span>', '_t')|format('<span class="screen-reader-text">' ~ post.title ~ '</span>') %}
-        {{ post.get_preview(50, false, read_more) }}
+    <hr class="wp-block-separator is-style-wide">
 
-        {{ fn('wp_link_pages', {
-            'before': '<div class="page-links">' ~ __( 'Pages:', '_t' ),
-            'after': '</div>'
-        }) }}
+    <div class="content content--with-sidebar content--article">
+        <div class="content__left entry-content">
+            <div class="article">
+                <div class="article__credits">
+                    {{ __('by', '_t') }} <a href="{{ author_link }}" class="article__info__author"><span>{{ post.author }}</span></a> | <span class="article__info__date">{{ post.date }}</span> {{ post.category.name ? '| <a class="article__info__tag" href="' ~ category_link ~ '"><span>' ~ post.category.name ~ '</span></a>' }}
+                </div>
+                {{ post.content }}
+                <div class="tag-cloud-links tag-cloud-links--inside-article tag-cloud-links--mobile">
+                    {% include 'template-parts/tag-cloud.twig' %}
+                </div>
+            <hr class="wp-block-separator is-style-dots-line has-margin-vertical-big">
+            {% include 'template-parts/related-articles.twig' with { category: post.category, posts: posts_in_category } %}
+            </div>
+        </div>
+        <div class="content__right sidebar">
+            {% include 'template-parts/tag-cloud.twig' %}
+        </div>
     </div><!-- .entry-content -->
-
-    <footer class="entry-footer">
-        {{ fn('_t_entry_footer') }}
-    </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

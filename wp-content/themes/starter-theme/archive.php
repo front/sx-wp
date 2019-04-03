@@ -1,10 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Under_Timber
+ * Template Name: Archive
  */
 
 if ( ! class_exists( 'Timber' ) ) {
@@ -13,6 +9,10 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 
 $context = Timber::get_context();
-$context['posts'] = Timber::get_posts();
+$context['posts'] = new Timber\PostQuery();
+if ( function_exists( 'yoast_breadcrumb' ) ) {
+    $context['breadcrumbs'] = yoast_breadcrumb('<nav id="breadcrumbs" class="main-breadcrumbs">','</nav>', false );
+}
 
-Timber::render('archive.twig', $context);
+//Timber::render('archive.twig', $context);
+Timber::render('archive-with-sidebar.twig', $context);

@@ -1,0 +1,25 @@
+.search-results {
+  font-family: Poppins;
+  font-style: normal;
+  &__header {
+    margin-top: 38px;
+    margin-bottom: 55px;
+  }
+  &__title {
+    font-weight: 500;
+    line-height: 21px;
+    font-size: rem(13);
+  }
+  &__query {
+    font-weight: bold;
+    line-height: 43px;
+    font-size: rem(32);
+    color: $dark-orange;
+    margin-right: 5px;
+  }
+  &__hits {
+    font-weight: bold;
+    line-height: 43px;
+    font-size: rem(32);
+  }
+}
