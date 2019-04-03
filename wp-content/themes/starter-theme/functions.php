@@ -347,3 +347,16 @@ function show_title_save_postdata( $post_id ) {
 }
 
 add_action( 'save_post', 'show_title_save_postdata' );
+
+/**
+ * add svg support
+ */
+
+function svg_support( $m ) {
+	$m['svg']  = 'image/svg+xml';
+	$m['svgz'] = 'image/svg+xml';
+
+	return $m;
+}
+
+add_filter( 'upload_mimes', 'svg_support' );
