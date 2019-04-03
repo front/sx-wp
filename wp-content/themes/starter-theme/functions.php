@@ -287,3 +287,63 @@ add_action( 'customize_controls_print_styles', 'my_customizer_styles', 999 );
 
 // social menu
 //require get_template_directory() . '/inc/customizer_social_icons/customizer-social-icons.php';
+
+/**
+ * Adds the meta box to the page screen
+ */
+function theme_options_add_meta_box() {
+	$screens = array( 'post', 'page' );
+	add_meta_box(
+		'theme_options',
+		__( 'Theme options' ),
+		'options_meta_box',
+		$screens,
+		'side',
+		'low'
+	);
+}
+
+add_action( 'add_meta_boxes', 'theme_options_add_meta_box' );
+
+function options_meta_box( $post, $meta ) {
+	wp_nonce_field( plugin_basename( __FILE__ ), 'title_nonce' );
+	$title_status = get_post_meta( $post->ID, '_show_title', true );
+
+	if ( $title_status === '' || ! empty( $title_status ) ) {
+		$checkbox_status = 'checked';
+	} else {
+		$checkbox_status = '';
+	}
+	?>
+
+    <div class="components-base-control components-base-control--mt">
+        <p class="post-attributes-label-wrapper"></p>
+        <div class="components-base-control__field">
+            <input id="show_title" class="components-checkbox-control__input" name="show_title" type="checkbox" <?php echo $checkbox_status ?>>
+            <label class="components-checkbox-control__label" for="show_title">Show title</label>
+        </div>
+    </div>
+	<?php
+
+}
+
+function show_title_save_postdata( $post_id ) {
+	$is_checked = 0;
+
+	if ( ! wp_verify_nonce( $_POST['title_nonce'], plugin_basename( __FILE__ ) ) ) {
+		return;
+	}
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+	if ( isset( $_POST['show_title'] ) ) {
+		$is_checked = $_POST['show_title'];
+	}
+
+	update_post_meta( $post_id, '_show_title', $is_checked );
+}
+
+add_action( 'save_post', 'show_title_save_postdata' );
