@@ -26,7 +26,9 @@ class Search {
   }
 
   init() {
-    this.events();
+    if(this.searchBtn){
+      this.events();
+    }
   }
 }
 

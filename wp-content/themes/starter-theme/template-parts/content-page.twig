@@ -8,9 +8,11 @@
  */
 #}
 <article id="post-{{ post.ID }}" {{ fn('post_class') }}>
-    <header class="entry-header alignwide">
-        <h1 class="entry-title">{{ post.title }}</h1>
-    </header><!-- .entry-header -->
+    {% if post.meta('_show_title') %}
+        <header class="entry-header alignwide">
+            <h1 class="entry-title">{{ post.title }}</h1>
+        </header><!-- .entry-header -->
+    {% endif %}
 
     <div class="entry-content">
         {{ post.content }}

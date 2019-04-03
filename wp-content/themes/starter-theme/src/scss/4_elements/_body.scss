@@ -5,6 +5,13 @@
 body:not(.wp-admin) {
   font-family: $font-family;
   font-size: $base-font-size;
+  overflow-x: hidden;
+
+  &.has-scrollbar {
+    .alignfull {
+      width: calc(100vw - var(--scroll-bar));
+    }
+  }
 }
 
 .container {

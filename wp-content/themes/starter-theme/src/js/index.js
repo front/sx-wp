@@ -4,6 +4,8 @@ import SkipLinkFix from './components/skip-link-focus-fix';
 import SelectLanguage from './components/select-language';
 import Menu from './components/menu';
 import Search from './components/search';
+import Accordion from './components/accordion';
+import AlignFull from "./components/alignfull";
 
 $(document).ready(() => {
     (async () => {
@@ -17,4 +19,8 @@ $(document).ready(() => {
     search.init();
     const selectLanguage = new SelectLanguage(document.querySelector('.js-lang-btn'));
     selectLanguage.init();
+    const accordion = new Accordion();
+    accordion.init();
+    const alignfull = new AlignFull();
+    alignfull.init();
 });
