@@ -22,7 +22,9 @@ class SelectLanguage {
   }
 
   init() {
-    this.events();
+    if (this.select) {
+      this.events();
+    }
   }
 }
 

@@ -32,16 +32,6 @@ class Menu {
       });
     }
 
-    var isMobile = window.matchMedia("only screen and (max-width: 640px)").matches;
-    if (isMobile) {
-        this.hamburger.addEventListener('click', e => {
-            e.preventDefault();
-            for (let i = 0; i < this.mobileNav.length; i++) {
-                this.mobileNav[i].style.display = 'block'
-            }
-        })
-    }
-
     if (this.submenu) {
       for (let i = 0; i < this.submenu.length; i++) {
         let subMenu = this.submenu[i];
@@ -59,8 +49,25 @@ class Menu {
     }
   }
 
+  resize(){
+    var isMobile = window.matchMedia("only screen and (max-width: 1024px)").matches;
+    if (isMobile) {
+      this.hamburger.addEventListener('click', e => {
+        e.preventDefault();
+        for (let i = 0; i < this.mobileNav.length; i++) {
+          this.mobileNav[i].style.display = 'block'
+        }
+      })
+    }
+  }
+
   init() {
     this.events();
+    this.resize();
+
+    window.addEventListener('resize', () => {
+      this.resize();
+    });
   }
 }
 
