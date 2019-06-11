@@ -19,7 +19,7 @@
         <div class="content__left entry-content">
             <div class="article">
                 <div class="article__credits">
-                    by <span class="article__info__author">{{ post.author }}</span> | <span class="article__info__date">{{ post.date }}</span> {{ post.tags ? '| <span class="article__info__tag">' ~ post.tags|join(', ') ~ '</span>' }}
+                    {{ __('by', '_t') }} <a href="{{ author_link }}" class="article__info__author"><span>{{ post.author }}</span></a> | <span class="article__info__date">{{ post.date }}</span> {{ post.category.name ? '| <a class="article__info__tag" href="' ~ category_link ~ '"><span>' ~ post.category.name ~ '</span></a>' }}
                 </div>
                 {{ post.content }}
                 <div class="tag-cloud-links tag-cloud-links--inside-article tag-cloud-links--mobile">

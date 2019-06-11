@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+
+$className: img-txt;
+
+.wp-block-starterx-img-txt {
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  font-family: "poppins", Arial, sans-serif;
+  background: #f0f0f0;
+
+  &--no-bg{
+    background: none;
+  }
+
+  &.alignwide{
+    .#{$className}{
+      padding: 40px;
+      grid-template-columns: unset;
+
+      &__text {
+        align-self: unset;
+      }
+
+      @media screen and (min-width: 1024px) {
+        grid-template-columns: 38% 1fr;
+      }
+
+      @media screen and (min-width: $content-width-wide) {
+        padding: 60px 118px;
+      }
+    }
+  }
+
+  .columns-2 .#{$className} {
+    grid-template-columns: repeat(1, 1fr);
+
+    &__title{
+      margin-top: -5px;
+    }
+    &__text{
+      align-self: unset;
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .#{$className} {
+    padding: 80px 0;
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    grid-template-columns: unset;
+
+    &__image {
+      display: block;
+      margin: 0;
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+
+      img {
+        display: none;
+      }
+    }
+
+    &__text{
+      align-self: center;
+      padding-left: 25px;
+      padding-right: 25px;
+  }
+
+    &__title{
+      margin-top: 0;
+      padding-top: 0;
+      //font-size: 24px;
+      line-height: (32/24);
+      margin-bottom: 19px;
+    }
+
+    &__desc{
+      font-weight: 500;
+      font-size: 18px;
+      line-height: (40/18);
+      color: #333333;
+      margin-bottom: 35px;
+    }
+
+    @media screen and (min-width: 800px){
+      grid-template-columns: 40% 1fr;
+    }
+  }
+
+  .wrapper{
+    max-width: $content-width-wide;
+    margin: 0 auto;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    grid-template-columns:repeat(1, 1fr);
+
+    @media (min-width: 800px) {
+      @for $i from 2 through 4 {
+        &.columns-#{$i} {
+          grid-template-columns: repeat($i, 1fr);
+        }
+      }
+    }
+  }
+}

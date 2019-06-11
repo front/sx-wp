@@ -1,11 +1,13 @@
 {% if menu %}
-<ul class="menu-item {{ class }}">
+<ul class="{{ class }} {{ item.get_children ? "sub-menu js-sub-menu" : "menu-item"}}">
   {% for item in menu %}
-    <li class="{{item.classes | join(' ')}} {{ item_class }}">
-      <a href="{{ item.get_link }}">
+    <li class="{{item.classes | join(' ')}} {{ item_class }} {{ item.get_children ? "js-menu-with-sub" }}">
+      <a class="menu-item__link js-menu-link" href="{{ item.get_link }}">
         <span>{{ item.title }}</span>
       </a>
-      {% include "menu.twig" with { 'menu': item.get_children } %}
+        {% if item.get_children %}
+            {% include "menu.twig" with { 'menu': item.get_children } %}
+        {% endif %}
     </li>
     {% endfor %}
   </ul>

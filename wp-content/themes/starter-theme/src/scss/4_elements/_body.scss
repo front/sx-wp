@@ -5,20 +5,31 @@
 body:not(.wp-admin) {
   font-family: $font-family;
   font-size: $base-font-size;
+  overflow-x: hidden;
+}
+
+body{
+  &.has-scrollbar{
+    .alignfull{
+      width: calc(100vw - var(--scroll-bar));
+    }
+  }
 }
 
 .container {
   max-width: 690px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 24px;
+  padding-right: 24px;
 
   @include rwd(medium) {
     max-width: 1250px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
   @include rwd(large) {
-    max-width: 1376px;
+    max-width: $content-width-wide;
   }
   &--centered {
     margin-left: auto;

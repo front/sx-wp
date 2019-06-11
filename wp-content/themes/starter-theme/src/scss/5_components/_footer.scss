@@ -10,7 +10,7 @@ footer {
     font-weight: 600;
     line-height: normal;
     font-size: 18px;
-    color: $gallery;
+    color: $romance;
   }
 
   .widget_nav_menu .menu {
@@ -40,7 +40,7 @@ footer {
 
   a {
     color: $gallery;
-    text-decoration: none;
+    text-decoration: none !important;
     font-size: 16px;
 
     &:before {
@@ -50,7 +50,7 @@ footer {
       height: 2px;
       bottom: -2px;
       left: 0;
-      background: $brandy-rose;
+      background: $light-red;
       visibility: hidden;
       -webkit-transform: scaleX(0);
       transform: scaleX(0);
@@ -63,5 +63,34 @@ footer {
       -webkit-transform: scaleX(1);
       transform: scaleX(1);
     }
+
+    .light & {
+      color: $text-color;
+    }
   }
+
+  &.light {
+    background-color: $romance;
+    color: $text-color;
+    border-top: 1px solid $semi-white;
+
+    .widget__title{
+      color: $text-color;
+    }
+
+    a{
+      color: $text-color;
+    }
+  }
+
+  .textwidget{
+    p{
+      font-size: 16px;
+      line-height: 1.75;
+    }
+  }
+}
+
+.copyright{
+  font-size: 13px;
 }

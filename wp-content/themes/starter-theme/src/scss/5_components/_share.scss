@@ -1,0 +1,76 @@
+.share-buttons {
+  margin-bottom: 30px;
+
+  @include rwd(medium) {
+    margin-bottom: 45px;
+  }
+
+  &__title,
+  & .widgettitle {
+    font-style: normal;
+    font-weight: bold;
+    line-height: 30px;
+    font-size: 18px;
+    color: $dark-gray;
+    margin-bottom: 25px;
+
+    @include rwd(tablet) {
+      line-height: 27px;
+      font-size: 20px;
+      margin-bottom: 35px;
+    }
+  }
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+
+  &--mobile {
+    @include rwd(medium) {
+      display: none;
+    }
+  }
+
+  .share-button{
+    border: 1px solid $semi-white;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background: $romance;
+    width: 100px;
+    height: 80px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex-wrap: wrap;
+
+    &:hover {
+      background: $semi-white;
+    }
+
+    &__icon{
+      --fill-color: #8c959b;
+      margin-bottom: 5px;
+    }
+
+    &__name{
+      font-weight: 500;
+      font-size: 13px;
+      line-height: (21/13);
+      text-align: center;
+      color: $button-gray;
+      width: 100%;
+    }
+  }
+
+  &--sidebar{
+    max-width: 100px;
+    text-align: center;
+    position: sticky;
+    top: 20px;
+  }
+
+}

@@ -1,7 +1,7 @@
 .content {
-  margin-top: $space-double;
+  margin-top: $space;
   @include rwd(medium) {
-    margin-top: $space-triple;
+    margin-top: $space-double;
   }
   &--with-sidebar {
     display: flex;
@@ -18,15 +18,41 @@
           display: block;
           width: 24%;
           padding-left: 77px;
-          border-left: 1px solid $text-color-gray--lighter;
+          position: relative;
+
+          &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: calc(100% - #{$margin_bottom_single_article});
+            background: $semi-white;
+          }
         }
       }
     }
   }
   &--article {
-    margin-top: 25px;
+    margin-top: 20px;
+    position: relative;
     & .sidebar {
-      margin-top: 40px;
+      margin-top: 20px;
+    }
+  }
+
+  &__share{
+    width: 100px;
+    margin-right: 132px;
+    margin-left: -232px;
+
+    @media screen and (max-width: $content-width-wide+132px) {
+      margin-right: 40px;
+      margin-left: -140px;
+    }
+
+    @media screen and (max-width: $content-width-wide - 40px) {
+     display: none;
     }
   }
 }

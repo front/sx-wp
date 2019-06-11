@@ -1,0 +1,110 @@
+$className: factbox;
+
+.wp-block-cloudblocks-factbox{
+  .#{$className} {
+    background: $light-red;
+    color: $romance;
+
+    &__image{
+      margin: 0 auto;
+    }
+
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        display: block;
+      }
+    }
+
+    &__text{
+      align-self: center;
+      padding: 30px;
+    }
+
+    &__desc{
+      margin-top: 20px;
+      font-size: 16px;
+
+      p{
+        margin: 0;
+        padding: 0;
+        font-size: inherit;
+      }
+
+      @include rwd(tablet){
+        margin-top: 40px;
+        font-size: rem(24);
+      }
+
+    }
+
+    @media (max-width: 1025px){
+      &__icon{
+        background: none !important;
+      }
+    }
+
+    @media (min-width: 1024px){
+      &__image{
+        height: 100%;
+      }
+
+      &__icon{
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        padding-bottom: 0;
+
+        img {
+          display: none;
+        }
+      }
+
+      &__text{
+        padding: get-vw(130px) get-vw(90px);
+      }
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 1024px) {
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+
+      &.columns-2 {
+        grid-template-columns: 44.4% 1fr;
+      }
+    }
+  }
+
+  &--icon{
+    .#{$className}{
+      &__icon{
+        background-size: auto;
+      }
+
+      &__image{
+        padding: 30px 30px 0 30px;
+
+        @media (min-width: 1024px){
+          padding: 30px;
+        }
+      }
+    }
+  }
+
+}

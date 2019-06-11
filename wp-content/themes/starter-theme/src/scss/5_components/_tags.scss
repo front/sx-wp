@@ -1,7 +1,12 @@
 .tag-cloud-links {
+  margin-bottom: 30px;
+
+  @include rwd(medium){
+    margin-bottom: 45px;
+  }
+
   &__title,
   & .widgettitle {
-    font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     line-height: 30px;
@@ -11,16 +16,12 @@
       font-size: 20px;
     }
 
-    color: #293139;
-    margin-bottom: 47px;
-    &--inline {
-      display: inline-block;
-      margin-right: 20px;
-    }
+    color: $dark-gray;
+    margin-bottom: 35px;
   }
   &--inside-article {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     @include rwd(medium) {
       margin-top: 50px;
       margin-bottom: 50px;
@@ -46,7 +47,7 @@
   }
   &__items {
     & .tag-cloud-links__title {
-      margin-bottom: 0;
+      margin-bottom: 25px;
     }
     &--centered {
       display: inline-block;
@@ -60,21 +61,29 @@
   &--mobile {
     @include rwd(medium) {
       display: none;
-    };
+    }
   }
   .tag-cloud-link {
-    background: #666666;
+    background: $light-gray;
     border-radius: 4px;
-    color: white;
-    font-family: Poppins;
+    color: $text-color;
     font-style: normal;
     font-weight: 500;
     line-height: 21px;
     font-size: 13px!important;
     text-align: center;
     padding: 10px 15px;
-    margin-right: 20px;
+    margin-right: 15px;
     margin-bottom: 10px;
     display: inline-block;
+
+    &:hover {
+      background: $semi-white;
+    }
+
+    &:focus, &.is-active{
+      background: $light-red;
+      color: $romance;
+    }
   }
 }

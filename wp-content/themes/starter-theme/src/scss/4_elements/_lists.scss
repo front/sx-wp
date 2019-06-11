@@ -3,8 +3,38 @@ ul
 ol
 li
  */
-ul {}
+ul {
+  margin: 20px 0;
+}
 
 li {
   line-height: 49px;
+}
+
+
+.content-area{
+  ul:not(.pagination):not(.wp-block-gallery):not(.breadcrumbs):not(.accordion) {
+    list-style: none;
+
+    li {
+      position: relative;
+      line-height: 1.5;
+      margin-bottom: 18px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $light-red;
+        top: 10px;
+        left: -21px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }

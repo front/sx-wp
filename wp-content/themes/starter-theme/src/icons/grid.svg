@@ -1,0 +1,11 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.75 0H5.25C5.66418 0 6 0.335815 6 0.75V5.25C6 5.66418 5.66418 6 5.25 6H0.75C0.335815 6 0 5.66418 0 5.25V0.75C0 0.335815 0.335815 0 0.75 0Z" fill="#E93350" style="fill: var(--fill-color); stroke: var(--stroke-color)"/>
+<path d="M9.75 0H14.25C14.6642 0 15 0.335815 15 0.75V5.25C15 5.66418 14.6642 6 14.25 6H9.75C9.33582 6 9 5.66418 9 5.25V0.75C9 0.335815 9.33582 0 9.75 0Z" fill="#E93350" style="fill: var(--fill-color); stroke: var(--stroke-color)"/>
+<path d="M18.75 0H23.25C23.6642 0 24 0.335815 24 0.75V5.25C24 5.66418 23.6642 6 23.25 6H18.75C18.3358 6 18 5.66418 18 5.25V0.75C18 0.335815 18.3358 0 18.75 0Z" fill="#E93350" style="fill: var(--fill-color); stroke: var(--stroke-color)"/>
+<path d="M0.75 9H5.25C5.66418 9 6 9.33582 6 9.75V14.25C6 14.6642 5.66418 15 5.25 15H0.75C0.335815 15 0 14.6642 0 14.25V9.75C0 9.33582 0.335815 9 0.75 9Z" fill="#E93350" style="fill: var(--fill-color); stroke: var(--stroke-color)"/>
+<path d="M9.75 9H14.25C14.6642 9 15 9.33582 15 9.75V14.25C15 14.6642 14.6642 15 14.25 15H9.75C9.33582 15 9 14.6642 9 14.25V9.75C9 9.33582 9.33582 9 9.75 9Z" fill="#E93350" style="fill: var(--fill-color); stroke: var(--stroke-color)"/>
+<path d="M18.75 9H23.25C23.6642 9 24 9.33582 24 9.75V14.25C24 14.6642 23.6642 15 23.25 15H18.75C18.3358 15 18 14.6642 18 14.25V9.75C18 9.33582 18.3358 9 18.75 9Z" fill="#E93350" style="fill: var(--fill-color); stroke: var(--stroke-color)"/>
+<path d="M0.75 18H5.25C5.66418 18 6 18.3358 6 18.75V23.25C6 23.6642 5.66418 24 5.25 24H0.75C0.335815 24 0 23.6642 0 23.25V18.75C0 18.3358 0.335815 18 0.75 18Z" fill="#E93350" style="fill: var(--fill-color); stroke: var(--stroke-color)"/>
+<path d="M9.75 18H14.25C14.6642 18 15 18.3358 15 18.75V23.25C15 23.6642 14.6642 24 14.25 24H9.75C9.33582 24 9 23.6642 9 23.25V18.75C9 18.3358 9.33582 18 9.75 18Z" fill="#E93350" style="fill: var(--fill-color); stroke: var(--stroke-color)"/>
+<path d="M18.75 18H23.25C23.6642 18 24 18.3358 24 18.75V23.25C24 23.6642 23.6642 24 23.25 24H18.75C18.3358 24 18 23.6642 18 23.25V18.75C18 18.3358 18.3358 18 18.75 18Z" fill="#E93350" style="fill: var(--fill-color); stroke: var(--stroke-color)"/>
+</svg>

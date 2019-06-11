@@ -11,6 +11,18 @@
     margin-bottom: 31px;
   }
   &__item {
+    display: flex;
+    margin-bottom: 40px;
+
+    &:nth-child(3){
+      margin-bottom: 0;
+    }
+
+    @include rwd(tablet){
+      display: block;
+      margin-bottom: 0;
+    }
+
     & a {
       display: flex;
       margin-bottom: 30px;
@@ -61,7 +73,7 @@
       font-size: 13px;
       color: $black;
       @include rwd(tablet) {
-        margin-top: 15px;
+        margin-top: 9px;
       }
     }
   }
@@ -71,4 +83,29 @@
       display: flex;
     }
   }
+
+  &__date{
+    color: $button-gray;
+    font-style: normal;
+    font-weight: 500;
+    line-height: (21/13);
+    font-size: 13px;
+    margin-top: 0;
+
+    @include rwd(tablet){
+      margin-top: 9px;
+    }
+  }
+
+  &__image{
+    flex-shrink: 0;
+    width: 99px;
+    margin-right: 14px;
+
+    @include rwd(tablet){
+      width: auto;
+    }
+
+  }
+
 }

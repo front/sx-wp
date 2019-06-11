@@ -3,8 +3,23 @@
 {% block content %}
 <div id="content" class="site-content">
     <div id="primary" class="content-area container">
+        {% include 'template-parts/breadcrumbs.twig' %}
+        <div class="search-field container--centered">
+            <form class="search-field__form">
+                <div class="input-submit">
+                    <label class="styled-input" for="styled-input__search">
+                        <input id="styled-input__search" class="styled-input__field" type="text" name="s" required placeholder=" ">
+                        <span class="styled-input__placeholder">Type to search:</span>
+                    </label>
+                    <button type="submit" class="button">
+                        <svg class="icon search-arrow" width="20" height="12">
+                            <use xlink:href="{{ theme.path }}/build/spritemap.svg#search-arrow"></use>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
         <main id="main" class="site-main search-results container--centered" role="main">
-            {% include 'template-parts/breadcrumbs.twig' %}
             {% if posts %}
                 <header class="search-results__header">
                     <h1 class="search-results__title">{{ __('Search Results for')}}</h1>

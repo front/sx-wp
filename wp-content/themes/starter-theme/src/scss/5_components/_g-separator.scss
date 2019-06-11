@@ -1,6 +1,6 @@
 .wp-block-separator {
   border: 0;
-  border-top: 1px solid $light-gray;
+  border-top: 1px solid $semi-white;
   height: 1px;
   padding: 0;
 
@@ -10,11 +10,17 @@
 
   &.is-short {
     width: 30px;
-    border-color: $dark-orange;
+    border-color: $light-red;
   }
+
   &.is-style-dots-line {
     border-style: dotted;
-    border-color: $light-gray;
+    border-color: $semi-white;
+  }
+
+  &.is-style-dashed-line {
+    border-style: dashed;
+    border-color: $semi-white;
   }
 
   &.no-margin-top {

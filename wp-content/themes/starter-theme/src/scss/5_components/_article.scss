@@ -1,7 +1,6 @@
 .article {
   margin-bottom: 45px;
   &__credits {
-    font-family: Poppins;
     font-style: normal;
     font-weight: 500;
     line-height: 21px;
@@ -13,11 +12,10 @@
     margin-bottom: 25px;
   }
   &__subtitle {
-    font-family: Poppins;
     font-style: normal;
     font-weight: 500;
     line-height: 25px;
-    font-size: rem(16);
+    font-size: rem(18);
     @include rwd(tablet) {
       line-height: 31px;
       font-size: rem(20);
@@ -32,7 +30,7 @@
     line-height: 31px;
     font-size: rem(18);
     color: #333333;
-    margin-bottom: 40px;
+    margin-bottom: $space;
   }
   &__img {
     &--section {
@@ -42,10 +40,9 @@
     }
     & img {
       max-width: 100%;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
     &__desc {
-      font-family: Poppins;
       font-style: normal;
       font-weight: 500;
       line-height: 19px;
@@ -54,7 +51,7 @@
       @include rwd(medium) {
         line-height: 21px;
         font-size: rem(13);
-        margin-bottom: $space-double;
+        margin-bottom: $space;
       }
       color: #3D3D3D;
     }
@@ -71,24 +68,54 @@
     }
   }
   &__info {
+    color: $button-gray;
     &__author {
-      margin-right: 10px;
+      margin-right: 3px;
     }
     &__date {
-      margin-left: 10px;
-      margin-right: 10px;
+      margin-left: 3px;
+      margin-right: 3px;
     }
     &__tag {
-      margin-left: 10px;
-      color: $dark-orange;
+      margin-left: 5px;
+      color: $light-red;
+    }
+  }
+  &__mobile-img{
+    flex-shrink: 0;
+    margin-left: 15px;
+    @include rwd(tablet) {
+      display: none;
+    }
+  }
+  &__wrapper{
+    display: flex;
+  }
+  &__text-wrapper{
+    flex-grow: 1;
+  }
+
+  .related-articles{
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  a{
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover{
+      text-decoration: none;
     }
   }
 }
 
 .content--article {
   &.container--centered {
+    display: flex;
     .article {
-      & > *:not(.wp-block-image):not(.wp-block-columns) {
+      & > *:not(.wp-block-image):not(.wp-block-columns):not(.article__img):not(.article__img--section):not(.wp-block-separator):not(.related-articles) {
         @include rwd(medium) {
           margin-left: 80px;
           margin-right: 80px;
@@ -99,7 +126,7 @@
         font-style: normal;
         font-weight: normal;
         line-height: 35px;
-        font-size: rem(18);
+        font-size: 18px;
         letter-spacing: 0.02em;
       }
     }

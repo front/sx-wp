@@ -1,0 +1,12 @@
+.wp-block-starterx-employees {
+  padding-left: 24px;
+  padding-right: 24px;
+  @include rwd(medium) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .h1 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}

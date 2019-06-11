@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+
+.wp-block-starterx-quote-background {
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  background-size: cover;
+  background-position: center;
+  font-family: "poppins", Arial, sans-serif;
+
+  blockquote {
+    display: flex;
+    background-color: rgba(#202124, 0.8);
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    width: 100%;
+    min-height: 500px;
+    margin: 0;
+    padding: 20px;
+
+    @media (min-width: 768px) {
+      width: 75%;
+      padding: 60px 100px;
+    }
+    @media (min-width: 1024px) {
+      width: 50%;
+      padding: 100px 100px;
+    }
+
+    p {
+      margin: 0;
+      font-weight: 700;
+      line-height: (32/24);
+      font-size: 24px;
+      font-style: normal;
+      quotes: none;
+    }
+
+    cite {
+      display: block;
+      font-weight: 500;
+      line-height: (26/16);
+      font-size: 16px;
+      font-style: normal;
+      margin-top: 25px;
+    }
+
+    .quote{
+      position: relative;
+    }
+
+    .quote__icon {
+      display: block;
+      margin: 5px 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      use{
+        fill: $light-red;
+      }
+    }
+
+    .quote__text{
+      padding-left: 53px;
+      padding-top: 10px;
+    }
+  }
+
+  @media (min-width: 1250px) {
+    &.alignfull .quote, .wp-block[data-align="full"] & .quote {
+      padding: 100px 180px;
+    }
+  }
+}

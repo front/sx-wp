@@ -22,7 +22,7 @@
   }
 
   .accordion__item-title {
-    font-weight: bold;
+    font-weight: normal;
     font-size: 20px;
     line-height: normal;
     margin: 0;
@@ -77,17 +77,34 @@
     }
   }
 
-    // item open
+  // item open
   .accordion__item--open {
+
+    .accordion__item-title{
+      font-weight: bold;
+    }
+
     .accordion__item-toggle-button {
       &::before {
         opacity: 0;
       }
 
       &::after {
-        background-color: $dark-tan;
+        background-color: $light-red;
         transform: translateY(-50%) rotate(0);
       }
+    }
+  }
+}
+
+.wp-block-cloudblocks-accordion.save {
+  .accordion {
+    &__item--open .accordion__item-content {
+      display: block;
+    }
+
+    &__item-content {
+      display: none;
     }
   }
 }

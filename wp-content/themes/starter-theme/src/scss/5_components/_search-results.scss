@@ -1,5 +1,4 @@
 .search-results {
-  font-family: Poppins;
   font-style: normal;
   &__header {
     margin-top: 38px;
@@ -14,7 +13,7 @@
     font-weight: bold;
     line-height: 43px;
     font-size: rem(32);
-    color: $dark-orange;
+    color: $light-red;
     margin-right: 5px;
   }
   &__hits {

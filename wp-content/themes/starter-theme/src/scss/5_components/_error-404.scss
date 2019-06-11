@@ -1,6 +1,6 @@
 .error-404 {
-  margin-top: 140px;
-  margin-bottom: 170px;
+  margin-top: 80px;
+  margin-bottom: 150px;
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
@@ -14,6 +14,7 @@
     &-wrapper {
       width: 300px;
       height: 300px;
+      overflow: hidden;
       @include rwd(small) {
         width: 426px;
         height: 426px;
@@ -24,22 +25,18 @@
       align-items: center;
       border-radius: 50%;
     }
-    width: 180px;
-    height: 180px;
-    @include rwd(small) {
-      width: 280px;
-      height: 280px;
-    }
   }
   &__title {
     line-height: 97px;
     font-size: rem(72);
-    margin-top: 13px;
+    margin-top: 20px;
   }
   &__subtitle {
-    line-height: 51px;
-    font-size: rem(38);
-    margin-bottom: 35px;
+    font-weight: 500;
+    font-size: rem(20);
+    line-height: (31/20);
+    text-align: center;
+    margin-bottom: 60px;
   }
   &__button {
     font-weight: 500;

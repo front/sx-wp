@@ -3,15 +3,23 @@
          {% if pagination.pages|first and pagination.pages|first.current != true %}
             <li class="pagination__item nav first">
                 <a class="pagination__link" href="{{ pagination.pages|first.link }}">
-                    <img class="line" src="{{theme.link}}/src/icons/line.svg" alt="line">
-                    <img class="arrow arrow--left" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
+                    <svg class="icon line" width="2" height="18">
+                        <use xlink:href="{{ theme.path }}/build/spritemap.svg#line"></use>
+                    </svg>
+                    <svg class="icon arrow arrow--left" width="10" height="18">
+                        <use xlink:href="{{ theme.path }}/build/spritemap.svg#arrow"></use>
+                    </svg>
                 </a>
             </li>
         {% else %}
             <li class="pagination__item nav first">
                 <a class="pagination__link">
-                    <img class="line" src="{{theme.link}}/src/icons/line.svg" alt="line">
-                    <img class="arrow arrow--left" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
+                    <svg class="icon line" width="2" height="18">
+                        <use xlink:href="{{ theme.path }}/build/spritemap.svg#line"></use>
+                    </svg>
+                    <svg class="icon arrow arrow--left" width="10" height="18">
+                        <use xlink:href="{{ theme.path }}/build/spritemap.svg#arrow"></use>
+                    </svg>
                 </a>
             </li>
         {% endif %}
@@ -19,13 +27,17 @@
         {% if pagination.prev %}
             <li class="pagination__item nav previous">
                 <a class="pagination__link" href="{{ pagination.prev.link }}">
-                    <img class="arrow arrow--left" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
+                    <svg class="icon arrow arrow--left" width="10" height="18">
+                        <use xlink:href="{{ theme.path }}/build/spritemap.svg#arrow"></use>
+                    </svg>
                 </a>
             </li>
         {% else %}
             <li class="pagination__item nav previous">
                 <a class="pagination__link">
-                    <img class="arrow arrow--left" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
+                    <svg class="icon arrow arrow--left" width="10" height="18">
+                        <use xlink:href="{{ theme.path }}/build/spritemap.svg#arrow"></use>
+                    </svg>
                 </a>
             </li>
         {% endif %}
@@ -49,29 +61,39 @@
         {% if pagination.next %}
             <li class="pagination__item nav next">
                 <a class="pagination__link" href="{{ pagination.next.link }}">
-                    <img class="arrow arrow--right" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
-                </a>
+                    <svg class="icon arrow arrow--right" width="10" height="18">
+                        <use xlink:href="{{ theme.path }}/build/spritemap.svg#arrow"></use>
+                    </svg>                </a>
             </li>
         {% else %}
             <li class="pagination__item nav next">
                 <a class="pagination__link">
-                    <img class="arrow arrow--right" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
-                </a>
+                    <svg class="icon arrow arrow--right" width="10" height="18">
+                        <use xlink:href="{{ theme.path }}/build/spritemap.svg#arrow"></use>
+                    </svg>                </a>
             </li>
         {% endif %}
 
          {% if pagination.pages|last and pagination.pages|last.current != true %}
              <li class="pagination__item nav last">
                  <a class="pagination__link" href="{{ pagination.pages|last.link }}">
-                     <img class="arrow arrow--right" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
-                     <img class="line" src="{{theme.link}}/src/icons/line.svg" alt="line">
+                     <svg class="icon arrow arrow--right" width="10" height="18">
+                         <use xlink:href="{{ theme.path }}/build/spritemap.svg#arrow"></use>
+                     </svg>
+                     <svg class="icon line" width="2" height="18">
+                         <use xlink:href="{{ theme.path }}/build/spritemap.svg#line"></use>
+                     </svg>
                  </a>
              </li>
         {% else %}
             <li class="pagination__item nav last">
                 <a class="pagination__link">
-                    <img class="arrow arrow--right" src="{{theme.link}}/src/icons/arrow.svg" alt="arrow">
-                    <img class="line" src="{{theme.link}}/src/icons/line.svg" alt="line">
+                    <svg class="icon arrow arrow--right" width="10" height="18">
+                        <use xlink:href="{{ theme.path }}/build/spritemap.svg#arrow"></use>
+                    </svg>
+                    <svg class="icon line" width="2" height="18">
+                        <use xlink:href="{{ theme.path }}/build/spritemap.svg#line"></use>
+                    </svg>
                 </a>
             </li>
         {% endif %}

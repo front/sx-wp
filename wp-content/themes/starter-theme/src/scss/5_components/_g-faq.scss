@@ -1,0 +1,33 @@
+.faq-contact{
+
+  &__label{
+    color: $text-color-gray;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 35px;
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+
+  a{
+    color: $light-red;
+    text-decoration: none;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  .wp-block-separator {
+    border-color: $semi-white;
+    margin: 15px 0;
+
+    &--short {
+      width: 69px;
+    }
+
+  }
+
+}

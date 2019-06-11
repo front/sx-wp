@@ -1,4 +1,9 @@
 .arrow {
+
+  use{
+    --fill-color: #{$semi-white};
+  }
+
   &--right {
     transform: rotate(-180deg);
     & + .line {

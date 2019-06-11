@@ -37,6 +37,10 @@
       @extend .flex-ai-center;
     }
 
+    .main-menu-items {
+      z-index: 6;
+    }
+
     .language-selector {
       margin: 0 30px;
       color: $text-color;
@@ -46,24 +50,25 @@
       }
 
       @include rwdmax(small) {
-        display: none;
+        margin: 0 0 0 15px;
       }
 
       .js-lang-btn {
         @extend .flex-ai-center;
         cursor: pointer;
 
-        svg path {
-          fill: $text-color;
+        svg {
+          margin-right: 7px;
+          --fill-color: #{$text-color};
 
           .dark & {
-            fill: #FFF;
+            --fill-color: #{$romance};
           }
         }
 
         &:hover {
-          svg path {
-            fill: $brandy-rose;
+          svg {
+            --fill-color: #{$light-red};
           }
         }
 
@@ -80,14 +85,18 @@
     height: 100%;
     @extend .flex-ai-center;
     justify-content: flex-end;
+
+    @include rwdmax(small) {
+      box-shadow: 0px 0px 6px rgba(140, 149, 155, 0.5);
+    }
   }
 
   .header-logo {
     z-index: 200;
 
     @include rwdmax(small) {
-      svg {
-        width: 64px;
+      img {
+        width: 26px;
       }
     }
 
@@ -116,16 +125,16 @@
           font-size: rem(24);
         }
 
+        @include rwdmax(small){
+          margin-left: 8px;
+        }
+
         .menu-open & {
           color: $text-color;
         }
 
         .dark & {
           color: #FFF;
-
-          .menu-open & {
-            color: $text-color;
-          }
         }
       }
     }
@@ -135,8 +144,8 @@
     @extend .flex-ai-center;
     justify-content: flex-end;
     height: 100%;
-
-    li {
+    position: relative;
+    > li {
       padding: 0 30px;
 
       @include rwd(large) {
@@ -155,6 +164,55 @@
 
       .sub-menu {
         display: none;
+        position: absolute;
+        top: 50px;
+        background: $romance;
+        left: 30px;
+        min-width: 247px;
+        z-index: 5;
+        box-shadow: 0px 0px 6px rgba(140, 149, 155, 0.5);
+        font-weight: 400;
+        font-size: 14px;
+
+        & .current-menu-item {
+          > a {
+            & span {
+              color: $light-red;
+            }
+          }
+        }
+
+        & ul.menu-item {
+          display: block;
+        }
+        & * {
+          color: black;
+        }
+        & li.menu-item {
+          display: block;
+          line-height: 1;
+
+
+          &.is-active{
+            > a{
+              color: $light-red;
+            }
+          }
+
+        }
+        & .sub-menu {
+          top: 0!important;
+        }
+
+        a{
+          padding: 16px 40px 16px 16px;
+          display: block;
+          background: $romance;
+
+          &:hover{
+            background: $light-gray;
+          }
+        }
       }
 
       a {
@@ -166,13 +224,15 @@
         }
 
         &:hover {
-          svg > path {
-            fill: $brandy-rose;
+          svg {
+            --fill-color: #{$light-red};
           }
         }
+      }
 
+      > a{
         .dark & {
-          color: #FFF;
+          color: $romance;
         }
       }
     }
@@ -192,6 +252,10 @@
       width: 75px;
       cursor: pointer;
       transform: translate3d(0, 0, 0);
+
+      @include rwdmax(small){
+        width: 60px;
+      }
     }
 
     path {
@@ -273,6 +337,12 @@ header.dark {
   overflow-y: hidden;
   background: #FFF;
 
+  @include rwdmax(medium) {
+    top: 136px;
+    height: calc(100% - 136px);
+    overflow-y: auto;
+  }
+
   .navigation {
     width: 100%;
     padding-bottom: 60px;
@@ -280,6 +350,15 @@ header.dark {
 
     @include rwd(small) {
       margin-top: 192px;
+    }
+
+    @include rwdmax(medium){
+      margin-top: 0;
+      padding-bottom: 0;
+
+      .container{
+        padding: 0;
+      }
     }
 
     a {
@@ -320,18 +399,6 @@ header.dark {
       .main-item {
         display: flex;
         justify-content: space-between;
-
-        .menu-carret {
-          transition: transform 0.3s ease;
-
-          @include rwd(mobile) {
-            display: none;
-          }
-        }
-
-        &.active .menu-carret {
-          transform: rotate(180deg);
-        }
       }
 
       .menu-open & {
@@ -345,6 +412,16 @@ header.dark {
           overflow: hidden;
           transition: max-height 0.2s ease-out;
         }
+      }
+
+      @include rwdmax(mobile) {
+        line-height: 100px;
+      }
+    }
+
+    .columns-4{
+      @include rwdmax(mobile) {
+        display: block;
       }
     }
   }
@@ -364,5 +441,128 @@ header.dark {
   width: 100%;
   height: 100vh;
   background: #fff;
-  z-index: 1;
+  z-index: 11;
+}
+
+
+.main-item {
+  .menu-carret {
+    transition: transform 0.3s ease;
+
+    use {
+      --fill-color: #{$button-gray};
+    }
+
+    @include rwdmax(medium) {
+      width: 18px;
+      height: 10px;
+    }
+  }
+
+  @include rwdmax(medium) {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $semi-white;
+    a {
+      flex-grow: 1;
+      font-size: 20px;
+      padding-left: 25px;
+      box-sizing: border-box;
+
+      span {
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    + .sub-menu {
+      display: none;
+
+
+
+      li {
+
+        &.is-active {
+          > a {
+            color: $light-red;
+          }
+        }
+
+        a{
+          width: 100%;
+          min-height: 75px;
+          border-bottom: 1px solid $semi-white;
+          padding-left: 30px;
+          box-sizing: border-box;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+      }
+
+      ul{
+        display: none;
+        width: 100%;
+        flex-grow: 1;
+
+        a{
+          background: $light-gray;
+          font-size: 16px;
+          padding-left: 55px;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
+
+
+.navigation{
+
+  @include rwdmax(medium) {
+    .container {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  ul.menu-item{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 40px;
+
+    @include rwdmax(medium){
+      display: block;
+
+      .has-submenu {
+        position: relative;
+
+        --fill-color: #{$light-red};
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 30px;
+          transform: rotate(-90deg);
+          transform-origin: 50% 50%;
+          height: 18px;
+          width: 10px;
+          color: $gray;
+          margin-top: -9px;
+          @include sprite('arrow', (
+              color: '#{$button-gray}'
+          ));
+        }
+
+        &.is-opened:after {
+          transform: rotate(90deg);
+          @include sprite('arrow', (
+               color: '#{$light-gray}'
+          ));
+        }
+      }
+    }
+  }
 }

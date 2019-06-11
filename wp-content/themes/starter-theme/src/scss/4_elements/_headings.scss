@@ -29,20 +29,18 @@ h6 {
 }
 
 h1, .h1 {
-  line-height: 27px;
-  font-size: rem(20);
+  line-height: (51/38);
+  font-size: rem(25);
   @include rwd(tablet) {
-    line-height: 43px;
     font-size: rem(32);
   }
   @include rwd(medium) {
-    line-height: 51px;
     font-size: rem(38);
   }
 }
 
 h2, .h2 {
-  line-height: 43px;
+  line-height: (43/32);
   font-size: rem(24);
 
   @include rwd(medium) {
@@ -51,7 +49,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  line-height: 32px;
+  line-height: (32/24);
   font-size: rem(18);
 
   @include rwd(medium) {
@@ -60,7 +58,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  line-height: 27px;
+  line-height: (27/20);
   font-size: rem(16);
 
   @include rwd(medium) {
@@ -69,7 +67,7 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  line-height: 22px;
+  line-height: (22/16);
   font-size: rem(14);
 
   @include rwd(medium) {

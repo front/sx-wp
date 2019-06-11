@@ -1,0 +1,39 @@
+.wp-block-cloudblocks-accordion.edit {
+  .accordion {
+    padding: 0;
+    list-style-type: none;
+
+    &__item {
+      margin-top: 10px;
+    }
+
+    &__item-settings {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+
+      .components-base-control__field {
+        margin: 0 10px 0 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .components-form-toggle {
+        height: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.wp-block-cloudblocks-accordion.save {
+  .accordion {
+    &__item--open .accordion__item-content {
+      display: block;
+    }
+
+    &__item-content {
+      display: none;
+    }
+  }
+}

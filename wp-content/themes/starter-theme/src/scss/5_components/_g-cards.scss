@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+
+$className: card;
+
+.wp-block-starterx-cards {
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .#{$className} {
+    font-size: 18px;
+    line-height: (29/18);
+    padding: 20px;
+    border: 1px solid $semi-white;
+    background: #fff;
+    transition:background 0.3s ease-in-out;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 2px #be8d7e solid;
+      }
+    }
+
+    &__image {
+      display: block;
+      margin: 0;
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+
+      img {
+        display: none;
+      }
+    }
+
+    &__title {
+      margin: 16px 0 0;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: (32/24);
+      transition: color 0.3s ease-in-out;
+    }
+
+    &__desc {
+      font-weight: 500;
+      color: #3d3d3d;
+      margin-top: 10px;
+      transition: color 0.3s ease-in-out;
+      margin-bottom: 0 !important;
+      font-size: 18px;
+      line-height: 29px;
+    }
+
+    &:hover{
+      background: $light-red;
+      border: 1px solid transparent;
+
+      .#{$className}__title, .#{$className}__desc {
+        color: #fff !important;
+      }
+    }
+  }
+
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: 1024px) {
+      @for $i from 2 through 4 {
+        &.columns-#{$i} {
+          grid-template-columns: repeat($i, 1fr);
+        }
+      }
+    }
+  }
+}

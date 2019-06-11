@@ -7,11 +7,13 @@ tr
 table {
 	border-collapse: collapse;
 	width: 100%;
-	margin: 0 0 1.5em;
+	margin: 60px 0;
 	font-size: 16px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	overflow: hidden;
 
 	tr:first-child {
-		background: $light-gray;
 		font-size: 18px;
 	}
 
@@ -21,12 +23,17 @@ table {
 	}
 }
 
-td,
 th {
-	padding: 0;
 	border-bottom: 1px solid $light-gray;
+	background: $light-red;
+	color: $romance;
+	font-weight: 400;
+	padding: 20px 30px 20px 30px;
+	text-align: left;
 }
 
 td {
-	padding: 30px;
+	padding: 20px 30px 20px 30px;
+	color: $dark-gray;
+	border-bottom: 1px solid $semi-white;
 }

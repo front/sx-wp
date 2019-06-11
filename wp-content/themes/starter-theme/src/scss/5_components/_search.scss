@@ -1,89 +1,62 @@
 .header-search {
   @include rwdmax(mobile) {
-    display: none;
-
-    .menu-open & {
-      display: block;
-      position: fixed;
-      bottom: 0;
-      z-index: 120;
-      width: 100vw;
-      left: 0;
-      right: 0;
-      padding: 0;
-
-
-      .search-icon {
-        svg {
-          margin-top: 0;
-        }
-      }
-
-      .main-search {
-        width: 100%;
-        height: 100%;
-        visibility: visible;
-      }
-
-      .search-input {
-        padding-left: 25px;
-      }
-
-
-      .search-submit {
-        right: 25px !important;
-
-        svg {
-          width: 18px;
-          height: 18px;
-          viewBox: 0 0 18 18;
-        }
-      }
-
-      #SearchArrow {
-        display: none;
-      }
-    }
   }
 
   padding-left: 50px;
   padding-right: 30px;
-  position: relative;
   height: 40px;
+  margin-top: 6px;
+  position: relative;
 
+  @include rwdmax(small) {
+    padding: 0 10px;
+    position: static;
+  }
 
+  .search-input {
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-family: $font-family;
+
+    @include placeholder {
+      color: $gray !important;
+    }
+  }
   .search-icon {
     svg {
+      --stroke-color: #{$text-color};
       margin-top: 50%;
-    }
-
-    svg path {
-      stroke: $text-color;
+      width: 18px;
+      height: 18px;
 
       .dark & {
-        stroke: #FFF;
+        --stroke-color: #{$romance};
       }
     }
 
     &:hover {
       cursor: pointer;
 
-      svg path {
-        stroke: $brandy-rose;
+      svg {
+        --stroke-color: #{$light-red};
       }
     }
   }
 
   .main-search {
     position: absolute;
-    top: 0;
+    top: 6px;
+    min-width: 200px;
+    background: $romance;
+    z-index: 999;
 
     .search-input {
       width: 100%;
       height: 100%;
       border: none;
-      background-color: #ffffff;
+      background-color: $romance;
       font-weight: 300;
+      padding-right: 50px;
 
       &::placeholder {
         color: initial;
@@ -91,10 +64,10 @@
 
       .dark & {
         background-color: $mine-shaft;
-        color: #FFF;
+        color: $romance;
 
         &::placeholder {
-          color: #FFF;
+          color: $romance;
         }
       }
     }
@@ -103,11 +76,27 @@
       background: transparent;
       border: none;
       cursor: pointer;
-      right: 0;
+      right: 20px;
       position: absolute;
       padding: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      bottom: 12px;
+      -webkit-appearance: none;
+      display: block;
+
+      @include rwdmax(small){
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+        margin-top: -6px;
+        right: 40px;
+      }
+    }
+
+    @include rwdmax(small){
+      top: 136px;
+      width: 100% !important;
+      left: 0;
+      display: none;
     }
 
 
@@ -119,13 +108,20 @@
       opacity: 0;
       transform: translateX(40px);
       transition: all 0.4s ease;
+    }
 
-      .search-input {
-        border-bottom: 2px solid $brandy-rose;
-      }
+    .search-input {
+      border-bottom: 1px solid $light-red;
+    }
 
-      #searchMagnifying {
-        display: none;
+    .search-arrow{
+      width: 20px;
+      height: 12px;
+
+      &:hover{
+       use{
+         --fill-color: #{$light-red};
+       }
       }
     }
 
@@ -137,6 +133,24 @@
       opacity: 1;
       transform: translateX(0);
       width: 350px;
+
+      @include rwdmax(small){
+        width: 100%;
+        display: block;
+        padding: 20px;
+        background: $romance;
+        box-sizing: border-box;
+      }
+
     }
+  }
+}
+
+
+.search-arrow-1{
+  --fill-color: #{$dark-gray};
+
+  .dark & {
+    --fill-color: #{$romance};
   }
 }

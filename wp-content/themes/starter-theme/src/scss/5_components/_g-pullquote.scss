@@ -6,32 +6,47 @@
 
     &:before {
       content: '';
-      background: url(../icons/separator.svg);
+      @include sprite('separator', (
+           color: '#{$semi-white}'
+      ));
       background-repeat: no-repeat;
       position: relative;
       top: 0;
-      width: 100%;
+      width: 70px;
       height: 1px;
       display: block;
     }
   }
 
-  p, cite {
+  p {
     font-family: 'Lora', serif;
     font-style: italic;
-    font-weight: normal;
     line-height: 26px;
     font-size: 18px;
-    color: $steel;
+    color: $text-color;
     text-align: left;
+    margin-bottom: 20px;
+
+    &:before{
+      content: '“';
+    }
+
+    &:after {
+      content: '”';
+    }
   }
 
   cite {
     position: relative;
     padding-left: 20px;
+    color: $gray;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
 
     &:before {
-      content: '-';
+      content: '—';
       position: absolute;
       left: 0;
     }
