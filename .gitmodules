@@ -1,0 +1,3 @@
+[submodule "wp-content/plugins/starterx-blocks-collection"]
+	path = wp-content/plugins/starterx-blocks-collection
+	url = git@github.com:front/starterx-blocks-collection.git

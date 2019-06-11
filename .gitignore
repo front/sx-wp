@@ -23,6 +23,7 @@ wp-content/uploads/*
 # Added automagically by WP-CLI Build (wp build-generate)
 # ------------------------------------------------------------
 
+!wp-content/plugins/starterx-blocks-collection
 !wp-content/themes/starter-theme/
 
 # ------------------------------------------------------------
