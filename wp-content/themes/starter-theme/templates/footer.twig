@@ -2,6 +2,9 @@
     <div class="row columns-4 column-gap-medium">
         <div>
             {{ footer1 }}
+            <div class="site-info copyright">
+                &copy; {{ now|date('Y') }} {{ bloginfo('name') }} {{ fn('get_theme_mod', 'copyright_text') }}
+            </div><!-- .site-info -->
         </div>
         <div>
             {{ footer2 }}
@@ -13,8 +16,4 @@
             {{ footer4 }}
         </div>
     </div>
-
-    <div class="site-info copyright">
-        &copy; {{ now|date('Y') }} {{ bloginfo('name') }} {{ fn('get_theme_mod', 'copyright_text') }}
-    </div><!-- .site-info -->
 </div>
