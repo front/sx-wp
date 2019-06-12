@@ -21,7 +21,9 @@
                 <div class="article__credits">
                     {{ __('by', '_t') }} <a href="{{ author_link }}" class="article__info__author"><span>{{ post.author }}</span></a> | <span class="article__info__date">{{ post.date }}</span> {{ post.category.name ? '| <a class="article__info__tag" href="' ~ category_link ~ '"><span>' ~ post.category.name ~ '</span></a>' }}
                 </div>
-                {{ post.content }}
+                <div class="article__content">
+                    {{ post.content }}
+                </div>
                 <div class="tag-cloud-links tag-cloud-links--inside-article tag-cloud-links--mobile">
                     {% include 'template-parts/tag-cloud.twig' %}
                 </div>
