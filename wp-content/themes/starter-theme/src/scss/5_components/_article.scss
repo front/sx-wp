@@ -67,10 +67,11 @@
       }
     }
   }
-  &__info {
+  &-info {
     color: $button-gray;
     &__author {
       margin-right: 3px;
+      text-decoration: none!important;
     }
     &__date {
       margin-left: 3px;
@@ -79,6 +80,7 @@
     &__tag {
       margin-left: 5px;
       color: $light-red;
+      text-decoration: none!important;
     }
   }
   &__mobile-img{
@@ -101,12 +103,14 @@
     }
   }
 
-  a{
-    color: inherit;
-    text-decoration: underline;
+  &__content {
+    a{
+      color: inherit;
+      text-decoration: underline;
 
-    &:hover{
-      text-decoration: none;
+      &:hover{
+        text-decoration: none;
+      }
     }
   }
 }
