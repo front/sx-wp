@@ -35,28 +35,36 @@
                 </a>
               </form>
             </div>
-            <div class="language-selector">
-              <div class="js-lang-btn">
-                <svg class="icon" width="18" height="18">
-                  <use xlink:href="{{ theme.path }}/build/spritemap.svg#earth"></use>
-                </svg>
-                <span>PL</span>
+
+            {% if fn('icl_get_languages') %}
+              {% set languages = fn('icl_get_languages') %}
+              <div class="language-selector">
+                {% for language in languages %}
+                  {% if language.active %}
+                    <div class="js-lang-btn">
+                      <svg class="icon" width="18" height="18">
+                        <use xlink:href="{{ theme.path }}/build/spritemap.svg#earth"></use>
+                      </svg>
+                      <span>{{ language.native_name }}</span>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+                <div class="lang-dropdown js-lang-dropdown">
+                  <ul>
+                    {% for language in languages %}
+                      {% if not language.active %}
+                        <li>
+                          <a href="{{ language.url }}">
+                            {{ language.native_name }}
+                          </a>
+                        </li>
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+                </div>
               </div>
-              <div class="lang-dropdown js-lang-dropdown">
-                <ul>
-                  <li class="is-active">
-                    <a href="#">
-                      Polski
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Português
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            {% endif %}
+
             <div class="menu-toggle menu-toggle--only-mobile">
               <div class="svg-hamburger">
                 <svg viewBox="0 0 800 600">
