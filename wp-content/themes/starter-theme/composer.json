@@ -1,0 +1,7 @@
+{
+    "require-dev": {
+        "djboris88/timber-commented-include": "^1.0",
+        "hellonico/timber-dump-extension": "^1.0",
+        "ajgl/breakpoint-twig-extension": "^0.3.4"
+    }
+}

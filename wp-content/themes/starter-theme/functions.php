@@ -359,3 +359,24 @@ function svg_support( $m ) {
 }
 
 add_filter( 'upload_mimes', 'svg_support' );
+
+
+/**
+ * require composer autoload
+ */
+
+require get_template_directory() . '/vendor/autoload.php';
+
+/**
+ * for xdebugging twig
+ */
+
+add_filter( 'timber/twig', function( \Twig\Environment $twig ) {
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG
+        && class_exists( 'Ajgl\Twig\Extension\BreakpointExtension' )
+    ) {
+        $twig->addExtension( new Ajgl\Twig\Extension\BreakpointExtension() );
+    }
+
+    return $twig;
+} );

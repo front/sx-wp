@@ -22,3 +22,6 @@ assets/
 
 ## Local configurations
 local-config.json
+
+## development
+vendor/*
