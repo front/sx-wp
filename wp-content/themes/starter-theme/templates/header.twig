@@ -36,7 +36,7 @@
               </form>
             </div>
 
-            {% if fn('icl_get_languages') %}
+            {% if fn('function_exists', 'icl_get_languages') %}
               {% set languages = fn('icl_get_languages') %}
               <div class="language-selector">
                 {% for language in languages %}
