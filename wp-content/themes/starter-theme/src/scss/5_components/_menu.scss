@@ -272,7 +272,7 @@
       }
 
       &#middle {
-        stroke-dasharray: 240px 240px;
+        opacity: 1;
       }
     }
 
@@ -296,8 +296,7 @@
           }
 
           &#middle {
-            stroke-dashoffset: -115px;
-            stroke-dasharray: 1px 220px;
+            opacity: 0;
           }
         }
       }
@@ -464,10 +463,11 @@ header.dark {
     display: flex;
     align-items: center;
     border-bottom: 1px solid $semi-white;
+    font-size: 20px;
+    padding-left: 25px;
     a {
       flex-grow: 1;
       font-size: 20px;
-      padding-left: 25px;
       box-sizing: border-box;
 
       span {
@@ -494,7 +494,7 @@ header.dark {
           width: 100%;
           min-height: 75px;
           border-bottom: 1px solid $semi-white;
-          padding-left: 30px;
+          padding-left: 50px;
           box-sizing: border-box;
           display: flex;
           flex-wrap: wrap;
@@ -517,7 +517,6 @@ header.dark {
     }
   }
 }
-
 
 .navigation{
 
@@ -565,4 +564,8 @@ header.dark {
       }
     }
   }
+}
+
+.has-submenu {
+  cursor: default;
 }

@@ -4,6 +4,7 @@ class Menu {
     this.mobileNav = document.querySelectorAll('.nav-columns');
     this.submenu = document.querySelectorAll('.js-sub-menu');
     this.menuWithSub = document.querySelectorAll('.js-menu-with-sub');
+    this.isMobile = window.matchMedia("only screen and (max-width: 1024px)").matches;
   }
 
   events() {
@@ -22,46 +23,54 @@ class Menu {
         let subMenu = this.submenu[i];
         let subMenuParent = subMenu.previousElementSibling;
         subMenuParent.classList.add('has-submenu');
-        subMenuParent.addEventListener('mouseover', e => {
-          e.preventDefault();
+        subMenu.style.display = "none";
 
-          subMenu.style.display = 'block';
-          subMenuParent.classList.add('is-opened');
+        if (this.isMobile) {
+          subMenuParent.addEventListener('click', e => {
+            subMenuParent.classList.toggle('is-opened');
+            subMenu.style.display = subMenu.style.display == "none" ? "block" : "none";
+          });
+        } else {
+          subMenuParent.addEventListener('mouseenter', e => {
+            e.preventDefault();
 
-          if ( i > 0 ) {
+            subMenu.style.display = 'block';
+            subMenuParent.classList.add('is-opened');
+
             subMenuParent.addEventListener('mouseleave', e => {
               subMenu.style.display = 'none';
-            })
+            });
 
-            subMenu.addEventListener('mouseover', e => {
+            subMenu.addEventListener('mouseenter', e => {
               subMenu.style.display = 'block';
-            })
+            });
 
             subMenu.addEventListener('mouseleave', e => {
               subMenu.style.display = 'none';
-            })
-          }
+            });
 
-          let subMenuWidth = subMenu.offsetWidth;
-          let subMenuChildMenu = subMenu.querySelector('.sub-menu');
-          if (subMenuChildMenu) {
-            subMenuChildMenu.style.left = subMenuWidth + 'px';
-          }
-        })
+            let subMenuWidth = subMenu.offsetWidth;
+            let subMenuChildMenu = subMenu.querySelector('.sub-menu');
+            if (subMenuChildMenu) {
+              subMenuChildMenu.style.left = subMenuWidth + 'px';
+            }
+          })
+        }
       }
 
-      if (allMenuElement) {
-        allMenuElement.addEventListener('mouseleave', e => {
-          subMenu.style.display = 'none';
-        })
+      if ( ! this.isMobile ) {
+        if (allMenuElement) {
+          allMenuElement.addEventListener('mouseleave', e => {
+            subMenu.style.display = 'none';
+          })
+        }
       }
 
     }
   }
 
   resize() {
-    var isMobile = window.matchMedia("only screen and (max-width: 1024px)").matches;
-    if (isMobile) {
+    if (this.isMobile) {
       this.hamburger.addEventListener('click', e => {
         e.preventDefault();
         for (let i = 0; i < this.mobileNav.length; i++) {
