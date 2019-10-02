@@ -1,5 +1,14 @@
 <header class="header">
   <div class="site-navigation">
+  {% if fn('has_nav_menu', 'top') and top_menu.get_items %}
+      <nav class="header-menu top-menu">
+        <div class="menu">
+          {% include "menu.twig" with {
+            'menu': top_menu.get_items
+          } %}
+        </div>
+      </nav>
+    {% endif %}
     {% if fn('has_nav_menu', 'main') %}
       <div class="header-menu main-menu">
         <div class="menu">
