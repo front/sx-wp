@@ -201,7 +201,18 @@ function regen_colors_after_save() {
         $gray-color: '.$gray_color.';
         $light-gray: '.$light_gray_color.';
         $gallery: '.$light_color.';
-        $romance: '.$white_color.';';
+        $romance: '.$white_color.';
+        $light-red: #BE8D7E;
+        $text-color-gray--lighter: #D6D6D6;
+        $dark-gray: #2c3238;
+        $light-red: #e93350;
+        $dark-red: #b91e37;
+        $semi-white: #d1dbe6;
+        $gray: #8c959b;
+        $light-gray: #f3f6f8;
+        $button-gray: #4f5c65;
+        $text-color-gray: #999999;
+    ';
 
     $scss_file = get_template_directory() . '/src/scss/0_settings/_colors.scss';
     file_put_contents($scss_file, $file_content);
