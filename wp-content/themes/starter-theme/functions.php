@@ -380,3 +380,28 @@ add_filter( 'upload_mimes', 'svg_support' );
 //
 //    return $twig;
 //} );
+
+/**
+ * Implement the Custom Google fonts feature.
+ */
+require get_template_directory() . '/inc/custom-fonts.php';
+
+/**
+ * Enqueue scripts and styles.
+ */
+function starterx_scripts() {
+    $headings_font = get_option('starterx_headings_fonts');
+    $body_font = get_option('starterx_body_fonts');
+    $paragraph_font = get_option('starterx_paragraph_fonts');
+
+    if( $headings_font ) {
+        wp_enqueue_style( 'starterx-headings-fonts', 'https://fonts.googleapis.com/css?family='. $headings_font, array(), null, false);
+    }
+    if( $body_font ) {
+        wp_enqueue_style( 'starterx-body-fonts', 'https://fonts.googleapis.com/css?family='. $body_font, array(), null, false);
+    }
+    if( $paragraph_font ) {
+        wp_enqueue_style( 'starterx-paragraph-fonts', 'https://fonts.googleapis.com/css?family='. $paragraph_font, array(), null, false);
+    }
+}
+add_action( 'wp_enqueue_scripts', 'starterx_scripts' );
