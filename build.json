@@ -16,7 +16,7 @@
             "version": "*"
         },
         "elasticpress": {
-            "version": "2.*"
+            "version": "3.2.*"
         },
         "enhanced-media-library": {
             "version": "*"
@@ -28,9 +28,6 @@
             "version": "*"
         },
         "wordpress-seo": {
-            "version": "*"
-        },
-        "wp-super-cache": {
             "version": "*"
         }
     }
