@@ -10,48 +10,48 @@ function fk_add_theme_support() {
   // Color palette
   add_theme_support( 'editor-color-palette', array(
       array(
-          'name' => __( 'Brandy Rose', fk-starterx ),
+          'name' => __( 'Brandy Rose', 'fk-starterx' ),
           'slug' => 'starter-brandy-rose',
           'color' => get_theme_mod('secondary_color', '#BE8D7E'),
       ),
       array(
-          'name' => __( 'Dark Tan', fk-starterx ),
+          'name' => __( 'Dark Tan', 'fk-starterx' ),
           'slug' => 'starter-dark-tak',
           'color' => get_theme_mod('primary_color', '#926355'),
       ),
       array(
-          'name' => __( 'Black', fk-starterx ),
+          'name' => __( 'Black', 'fk-starterx' ),
           'slug' => 'starter-black',
           'color' => get_theme_mod('dark_color', '#000000'),
       ),
       array(
-          'name' => __( 'Mine Shaft', fk-starterx ),
+          'name' => __( 'Mine Shaft', 'fk-starterx' ),
           'slug' => 'starter-mine-shaft',
           'color' => get_theme_mod('accent_color', '#333333'),
       ),
       array(
-          'name' => __( 'Steel', fk-starterx ),
+          'name' => __( 'Steel', 'fk-starterx' ),
           'slug' => 'starter-steel',
           'color' => get_theme_mod('accent2_color', '#666666'),
       ),
       array(
-          'name' => __( 'Gray', fk-starterx ),
+          'name' => __( 'Gray', 'fk-starterx' ),
           'slug' => 'starter-gray',
           'color' => get_theme_mod('gray_color', '#ABABAB'),
       ),
       array(
-          'name' => __( 'Light Gray', fk-starterx ),
+          'name' => __( 'Light Gray', 'fk-starterx' ),
           'slug' => 'starter-light-gray',
           'color' => get_theme_mod('light_gray_color', '#D6D6D6'),
       ),
       array(
-          'name' => __( 'Gallery', fk-starterx ),
+          'name' => __( 'Gallery', 'fk-starterx' ),
           'slug' => 'starter-gallery',
           'color' => get_theme_mod('light_color', '#F0F0F0'),
       ),
 
       array(
-          'name' => __( 'Romance', fk-starterx ),
+          'name' => __( 'Romance', 'fk-starterx' ),
           'slug' => 'starter-romance',
           'color' => get_theme_mod('white_color', '#FFFFFF'),
       ),
@@ -65,22 +65,22 @@ function fk_add_theme_support() {
   // Font sizes
   add_theme_support( 'editor-font-sizes', array(
       array(
-          'name' => __( 'Extra small', fk-starterx ),
+          'name' => __( 'Extra small', 'fk-starterx' ),
           'size' => 14,
           'slug' => 'xsmall'
       ),
       array(
-          'name' => __( 'Small', fk-starterx ),
+          'name' => __( 'Small', 'fk-starterx' ),
           'size' => 16,
           'slug' => 'small'
       ),
       array(
-          'name' => __( 'Normal', fk-starterx ),
+          'name' => __( 'Normal', 'fk-starterx' ),
           'size' => 18,
           'slug' => 'normal'
       ),
       array(
-          'name' => __( 'Large', fk-starterx ),
+          'name' => __( 'Large', 'fk-starterx' ),
           'size' => 24,
           'slug' => 'large'
       ),
