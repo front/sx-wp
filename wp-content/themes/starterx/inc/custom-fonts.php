@@ -69,9 +69,6 @@ function starterx_fonts_customizer( $wp_customize ) {
 }
 add_action('customize_register', 'starterx_fonts_customizer');
 
-// Output custom CSS to live site
-add_action( 'wp_head', array( 'font_customizer' ) );
-
 function starterx_custom_styles($custom) {
 
     //Fonts
@@ -95,7 +92,7 @@ function starterx_custom_styles($custom) {
     }
 
     //Output all the styles
-    wp_add_inline_style( '_t-style', $custom );
+    wp_add_inline_style( 'starterx-style', $custom );
 }
 add_action( 'wp_enqueue_scripts', 'starterx_custom_styles' );
 
