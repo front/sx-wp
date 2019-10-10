@@ -17,13 +17,13 @@
     <div class="entry-content">
         {{ post.content }}
         {{ fn('wp_link_pages', {
-            'before': '<div class="page-links">' ~ __( 'Pages:', '_t' ),
+            'before': '<div class="page-links">' ~ __( 'Pages:', fk-starterx ),
             'after': '</div>'
         }) }}
     </div><!-- .entry-content -->
 
     <footer class="entry-footer">
-        {% set edit_label = __('Edit %s', '_t')|format('<span class="screen-reader-text">' ~ post.title ~ '</span>') %}
+        {% set edit_label = __('Edit %s', fk-starterx)|format('<span class="screen-reader-text">' ~ post.title ~ '</span>') %}
         {{ fn('edit_post_link', edit_label, '<span class="edit-link">', '</span>') }}
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

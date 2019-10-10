@@ -19,7 +19,7 @@
         <div class="content__left entry-content">
             <div class="article">
                 <div class="article__credits">
-                    {{ __('by', '_t') }} <a href="{{ author_link }}" class="article-info__author"><span>{{ post.author }}</span></a> | <span class="article-info__date">{{ post.date }}</span> {{ post.category.name ? '| <a class="article-info__tag" href="' ~ category_link ~ '"><span>' ~ post.category.name ~ '</span></a>' }}
+                    {{ __('by', fk-starterx) }} <a href="{{ author_link }}" class="article-info__author"><span>{{ post.author }}</span></a> | <span class="article-info__date">{{ post.date }}</span> {{ post.category.name ? '| <a class="article-info__tag" href="' ~ category_link ~ '"><span>' ~ post.category.name ~ '</span></a>' }}
                 </div>
                 <div class="article__content">
                     {{ post.content }}

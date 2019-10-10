@@ -9,20 +9,20 @@
 #}
 <section class="no-results not-found">
     <header class="page-header">
-        <h1 class="page-title">{{ __('Nothing Found', '_t') }}</h1>
+        <h1 class="page-title">{{ __('Nothing Found', fk-starterx) }}</h1>
     </header><!-- .page-header -->
 
     <div class="page-content">
         {% if fn('is_home') and fn('current_user_can', 'publish_posts') %}
-            <p>{{ __('Ready to publish your first post? <a href="%1$s">Get started here</a>.', '_t')|format(fn('admin_url', 'post-new.php')|e('html_attr')) }}</p>
+            <p>{{ __('Ready to publish your first post? <a href="%1$s">Get started here</a>.', fk-starterx)|format(fn('admin_url', 'post-new.php')|e('html_attr')) }}</p>
 
         {% elseif fn('is_search') %}
-            <p>{{ __('Sorry, but nothing matched your search terms. Please try again with some different keywords.', '_t') }}</p>
+            <p>{{ __('Sorry, but nothing matched your search terms. Please try again with some different keywords.', fk-starterx) }}</p>
 
             {{ fn('get_search_form', false) }}
 
         {% else %}
-            <p>{{ __('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', '_t') }}</p>
+            <p>{{ __('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', fk-starterx) }}</p>
 
             {{ fn('get_search_form', false) }}
 

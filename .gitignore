@@ -24,12 +24,12 @@ wp-content/uploads/*
 # ------------------------------------------------------------
 
 !wp-content/plugins/starterx-blocks-collection
-!wp-content/themes/starter-theme/
+!wp-content/themes/starterx/
 
 # ------------------------------------------------------------
 # END WP-CLI BUILD BLOCK
 
 !wp-content/uploads/gutenberg-blocks/
 wp-content/uploads/gutenberg-blocks/*/node_modules
-wp-content/themes/starter-theme/node_modules/
-wp-content/themes/starter-theme/build/
+wp-content/themes/starterx/node_modules/
+wp-content/themes/starterx/build/

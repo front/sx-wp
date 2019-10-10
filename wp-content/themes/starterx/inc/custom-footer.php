@@ -6,7 +6,7 @@ function footer_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'footer_section',
         array(
-            'title'       => __('Copyright', 'starter-theme'),
+            'title'       => __('Copyright', 'starterx-theme'),
             'priority'    => 150,
         )
     );

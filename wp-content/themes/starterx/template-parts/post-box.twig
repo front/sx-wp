@@ -13,7 +13,7 @@
                 <img class="article__img-mobile" src="{{ (post.thumbnail and post.thumbnail._wp_attachment_metadata != 'a:0:{}') ? post.thumbnail.src|resize(100, 100) : theme.link ~ '/src/icons/250x250.svg' }}" alt="article img">
             </div>
           <div class="article-info__credits">
-            {{ __('by', '_t') }} <span class="article-info__author">{{ post.author }}</span> | <span class="article-info__date">{{ post.date }}</span>
+            {{ __('by', fk-starterx) }} <span class="article-info__author">{{ post.author }}</span> | <span class="article-info__date">{{ post.date }}</span>
           </div>
           <p class="article-info__content">
             {{ half ? post.post_excerpt|excerpt(25) : post.post_excerpt|excerpt(50) }}

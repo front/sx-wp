@@ -1,6 +1,0 @@
-{
-  "browserSync": {
-    "port": 3000,
-    "proxy": "http://dev.starter-theme.no"
-  }
-}

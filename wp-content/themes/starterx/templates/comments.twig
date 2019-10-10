@@ -20,16 +20,16 @@
         {# You can start editing here -- including this comment! #}
         {% if comments %}
             <h2 class="comments-title">
-                {{ _nx('One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', comments|length, 'comments title', '_t')|format(function('number_format_i18n', comments|length), '<span>' ~ post.title ~ '</span>') }}
+                {{ _nx('One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', comments|length, 'comments title', fk-starterx)|format(function('number_format_i18n', comments|length), '<span>' ~ post.title ~ '</span>') }}
             </h2>
 
             {# Are there comments to navigate through? #}
             {% if comment_pages_count > 1 and page_comments %}
                 <nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-                    <h2 class="screen-reader-text">{{ __( 'Comment navigation', '_t' ) }}</h2>
+                    <h2 class="screen-reader-text">{{ __( 'Comment navigation', fk-starterx ) }}</h2>
                     <div class="nav-links">
-                        <div class="nav-previous">{{ fn('previous_comments_link', __('Older Comments', '_t')) }}</div>
-                        <div class="nav-next">{{ fn('next_comments_link', __('Newer Comments', '_t')) }}</div>
+                        <div class="nav-previous">{{ fn('previous_comments_link', __('Older Comments', fk-starterx)) }}</div>
+                        <div class="nav-next">{{ fn('next_comments_link', __('Newer Comments', fk-starterx)) }}</div>
                     </div><!-- .nav-links -->
                 </nav><!-- #comment-nav-above -->
             {% endif %}
@@ -41,10 +41,10 @@
             {# Are there comments to navigate through? #}
             {% if comment_pages_count > 1 and page_comments %}
                 <nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-                    <h2 class="screen-reader-text">{{ __( 'Comment navigation', '_t' ) }}</h2>
+                    <h2 class="screen-reader-text">{{ __( 'Comment navigation', fk-starterx ) }}</h2>
                     <div class="nav-links">
-                        <div class="nav-previous">{{ fn('previous_comments_link', __('Older Comments', '_t')) }}</div>
-                        <div class="nav-next">{{ fn('next_comments_link', __('Newer Comments', '_t')) }}</div>
+                        <div class="nav-previous">{{ fn('previous_comments_link', __('Older Comments', fk-starterx)) }}</div>
+                        <div class="nav-next">{{ fn('next_comments_link', __('Newer Comments', fk-starterx)) }}</div>
                     </div><!-- .nav-links -->
                 </nav><!-- #comment-nav-below -->
             {% endif %}
@@ -52,7 +52,7 @@
 
         {# If comments are closed and there are comments, let's leave a little note, shall we? #}
         {% if post.comment_status != 'open' and comments|length and fn('post_type_supports', post.post_type, 'comments') %}
-            <p class="no-comments">{{ __('Comments are closed.', '_t') }}</p>
+            <p class="no-comments">{{ __('Comments are closed.', fk-starterx) }}</p>
         {% endif %}
 
         {{ fn('comment_form', {}, post.ID) }}

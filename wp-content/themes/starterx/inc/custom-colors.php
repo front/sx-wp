@@ -17,7 +17,7 @@ function color_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'color_section',
         array(
-            'title'       => __('Colors', '_t'),
+            'title'       => __('Colors', fk-starterx),
             'priority'    => 30,
         )
     );

@@ -50,6 +50,7 @@ class UnderTimberSite extends TimberSite {
 		$context['menu'] = new TimberMenu();
 		$context['top_menu'] = new TimberMenu( 'top' );
 		$context['main_menu'] = new TimberMenu( 'main' );
+		$context['full_menu'] = new TimberMenu( 'full' );
         $context['additional_mobile_menu'] = new TimberMenu( 'mobile' );
         $context['social_menu'] = new TimberMenu( 'social' );
 		$context['site'] = $this;
@@ -76,9 +77,9 @@ function _t_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Under Timber, use a find and replace
-	 * to change '_t' to the name of your theme in all the template files.
+	 * to change fk-starterx to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( '_t', get_template_directory() . '/languages' );
+	load_theme_textdomain( fk-starterx, get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -107,11 +108,11 @@ function _t_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'top' => esc_html__( 'Top Menu', '_t' ),
-		'main' => esc_html__( 'Main Menu', '_t' ),
-//		'full' => esc_html__( 'Expandable Menu', '_t' ),
-//        'social' => esc_html__( 'Social Menu', '_t' ),
-        'mobile' => esc_html__( 'Additional Mobile Menu', '_t' ),
+		'top' => esc_html__( 'Top Menu', fk-starterx ),
+		'main' => esc_html__( 'Main Menu', fk-starterx ),
+		'full' => esc_html__( 'Expandable Menu', fk-starterx ),
+        'social' => esc_html__( 'Social Menu', fk-starterx ),
+        'mobile' => esc_html__( 'Additional Mobile Menu', fk-starterx ),
 	) );
 
 	/*
@@ -161,7 +162,7 @@ add_action( 'after_setup_theme', '_t_content_width', 0 );
  */
 function _t_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', '_t' ),
+		'name'          => esc_html__( 'Sidebar', fk-starterx ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -170,9 +171,9 @@ function _t_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
     register_sidebar( array(
-        'name'          => __( 'Footer 1', '_t' ),
+        'name'          => __( 'Footer 1', fk-starterx ),
         'id'            => 'footer-1',
-        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', '_t' ),
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', fk-starterx ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget__title">',
@@ -180,9 +181,9 @@ function _t_widgets_init() {
     ) );
 
     register_sidebar( array(
-        'name'          => __( 'Footer 2', '_t' ),
+        'name'          => __( 'Footer 2', fk-starterx ),
         'id'            => 'footer-2',
-        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', '_t' ),
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', fk-starterx ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget__title">',
@@ -190,9 +191,9 @@ function _t_widgets_init() {
     ) );
 
     register_sidebar( array(
-        'name'          => __( 'Footer 3', '_t' ),
+        'name'          => __( 'Footer 3', fk-starterx ),
         'id'            => 'footer-3',
-        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', '_t' ),
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', fk-starterx ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget__title">',
@@ -200,9 +201,9 @@ function _t_widgets_init() {
     ) );
 
     register_sidebar( array(
-        'name'          => __( 'Footer 4', '_t' ),
+        'name'          => __( 'Footer 4', fk-starterx ),
         'id'            => 'footer-4',
-        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', '_t' ),
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', fk-starterx ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget__title">',
@@ -285,123 +286,4 @@ function my_customizer_styles() { ?>
 add_action( 'customize_controls_print_styles', 'my_customizer_styles', 999 );
 
 // social menu
-//require get_template_directory() . '/inc/customizer_social_icons/customizer-social-icons.php';
-
-/**
- * Adds the meta box to the page screen
- */
-function theme_options_add_meta_box() {
-	$screens = array( 'post', 'page' );
-	add_meta_box(
-		'theme_options',
-		__( 'Theme options' ),
-		'options_meta_box',
-		$screens,
-		'side',
-		'low'
-	);
-}
-
-add_action( 'add_meta_boxes', 'theme_options_add_meta_box' );
-
-function options_meta_box( $post, $meta ) {
-	wp_nonce_field( plugin_basename( __FILE__ ), 'title_nonce' );
-	$title_status = get_post_meta( $post->ID, '_show_title', true );
-
-	if ( $title_status === '' || ! empty( $title_status ) ) {
-		$checkbox_status = 'checked';
-	} else {
-		$checkbox_status = '';
-	}
-	?>
-
-    <div class="components-base-control components-base-control--mt">
-        <p class="post-attributes-label-wrapper"></p>
-        <div class="components-base-control__field">
-            <input id="show_title" class="components-checkbox-control__input" name="show_title" type="checkbox" <?php echo $checkbox_status ?>>
-            <label class="components-checkbox-control__label" for="show_title">Show title</label>
-        </div>
-    </div>
-	<?php
-
-}
-
-function show_title_save_postdata( $post_id ) {
-	$is_checked = 0;
-
-	if ( ! wp_verify_nonce( $_POST['title_nonce'], plugin_basename( __FILE__ ) ) ) {
-		return;
-	}
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-	if ( ! current_user_can( 'edit_post', $post_id ) ) {
-		return;
-	}
-	if ( isset( $_POST['show_title'] ) ) {
-		$is_checked = $_POST['show_title'];
-	}
-
-	update_post_meta( $post_id, '_show_title', $is_checked );
-}
-
-add_action( 'save_post', 'show_title_save_postdata' );
-
-/**
- * add svg support
- */
-
-function svg_support( $m ) {
-	$m['svg']  = 'image/svg+xml';
-	$m['svgz'] = 'image/svg+xml';
-
-	return $m;
-}
-
-add_filter( 'upload_mimes', 'svg_support' );
-
-
-///**
-// * require composer autoload
-// */
-//
-//require get_template_directory() . '/vendor/autoload.php';
-//
-///**
-// * for xdebugging twig
-// */
-//
-//add_filter( 'timber/twig', function( \Twig\Environment $twig ) {
-//    if ( defined( 'WP_DEBUG' ) && WP_DEBUG
-//        && class_exists( 'Ajgl\Twig\Extension\BreakpointExtension' )
-//    ) {
-//        $twig->addExtension( new Ajgl\Twig\Extension\BreakpointExtension() );
-//    }
-//
-//    return $twig;
-//} );
-
-/**
- * Implement the Custom Google fonts feature.
- */
-require get_template_directory() . '/inc/custom-fonts.php';
-
-/**
- * Enqueue scripts and styles.
- */
-function starterx_scripts() {
-    $headings_font = get_option('starterx_headings_fonts');
-    $body_font = get_option('starterx_body_fonts');
-    $paragraph_font = get_option('starterx_paragraph_fonts');
-
-    if( $headings_font ) {
-        wp_enqueue_style( 'starterx-headings-fonts', 'https://fonts.googleapis.com/css?family='. $headings_font, array(), null, false);
-    }
-    if( $body_font ) {
-        wp_enqueue_style( 'starterx-body-fonts', 'https://fonts.googleapis.com/css?family='. $body_font, array(), null, false);
-    }
-    if( $paragraph_font ) {
-        wp_enqueue_style( 'starterx-paragraph-fonts', 'https://fonts.googleapis.com/css?family='. $paragraph_font, array(), null, false);
-    }
-}
-add_action( 'wp_enqueue_scripts', 'starterx_scripts' );
+// require get_template_directory() . '/inc/customizer_social_icons/customizer-social-icons.php';
